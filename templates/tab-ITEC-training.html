@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+
+{% block meta %}
+  <meta name="description" content="ITEC Training Programmes page by the National Institute of Wind Energy (NIWE), Chennai, detailing international training programs, workshops, and capacity-building initiatives in wind energy and renewable energy under MNRE.">
+  <meta name="keywords" content="NIWE ITEC training programmes, NIWE Chennai, MNRE India, international wind energy training, renewable energy workshops, capacity-building initiatives, global training programs, wind sector education, MNRE initiatives, NIWE programs">
+{% endblock %}
+
+{% block title %} ITEC Training programmes | National Institute of Wind Energy (NIWE), Ministry of New and Renewable Energy, Government of India {% endblock %}
+
+{% block content %}
+
+<section class="head-div">
+  <div class="overlay d-flex align-items-center">
+    <div class="container">
+      <h1 class="text-white">ITEC Training</h1>
+    </div>
+  </div>
+</section>
+<div class="container">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb bg-transparent p-0">
+      <li class="breadcrumb-item"><a href="/">Home</a></li>
+      <li class="breadcrumb-item">
+        <a href="{% url 'departments' %}">Department</a>
+      </li>
+      <li class="breadcrumb-item">
+        <a href="{% url 'sdt' %}">Skill Development & Training</a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">ITEC Training</li>
+    </ol>
+  </nav>
+</div>
+
+<section class="rnd-div" id="divContent">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="itec-img-div pe-2 pb-5">
+          <div class="row col-12 ms-auto mb-2 tab-itec-div">
+            <div class="col-auto mb-3">
+              <a href="/itec/" class="tab-itec"> ITEC </a>
+            </div>
+
+            <div class="col-auto mb-3">
+              <a href="{% url 'itec_training' %}" class="tab-itec">
+                TRAININGS
+              </a>
+            </div>
+            <div class="col-auto mb-3">
+              <a href="{% url 'itec_countries' %}" class="tab-itec">
+                COUNTRIES
+              </a>
+            </div>
+
+            <div class="col-auto mb-3">
+              <a href="{% url 'itec_feedback' %}" class="tab-itec">
+                FEEDBACK
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="pt-4 mt-5">
+          <h5><b> ITEC TRAININGS COURSE CONDUCTED </b></h5>
+          <div class="table-responsive">
+          <table class="table table-bordered w-100">
+            <thead style="background: #00889a5e">
+              <tr class="table-primary">
+                <th scope="col">SI.No</th>
+                <th scope="col">Title of the Project</th>
+                <th scope="col">No. of Country</th>
+                <th scope="col">No. of Participants</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for item in trainings %}
+
+              <tr>
+                <th scope="row">{{ item.serial }}</th>
+                <td class="text-dark">
+                  <a href="{% url 'itec_training_sub' item.id %}">
+                    {{ item.project_title }}
+                  </a>
+                </td>
+                <td>{{ item.no_of_country }} </td>
+                <td>{{ item.no_of_participants }} </td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

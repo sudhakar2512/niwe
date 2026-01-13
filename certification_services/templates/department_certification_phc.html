@@ -1,0 +1,124 @@
+{% extends 'base.html' %}
+
+{% block meta %}
+  <meta name="description" content="Learn about the procedure for handling complaints and appeals at the National Institute of Wind Energy (NIWE), Chennai. This page provides guidelines for lodging complaints, submitting appeals, and resolving issues related to certification of wind power systems, sub-systems, and components under MNRE standards.">
+  <meta name="keywords" content="NIWE complaints procedure, appeals process NIWE, wind energy certification complaints, MNRE grievance guidelines, NIWE Chennai, wind turbine certification issues, renewable energy complaint handling, wind power appeals, NIWE certification feedback, wind energy compliance">
+{% endblock %}
+
+{% block title %} Procedure for Handling Complaints & Appeals | National Institute of Wind Energy (NIWE), Ministry of New and Renewable Energy, Government of India {% endblock %}
+
+{% block content %}
+<section class="head-div">
+  <div class="overlay d-flex align-items-center">
+    <div class="container">
+      <h1 class="text-white">Procedure for Handling Complaints and Appeals</h1>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb bg-transparent p-0">
+      <li class="breadcrumb-item"><a href="/">Home </a></li>
+      <li class="breadcrumb-item" aria-current="page">
+        <a href="{% url 'departments' %}">Department</a>
+      </li>
+      <li class="breadcrumb-item" aria-current="page">
+        <a href="{% url 'certificate' %}">Certification</a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">
+        Certification Services
+      </li>
+    </ol>
+  </nav>
+</div>
+
+<section class="about-div" id="divContent">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">{% include 'certification_sidenav.html' %}</div>
+      <div class="col-md-8">
+        <div class="dgm-text">
+          <p>
+            The following are the procedures for complaints and appeals
+            handling.
+          </p>
+          <ol style="list-style-type: square">
+            <li>
+              All complaint/appeals are received by the Director General and
+              they are recorded in the complaints and forwarded to Project
+              Manager.
+            </li>
+            <li>
+              Upon receipt of complaint/appeals, NIWE shall confirm whether the
+              complaint/appeals relate to certification activities for which it
+              is responsible.
+            </li>
+
+            <li>
+              All the relevant complaint/appeals are registered in the compliant
+              and appeals register available in Certification Division of NIWE,
+              Chennai and acknowledge the receipt of the same.
+            </li>
+            <li>
+              Action request shall be raised by Project Manager and forwarded to
+              Quality coordinator for initiating action.
+            </li>
+            <li>
+              A written response will be sent to the complaint/appeals without
+              delay. In case time is needed to complete the investigation, a
+              letter acknowledging the complaint/appeals and that the response
+              will be sent in due course will be communicated.
+            </li>
+            <li>
+              The decision resolving the complaint/appeals shall be made by, or
+              reviewed and approved by, person(s) not involved in the
+              certification activities related to the relevant
+              complaint/appeals.
+            </li>
+            <li>
+              To ensure that there is no conflict of interest, personnel who
+              have provided consultancy for a client, or been employed by a
+              client, shall not be used by NIWE to review or approve the
+              resolution of a complaint or appeal for that client within two
+              years following the end of the consultancy or employment.
+            </li>
+            <li>
+              The outcome of investigations shall be prepared by Quality
+              coordinator, reviewed and approved by the Project Manager.
+            </li>
+            <li>
+              Whenever possible, NIWE will give formal notice of the outcome and
+              the end of the complaint process to the complainant.
+            </li>
+            <li>
+              NIWE will give formal notice of the outcome and the end of the
+              appeal process to the appellant.
+            </li>
+
+            <li>The Director General will co-sign the final response.</li>
+
+            <li>
+              NIWE will take any subsequent action needed to resolve the
+              complaint or appeal.
+            </li>
+
+            <li>
+              The action taken will be recorded in the customer complaint
+              register.
+            </li>
+
+            <li>
+              The status of all complaints shall be monitored by the PM and
+              discussed with Director General and the effectiveness of action
+              taken on complaints shall be reviewed at the Management Review
+              Meeting (MRM).
+            </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

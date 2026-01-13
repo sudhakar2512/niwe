@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block meta %}
+  <meta name="description" content="Detailed information on Wind Energy Generator (WEG) installations provided by the National Institute of Wind Energy (NIWE), Chennai, including installation locations, capacities, and operational data to support wind energy development under MNRE.">
+  <meta name="keywords" content="WEG installation, wind energy generators, NIWE Chennai, MNRE India, wind power installation data, wind energy projects, renewable energy statistics, wind turbine installation, wind energy monitoring, NIWE wind data">
+{% endblock %}
+
+{% block title %} WEG Installation | National Institute of Wind Energy (NIWE), Ministry of New and Renewable Energy, Government of India {% endblock %}
+
+{% block content %}
+
+<section class="head-div">
+  <div class="overlay d-flex align-items-center">
+    <div class="container">
+      <h1 class="text-white">WEG Installation</h1>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb bg-transparent p-0">
+      <li class="breadcrumb-item"><a href="/">Home </a></li>
+      <li class="breadcrumb-item" aria-current="page">
+        <a href="{% url 'document' %}">Documents</a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">
+        WEG Installation
+      </li>
+    </ol>
+  </nav>
+</div>
+
+<section class="hwed-sec" id="divContent">
+  <div class="container">
+    <ul type="disc">
+      <li>
+        <span class="fw-bold">link:-</span>  <a href="{% url 'weg_install_India' %}"
+       class="linkIcon"> India - Year Wise</a>
+      </li>
+      <li>
+       <span class="fw-bold">link:-</span> <a href="{% url 'weg_install_country_wise' %}"
+      class="linkIcon">World - Country Wise</a>
+      </li>
+    </ul>
+  </div>
+</section>
+<!-- footer -->
+
+{% endblock %}

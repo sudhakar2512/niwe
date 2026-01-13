@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block meta %}
+  <meta name="description" content="IREDA-NIWE Annual Awards page, highlighting achievements and recognition in the wind energy sector by the National Institute of Wind Energy (NIWE), Chennai, under the Ministry of New and Renewable Energy (MNRE).">
+  <meta name="keywords" content="IREDA NIWE awards, NIWE Chennai, MNRE India, wind energy awards, renewable energy recognition, NIWE achievements, wind power excellence, MNRE initiatives, wind sector awards, NIWE annual awards">
+{% endblock %}
+
+{% block title %} IREDA - NIWE Annual Awards | National Institute of Wind Energy (NIWE), Ministry of New and Renewable Energy, Government of India {% endblock %}
+
+{% block content %}
+
+<section class="head-div">
+  <div class="overlay d-flex align-items-center">
+    <div class="container">
+      <h1 class="text-white">
+        {% for sub in subIreda %} {{sub.title}} {% endfor %}
+      </h1>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb bg-transparent p-0">
+      <li class="breadcrumb-item"><a href="/">Home</a></li>
+      <li class="breadcrumb-item">
+        <a href="{% url 'departments' %}">Department</a>
+      </li>
+      <li class="breadcrumb-item">
+        <a href="{% url 'sdt' %}">Skill Development & Training</a>
+      </li>
+      <li class="breadcrumb-item">
+        <a href="{% url 'ireda_niwe_annual_awards' %}">IREDA - NIWE Annual Awards</a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">
+        {% for sub in subIreda %} {{sub.title}} {% endfor %}
+      </li>
+    </ol>
+  </nav>
+</div>
+  
+<section class="dgm-div" id="divContent">
+  <div class="container">
+    
+    {% for sub in subIreda %}
+    
+        <div>{{ sub.description|safe }}</div>
+           
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}

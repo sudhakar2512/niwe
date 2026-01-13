@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+
+{% block meta %}
+  <meta name="description" content="FOWPI (Future Offshore Wind Power Initiative) Report by the National Institute of Wind Energy (NIWE), Chennai, detailing offshore wind power potential, feasibility studies, and research outcomes under the Ministry of New and Renewable Energy (MNRE).">
+  <meta name="keywords" content="FOWPI Report, NIWE Chennai, MNRE India, offshore wind power, wind energy research, renewable energy studies, offshore wind feasibility, NIWE offshore projects, wind energy potential, MNRE initiatives">
+{% endblock %}
+
+{% block title %} FOWPI Report | National Institute of Wind Energy (NIWE), Ministry of New and Renewable Energy, Government of India{% endblock %}
+
+{% block content %}
+
+{% load static %}
+
+<!-- nav end  -->
+
+<section class="head-div">
+  <div class="overlay d-flex align-items-center">
+    <div class="container">
+      <h1 class="text-white">FOWPI Report</h1>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb bg-transparent p-0">
+      <li class="breadcrumb-item"><a href="/">Home</a></li>
+      <li class="breadcrumb-item">
+        <a href="{% url 'departments' %}">Department</a>
+      </li>
+      <li class="breadcrumb-item">
+        <a href="{% url 'owd' %}">Offshore Wind Development</a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">Fowpi Report</li>
+    </ol>
+  </nav>
+</div>
+
+<section class="rnd-div" id="divContent">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <ol>
+            <li>
+             <a href="{% static '/pdf/depart-side-tabs/FOWPI_COWI-EU_ESIA_Practice_and_IFI_requirements_for_Offshore_Wind.pdf' %}" target="_blank" data-doc >
+              FOWPI COWI - EU ESIA Practice and IFI requirements for Offshore Wind
+              </a>
+            </li>
+            <li>
+              <a href="{% static '/pdf/depart-side-tabs/FOWPI_ERM-Indian_ESIA_Regulatory_Framework_for_Offshore_Wind.pdf' %}"  target="_blank" data-doc>
+                FOWPI ERM - Indian ESIA Regulatory Framework for Offshore Wind
+              </a>
+            </li>
+            <li>
+              <a  href="{% static '/pdf/depart-side-tabs/FOWPI_Metocean_Study.pdf' %}"  target="_blank" data-doc>
+              FOWPI Metocean Study
+              </a>
+            </li>
+            <li>
+              <a  href="{% static '/pdf/depart-side-tabs/FOWPI_Weather_Windows.pdf' %}"  target="_blank" data-doc>
+              FOWPI Metocean Weather Windows for installation
+              </a>
+            </li>
+            <li>
+              <a href="{% static '/pdf/depart-side-tabs/FOWPI_Metocean_Data_Requirements.pdf' %}" target="_blank" data-doc>
+              FOWPI Metocean Data Requirements
+              </a>
+            </li>
+            <li>
+              <a href="{% static '/pdf/depart-side-tabs/FOWPI_Advisory_Foundation_Design.pdf' %}" target="_blank" data-doc>
+               Advisory Foundation Concept Design Report
+              </a>
+            </li>
+            <li>
+              <a href="{% static '/pdf/depart-side-tabs/FOWPI_Procedures_for_Offshore_Wind.pdf' %} " target="_blank" data-doc>
+                Procedures for Offshore Wind
+              </a>
+            </li>
+        </ol>
+      </div>
+
+      <div class="col-md-4">{% include 'departments-owd-side-tabs.html' %}</div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

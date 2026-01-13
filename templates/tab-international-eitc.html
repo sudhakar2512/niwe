@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% block meta %}
+  <meta name="description" content="International Trainings page of the National Institute of Wind Energy (NIWE), Chennai, providing details on global training programs, workshops, and knowledge exchange initiatives in wind energy and renewable energy under MNRE.">
+  <meta name="keywords" content="NIWE international trainings, NIWE Chennai, MNRE India, global wind energy workshops, renewable energy training, knowledge exchange programs, international wind energy education, wind sector training, MNRE initiatives, NIWE global programs">
+{% endblock %}
+
+{% block title %} International Trainings | National Institute of Wind Energy (NIWE), Ministry of New and Renewable Energy, Government of India {% endblock %}
+
+{% block content %} 
+
+<section class="head-div">
+  <div class="overlay d-flex align-items-center">
+    <div class="container">
+      <h1 class="text-white">International Trainings</h1>
+    </div>
+  </div>
+</section>
+<div class="container">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb bg-transparent p-0">
+      <li class="breadcrumb-item"><a href="/">Home</a></li>
+      <li class="breadcrumb-item">
+        <a href="{% url 'departments' %}">Department</a>
+      </li>
+      <li class="breadcrumb-item">
+        <a href="{% url 'sdt' %}">Skill Development & Training</a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">
+        International Trainings
+      </li>
+    </ol>
+  </nav>
+</div>
+
+<section class="rnd-div" id="divContent">
+  <div class="container">
+    <div class="row col-12 mx-auto">
+      <div class="col-md-8">
+        {% for eitec in eitecs %}
+        <div class="training-list-item">
+          <p class="entry-text">           
+             <a href="{% url 'international_training_sub_eite' eitec.slug %}" aria-label="{{ eitec.title }}"  class="entry-link" title="{{ eitec.title |striptags}}">
+
+              {{ eitec.serial}}. {{ eitec.title }}
+            </a>
+          </p>
+        </div>
+        {% endfor %}
+      </div>
+
+      <div class="col-md-4">{% include "side-tab.html" %}</div>
+    </div>
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block meta %}
+  <meta name="description" content="Search page of the National Institute of Wind Energy (NIWE), Chennai, allowing users to find information, documents, reports, and resources related to wind energy and renewable energy initiatives under MNRE.">
+  <meta name="keywords" content="NIWE search, NIWE Chennai, MNRE India, wind energy search, renewable energy resources, NIWE documents, wind power information, MNRE initiatives, search NIWE website, wind energy data">
+{% endblock %}
+
+{% block title %} Search | National Institute of Wind Energy (NIWE), Ministry of New and Renewable Energy, Government of India {% endblock %}
+
+{% block content %} 
+<section class="head-div">
+    <div class="overlay d-flex align-items-center">
+      <div class="container">
+        <h1 class="text-white">Search</h1>
+      </div>
+    </div>
+  </section>
+  
+  <div class="container">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb bg-transparent p-0">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Search</li>
+      </ol>
+    </nav>
+  </div>
+
+
+<div class="search-page-wrapper">
+  <h1 class="search-heading">NIWE SEARCH</h1>
+  
+  <!-- Google Custom Search Box -->
+  <!-- <div class="gcse-searchbox"></div> -->
+
+  <!-- Google Custom Search Results -->
+  <!-- <div class="gcse-searchresults-only"></div> -->
+  <div class="gcse-search"></div>
+</div>
+
+<!-- Google CSE Script -->
+<!-- <script async src="https://cse.google.com/cse.js?cx=73e0304d0105a42e2"></script> -->
+{% endblock %}
+
+

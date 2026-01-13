@@ -1,0 +1,154 @@
+{% extends 'base.html' %}
+
+{% block meta %}
+  <meta name="description" content="Learn about the limitations, restrictions, and proper use of certificates issued by the National Institute of Wind Energy (NIWE), Chennai. This page details the terms, conditions, and compliance requirements for wind power system certification under the Ministry of New and Renewable Energy.">
+  <meta name="keywords" content="NIWE certificate limitations, certificate restrictions, use of NIWE certificates, wind energy compliance, MNRE certificate guidelines, NIWE Chennai, wind turbine certification rules, renewable energy certificate usage, wind power system certification, NIWE standards">
+{% endblock %}
+
+{% block title %} Limitations, Restrictions & Use of Certificates | National Institute of Wind Energy (NIWE), Ministry of New and Renewable Energy, Government of India {% endblock %}
+
+{% block content %}
+<section class="head-div">
+  <div class="overlay d-flex align-items-center">
+    <div class="container">
+      <h1 class="text-white">
+        Limitations, Restriction and use of Certificates issued by NIWE
+      </h1>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb bg-transparent p-0">
+      <li class="breadcrumb-item"><a href="/">Home </a></li>
+      <li class="breadcrumb-item" aria-current="page">
+        <a href="{% url 'departments' %}">Department</a>
+      </li>
+      <li class="breadcrumb-item" aria-current="page">
+        <a href="{% url 'certificate' %}">Certification</a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">
+        Certification Services
+      </li>
+    </ol>
+  </nav>
+</div>
+
+<section class="rnd-div" id="divContent">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">{% include 'certification_sidenav.html' %}</div>
+      <div class="col-md-8">
+        <div class="dgm-text">
+          <!-- your code -->
+          <div>
+            <ol style="list-style-type: disc">
+              <li>
+                NIWE will provide certificates to its Client, who fulfills the
+                certification requirements.
+              </li>
+              <li>
+                Upon successful completion of the evaluation of all modules,
+                Type certificate will be issued with a Unique Identification
+                Number and Validity period. There is no separate mark of
+                conformity is issued.
+              </li>
+
+              <li>
+                Certified clients may utilize the certificate in communication
+                media such as the internet; brochures and marketing
+                presentation.
+              </li>
+              <li>
+                If the scope of certification does not include all products
+                manufactured by the client, and/or all locations/facilities,
+                then the client shall ensure that use of the certificates
+                restricted only for the scope covered in the certificate.
+              </li>
+              <li>
+                The clients shall not use the certificates provided by NIWE in
+                such in a manner that would bring NIWE, into disrepute and lose
+                public trust, and shall not make any statement regarding its
+                product certification that NIWE may consider to be misleading or
+                unauthorized.
+              </li>
+              <li>
+                Photocopies or electronic copies of original “paper” versions of
+                the certificates may be in full color, and need to be
+                watermarked or otherwise marked as being a copy of the original.
+              </li>
+
+              <li>
+                The certificate can be used “as provided” by NIWE and cannot be
+                altered or modified.
+              </li>
+
+              <li>
+                Upon a reduction of the scope of certification, the client shall
+                amend all advertising material referring to its certification to
+                properly reflect the reduced scope.
+              </li>
+
+              <li>
+                In case of withdrawal or termination of its certification, the
+                clients shall discontinue its use of all advertising material
+                that contains a reference to certification, and take actions as
+                required by the certification scheme and any other required
+                measures as directed by NIWE.
+              </li>
+
+              <li>
+                Contractual obligation: Correct use of the certificate is a
+                contractual obligation and will be monitored at surveillance and
+                certificate renewal assessments.
+              </li>
+
+              <li>
+                The type of corrective action against any misuse will depends on
+                the nature of the misuse and its subsequent consequences.
+              </li>
+
+              <li>
+                Any misuse of the certificate by the clients brought to the
+                notice of NIWE by any third party or noticed by NIWE may result
+                in suspension or withdrawal of the certification by NIWE. NIWE’s
+                considerations with respect to suspension or withdrawal will be
+                as follows:
+              </li>
+
+              <ol style="list-style-type: square">
+                <li>
+                  Inadvertent misuse: with this activity, the organization will
+                  be required to immediately withdraw the offending materials,
+                  or NIWE will suspend certification until the misuse is
+                  rectified. Repeated inadvertent misuse will not be tolerated
+                  by NIWE and therefore will be cause for withdrawal of
+                  certification.
+                </li>
+
+                <li>
+                  Misuse: with an activity considered premeditated on the part
+                  of the organization, NIWE will withdraw certification and
+                  publish notices to that effect in the directory of certified
+                  companies.
+                </li>
+              </ol>
+              <li>
+                When misuses refuse to take corrective action, NIWE has the
+                rights to terminate the certificate, to inform the regulatory
+                authority and also to take any legal proceedings.
+              </li>
+
+              <li>The clients need to adhere the above said procedure</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+{% endblock %}

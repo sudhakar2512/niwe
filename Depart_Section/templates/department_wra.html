@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+
+{% block meta %}
+  <meta name="description" content="Comprehensive Wind Resource Assessment (WRA) by the National Institute of Wind Energy (NIWE), Chennai, including wind data measurement, analysis, mapping, and evaluation to support onshore and offshore wind energy projects under MNRE.">
+  <meta name="keywords" content="wind resource assessment, NIWE WRA, wind data measurement, MNRE India, NIWE Chennai, wind mapping, wind energy potential, renewable energy assessment, wind site evaluation, wind resource analysis">
+{% endblock %}
+
+{% block title %} Wind Resource Assessment | National Institute of Wind Energy (NIWE), Ministry of New and Renewable Energy, Government of India {% endblock %}
+
+{% block content %}
+
+<section class="head-div">
+  <div class="overlay d-flex align-items-center">
+    <div class="container">
+      <h1 class="text-white">Wind Resource Assessment (WRA)</h1>
+    </div>
+  </div>
+</section>
+<div class="container">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb bg-transparent p-0">
+      <li class="breadcrumb-item"><a href="/">Home</a></li>
+      <li class="breadcrumb-item" aria-current="page">
+        <a href="{% url 'departments' %}">Department</a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">
+        Wind Resource Assessment (WRA)
+      </li>
+    </ol>
+  </nav>
+</div>
+
+<section class="rnd-div" id="divContent" >
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8" >
+        <div class="accordion" id="accordionExample">
+          {% for item in wra %}
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="heading{{ forloop.counter }}">
+              <button
+                class="accordion-button {% if not forloop.first %}collapsed{% endif %}"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapse{{ forloop.counter }}"
+                aria-expanded="{% if forloop.first %}true{% else %}false{% endif %}"
+                aria-controls="collapse{{ forloop.counter }}"
+              >
+                {{ item.title|safe }}
+              </button>
+            </h2>
+            <div
+              id="collapse{{ forloop.counter }}"
+              class="accordion-collapse collapse {% if forloop.first %}hide{% endif %}"
+              aria-labelledby="heading{{ forloop.counter }}"
+              data-bs-parent="#accordionExample"
+            >
+              <div class="accordion-body">{{ item.description|safe }}</div>
+            </div>
+          </div>
+          {% endfor %}
+          
+        </div>
+        <a href="{% url 'windSolar_DateSale' %}">Procedure for purchasing the Time Series Wind/Solar Data</a>
+      </div>
+
+      <div class="col-md-4">{% include 'depart-side-tabs.html' %}</div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

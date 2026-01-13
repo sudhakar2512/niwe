@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+
+{% block meta %}
+  <meta name="description" content="Scope of Inspection Services at the National Institute of Wind Energy (NIWE), Chennai, defining the range, objectives, and areas covered for inspections of wind energy systems and components under MNRE.">
+  <meta name="keywords" content="inspection scope NIWE, NIWE Chennai, MNRE India, wind energy inspections, renewable energy evaluation, wind turbine inspection coverage, wind power systems inspection, NIWE inspection objectives, wind energy components, MNRE standards">
+{% endblock %}
+
+{% block title %} Inspection Scope  | National Institute of Wind Energy (NIWE), Ministry of New and Renewable Energy, Government of India {% endblock %}
+
+{% block content %}
+
+<section class="head-div">
+  <div class="overlay d-flex align-items-center">
+    <div class="container">
+      <h1 class="text-white">Inspection Scope</h1>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb bg-transparent p-0">
+      <li class="breadcrumb-item"><a href="/">Home </a></li>
+      <li class="breadcrumb-item" aria-current="page">
+        <a href="{% url 'departments' %}">Department</a>
+      </li>
+      <li class="breadcrumb-item" aria-current="page">
+        <a href="{% url 'certificate' %}">Certification</a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">
+        Inspection Services
+      </li>
+    </ol>
+  </nav>
+</div>
+
+<section class="rnd-div" id="divContent">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">{% include 'inspection_sidenav.html' %}</div>
+      <div class="col-md-8">
+        <div class="dgm-text">
+          <!--  your text -->
+          <h5>Scope</h5>
+       
+          <p>
+            NIWE carries out Inspection Services as per the requirements of ISO/IEC 17020:2012 as an Independent Inspection body (Type - A) 
+            and to demonstrate the effective implementation of the system at NIWE.
+          </p>
+          <p>
+            The scope of NIWE as a Type - A Inspection body is to carry out the Inspection of Finished components at the manufacturing plant and whole 
+            ind Turbines installed at the site. The detailed scope is defined below:
+          </p>
+          <ol>
+            <li><strong>IAF Scope 18 - Machinery and Equipment</strong></li>            
+              <ul>
+                <li>1.1 Wind Turbine Tower
+                <li>1.2	Wind Turbine Hub and Nacelle Assembly</li>
+                <li>1.3	Wind Turbine Rotor Blades</li>
+              </ul>
+
+            <li><strong>IAF Scope 19a - Electrical equipment </strong></li>            
+              <ul>
+                <li> 2.1	Generators</li>
+                <li>2.2	Power Transformers</li>
+                <li>2.3	Power Converters</li>
+                <li>2.4	Wind Turbines installed at the Site</li>
+              </ul>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

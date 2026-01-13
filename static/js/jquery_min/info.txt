@@ -1,0 +1,5 @@
+/*! jQuery v3.6.0 | (c) OpenJS Foundation and other contributors | jquery.org/license */
+
+The version used here is jQuery v3.6.0.
+It is taken from link below
+https://code.jquery.com/jquery-3.6.0.min.js

@@ -1,0 +1,64 @@
+
+/* General styles */
+body {
+    top: 0px;
+}
+
+/* Flexbox container */
+.flex-container {
+    display: flex;
+}
+
+/* Image styles */
+.amritimg {
+    height: 120px;
+    width: auto;
+}
+
+.amritimg.sidelogo {
+    height: 145px;
+    width: 110%;
+}
+
+/* Hidden element */
+.dearch-div {
+    display: none;
+}
+
+/* Director's Message */
+.director-message {
+    color: #212529;
+}
+
+/* "View more" links */
+.view-more {
+    color: #ce8b17;
+    text-decoration: none;
+}
+
+/* Footer styles */
+.footer {
+    background-color: #f2f9fa;
+}
+
+.footer p {
+    font-size: 14px;
+}
+
+.footer-link {
+    color: #212529;
+    text-decoration: none;
+}
+
+.blink_me {
+    font-size: 14px;
+}
+
+.img-responsive {
+    max-width: 100%;
+    height: auto;
+}
+
+.india-img {
+    width: 40px;
+}

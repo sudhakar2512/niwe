@@ -1,0 +1,107 @@
+{% extends 'base.html' %}
+
+{% block meta %}
+  <meta name="description" content="Vayumitra Skill Development Programme page of the National Institute of Wind Energy (NIWE), Chennai, providing details on skill development initiatives, training programs, and capacity-building in wind energy and renewable energy under MNRE.">
+  <meta name="keywords" content="NIWE Vayumitra Skill Development Programme, NIWE Chennai, MNRE India, wind energy skill development, renewable energy training, capacity-building programs, wind sector education, MNRE initiatives, NIWE training initiatives, wind energy workforce development">
+{% endblock %}
+
+{% block title %} Vayumitra Skill Development Programme | National Institute of Wind Energy (NIWE), Ministry of New and Renewable Energy, Government of India {% endblock %}
+
+{% block content %} 
+
+<section class="head-div">
+  <div class="overlay d-flex align-items-center">
+    <div class="container">
+      <h1 class="text-white">Vayumitra Skill Development Programme</h1>
+    </div>
+  </div>
+</section>
+<div class="container">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb bg-transparent p-0">
+      <li class="breadcrumb-item"><a href="/">Home</a></li>
+      <li class="breadcrumb-item">
+        <a href="{% url 'departments' %}">Department</a>
+      </li>
+      <li class="breadcrumb-item">
+        <a href="{% url 'sdt' %}">Skill Development & Training</a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">
+        Vayumitra Skill Development Programme
+      </li>
+    </ol>
+  </nav>
+</div>
+
+<section class="rnd-div" id="divContent">
+  <div class="container">
+    <div class="row col-12 mx-auto">
+      <div class="col-md-8">
+        <div class="dgm-text">
+          <p class="font-italic mb-2">
+            &nbsp &nbsp &nbsp MNRE has assigned NIWE as the nodal agency to
+            implement “Vayumitra Skill Development Program (VSDP)” in eight
+            windy states and Kerala. The objective of the programme is to create
+            skilled workforce for the Indian wind energy sector so as to achieve
+            the Government of India targets. In the first phase, the following
+            three major areas / job levels were identified namely (1) O&M
+            Electrical & Instrumentation Technician – WPP, (2) O&M Mechanical
+            Technician – WPP and (3) Site Surveyor – WPP based on the
+            discussions and demand of the wind industry. The proposed "VSDP" is
+            designed in line with the National Skill Development Corporation
+            (NSDC) of the Ministry of Skill Development and Entrepreneurship,
+            Government of India.
+          </p>
+          <p class="font-italic mb-2">
+            &nbsp &nbsp &nbsp The programme envisages training of 5734 out of
+            which 5010 Participants through Training of Participants (TOP)
+            programme(1830 participants in O&M Mechanical Technician,1830
+            trainees in O&M Electrical Technician and 1350 trainees in Site
+            Surveyor). The TOP programmewill be conducted at the identified
+            Training Partnerslocated close to Wind Farms of nine (9) windy
+            states, namely Rajasthan, Gujarat, Maharashtra, Karnataka, Tamil
+            Nadu, Andhra Pradesh, Telangana, Madhya Pradesh and Kerala. To train
+            the participants through the identified institutions, NIWE will
+            train 690 Trainers (345 participants from the institutes and 345
+            participants from the wind industry) through 12 days Training of
+            Trainers (TOT) programmes. Both the TOP and TOT programme will be
+            assessed by qualified Assessors from Sector Skill Council (Skill
+            Council for Green Jobs) and NIWE will conduct Orientation Programme
+            to 34 Assessors through Orientation to Assessors (OTA) programme of
+            7 days.
+          </p>
+          <p class="font-italic mb-2">
+            For more details - https://vsdp.niwe.res.in/
+          </p>
+        </div>
+        <div class="row py-2 mx-auto col-12">
+          <div class="col-12">
+        
+
+            {% for item in vayumitra %}
+
+            <div class="training-list-item">
+              <p class="entry-text" > 
+                
+                {% if item.type == "docs" %}
+                  {{ item.serial}} &nbsp &nbsp
+                  <a href="{{ item.docs.url }}" data-doc target="_blank" class="text-secondary entry-link"> {{ item.title }}</a>
+
+                {% elif item.type == "url"%}
+                  {{ item.serial}} &nbsp &nbsp 
+                  <a href="{{ item.urls }}" target="_blank" class="text-secondary entry-link"> {{ item.title }}</a>
+                {% endif %}
+             </p>
+            </div>
+
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">{% include "side-tab.html" %}</div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

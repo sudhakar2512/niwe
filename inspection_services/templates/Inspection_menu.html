@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+{% block meta %}
+  <meta name="description" content="Introduction to Inspection Services offered by the National Institute of Wind Energy (NIWE), Chennai, detailing objectives, scope, procedures, and standards for wind energy inspections under the Ministry of New and Renewable Energy (MNRE).">
+  <meta name="keywords" content="inspection services NIWE, NIWE Chennai, MNRE India, wind energy inspection, renewable energy standards, wind turbine inspection, wind power evaluation, NIWE inspection procedures, wind energy compliance, MNRE guidelines">
+{% endblock %}
+
+{% block title %} Introduction - Inspection Services  | National Institute of Wind Energy (NIWE), Ministry of New and Renewable Energy, Government of India {% endblock %}
+
+{% block content %}
+
+<section class="head-div">
+  <div class="overlay d-flex align-items-center">
+    <div class="container">
+      <h1 class="text-white">Introduction</h1>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb bg-transparent p-0">
+      <li class="breadcrumb-item"><a href="/">Home </a></li>
+      <li class="breadcrumb-item" aria-current="page">
+        <a href="{% url 'departments' %}">Department</a>
+      </li>
+      <li class="breadcrumb-item" aria-current="page">
+        <a href="{% url 'certificate' %}">Certification</a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">
+        Inspection Services
+      </li>
+    </ol>
+  </nav>
+</div>
+
+<section class="rnd-div" id="divContent">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">{% include 'inspection_sidenav.html' %}</div>
+      <div class="col-md-8">
+        <div class="dgm-text">
+          <h5>Introduction</h5>
+          <p>
+            National Institute of Wind Energy (NIWE) as a Third Party Technical
+            Inspection Body (Type- A )endeavour to provide Quality Services on
+            the components used in the Renewable Energy Industry (On-shore and
+            Off -shore). NIWE has a quality system that complies with the
+            international standards ISO/IEC 17020:2012.
+          </p>
+          <p>
+            NIWE has developed and documented the general, structural, resource
+            and procedural requirements for Type - A inspection body as per
+            ISO/IEC 17020:2012 compliance and to assure quality service to the
+            customers.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- footer -->
+
+{% endblock %}

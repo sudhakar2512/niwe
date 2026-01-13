@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+
+{% block meta %}
+  <meta name="description" content="General information about the National Institute of Wind Energy (NIWE), Chennai, including its objectives, functions, organizational structure, services, and contributions to wind energy development under the Ministry of New and Renewable Energy (MNRE).">
+  <meta name="keywords" content="NIWE general information, wind energy institute, MNRE India, NIWE Chennai, wind energy objectives, organizational structure, wind energy services, renewable energy information, wind power development, NIWE overview">
+{% endblock %}
+
+{% block title %}General Information | National Institute of Wind Energy (NIWE), Ministry of New and Renewable Energy, Government of India {% endblock %}
+
+{% block content %}
+
+<section class="head-div">
+  <div class="overlay d-flex align-items-center">
+    <div class="container">
+      <h1 class="text-white">General Information</h1>
+    </div>
+  </div>
+</section>
+<div class="container">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb bg-transparent p-0">
+      <li class="breadcrumb-item"><a href="/">Home</a></li>
+      <li class="breadcrumb-item" aria-current="page">
+        <a href="{% url 'document' %}">Documents</a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">
+        General Information
+      </li>
+    </ol>
+  </nav>
+</div>
+
+<section class="rnd-div">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 " id="divContent">
+
+        <div class="accordion" id="general">
+          {% for item in info %}
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="heading{{ forloop.counter }}">
+              <button
+                class="accordion-button {% if not forloop.first %}collapsed{% endif %}"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapse{{ forloop.counter }}"
+                aria-expanded="{% if forloop.first %}true{% else %}false{% endif %}"
+                aria-controls="collapse{{ forloop.counter }}"
+              > 
+                {{ item.title|safe }}
+              </button>
+            </h2>
+            <div
+              id="collapse{{ forloop.counter }}"
+              class="accordion-collapse collapse {% if forloop.first %}hide{% endif %}"
+              aria-labelledby="heading{{ forloop.counter }}"
+              data-bs-parent="#general"
+            >
+              <div class="accordion-body">{{ item.description|safe }}</div>
+            </div>
+          </div>
+
+          {% endfor %}
+
+          
+        </div>
+
+        
+      </div>
+    </div>
+  </div> 
+</section>
+
+{% endblock %}

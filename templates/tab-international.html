@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+{% block meta %}
+  <meta name="description" content="International Training page of the National Institute of Wind Energy (NIWE), Chennai, providing information on global training programs, workshops, and capacity-building initiatives in wind energy and renewable energy under MNRE.">
+  <meta name="keywords" content="NIWE international training, NIWE Chennai, MNRE India, global wind energy workshops, renewable energy capacity-building, training programs, wind sector education, international knowledge exchange, MNRE initiatives, NIWE programs">
+{% endblock %}
+
+{% block title %}International Training | National Institute of Wind Energy (NIWE), Ministry of New and Renewable Energy, Government of India {% endblock %}
+
+{% block content %}
+
+<section class="head-div">
+  <div class="overlay d-flex align-items-center">
+    <div class="container">
+      <h1 class="text-white">International Training</h1>
+    </div>
+  </div>
+</section>
+<div class="container">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb bg-transparent p-0">
+      <li class="breadcrumb-item">
+        <a href="/">Home</a>
+      </li>
+      <li class="breadcrumb-item">
+        <a href="{% url 'departments' %}">Department</a>
+      </li>
+      <li class="breadcrumb-item">
+        <a href="{% url 'sdt' %}">Skill Development & Training</a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">International Training</li>
+    </ol>
+  </nav>
+</div>
+
+<section class="main-div" id="divContent">
+  <div class="container py-1">
+    <div class="row col-12 mx-auto">
+      <div class="col-md-8 col-12">
+        <div class="row col-12  mx-auto">
+          
+        {% for item in trainings %}
+        
+          <div class="col-lg-3 col-md-4 col-sm-7 col-12 mb-3">
+            <a href="{% url 'international_training_eitec' item.slug %}" aria-label="{{ item.title|safe }}" class="text-light">
+              <div class="card sm-card-design text-center px-8 py-4 mt-4" title="{{ item.title |striptags}}">
+                <h5 class="card-title text-primary" >{{ item.title|safe }}</h5>
+                <img src="{{ item.image.url }}" alt="{{ item.title|safe }}" style="height:10rem;" class="img-fluid" />
+              </div>
+            </a>
+          </div>
+
+        {% endfor %}
+      </div>
+    </div>
+
+
+      <!-- div close for row -->
+
+      <!-- div close for col-md-9 -->
+      <div class="col-md-4 mt-4 order-lg-2 order-1">
+        {% include 'side-tab.html' %}
+      </div>
+
+      <!-- div close for col-md-3 -->
+    </div>
+  </div>
+</section>
+
+{% endblock %}

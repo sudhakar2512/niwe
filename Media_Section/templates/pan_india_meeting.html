@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% block meta %}
+  <meta name="description" content="Information on the 2nd PAN-INDIA Research Network Meeting organized by the National Institute of Wind Energy (NIWE), Chennai, focusing on collaborative research, wind energy projects, knowledge sharing, and developments under MNRE.">
+  <meta name="keywords" content="2nd PAN-INDIA Research Network Meeting, NIWE Chennai, MNRE India, wind energy research, collaborative projects, renewable energy research, wind sector knowledge sharing, NIWE events, wind energy developments, research network meeting">
+{% endblock %}
+
+{% block title %} 2nd PAN-INDIA Research Network Meeting | National Institute of Wind Energy (NIWE), Ministry of New and Renewable Energy, Government of India {% endblock %}
+
+{% block content %} 
+
+<section class="head-div">
+  <div class="overlay d-flex align-items-center">
+    <div class="container">
+      <h1 class="text-white">Events</h1>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb bg-transparent p-0">
+      <li class="breadcrumb-item"><a href="/">Home</a></li>
+      <li class="breadcrumb-item">
+        <a href="{% url 'medias' %}">Media</a>
+      </li>
+      <li class="breadcrumb-item">
+        <a href="{% url 'events' %}"> Events</a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">
+        2nd PAN-INDIA Research Network Meeting "Industry and Academia Amalgamation" - 6th January 2020 
+      </li>
+    </ol>
+  </nav>
+</div>
+
+<section class="main-div">
+  <div class="container">
+    <h2>2nd PAN-INDIA Research Network Meeting "Industry and Academia Amalgamation" - 6th January 2020 </h2>
+<div class="container">
+   <div class="row mx-auto gallery">
+      {% for photo in panindia_photo %}
+      <div class="col-lg-3 col-md-3 col-sm-6 col-12">
+        <a href="{{ photo.image.url }}" class="big" aria-label="open PAN-INDIA Research Network Meeting">
+          <div class="card sub-gallery-card p-0">
+            <div class="card-body text-center p-2 sub-gallery-img">
+              <img
+                src="{{ photo.image.url }} "
+                class="card-img-top"
+                alt="PAN-INDIA Research Network Meeting"
+                title = "PAN-INDIA Research Network Meeting"
+              />
+            </div>
+          </div>
+        </a>
+      </div>
+      {% endfor %}
+    </div>
+</div>
+
+  </div>
+</section>
+
+{% endblock %}

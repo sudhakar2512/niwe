@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block meta %}
+  <meta name="description" content="Names, designation, and other particulars of the Public Information Officers (PIOs) page of the National Institute of Wind Energy (NIWE), Chennai, providing contact details and responsibilities for accessing information under the RTI Act and MNRE guidelines.">
+  <meta name="keywords" content="NIWE PIO details, Public Information Officers, NIWE Chennai, MNRE India, RTI contact information, wind energy officers, renewable energy information access, NIWE RTI officers, MNRE initiatives, public access officials">
+{% endblock %}
+
+{% block title %} Names, designation and other particulars of the Public Information Officers | National Institute of Wind Energy (NIWE), Ministry of New and Renewable Energy, Government of India {% endblock %}
+
+{% block content %} 
+
+<section class="head-div">
+  <div class="overlay d-flex align-items-center">
+    <div class="container">
+      <h1 class="text-white">Names, designation and other particulars of the Public Information Officers</h1>
+    </div>
+  </div>
+</section>
+<div class="container">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb bg-transparent p-0">
+      <li class="breadcrumb-item"><a href="/">Home </a></li>
+      <li class="breadcrumb-item" aria-current="page">
+        <a href="{% url 'rti' %}">Right To Information</a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">
+        Names, designation and other particulars of the Public Information Officers
+      </li>
+    </ol>
+  </nav>
+</div>
+
+<section class="rrs_section" id="divContent">  
+  <div class="container">
+    {% for item in detail %}
+        {{item.description|safe}}
+    {% endfor %}
+  </div>
+</section>
+
+{% endblock %}

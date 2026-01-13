@@ -1,0 +1,618 @@
+{% extends 'base.html' %}
+{% block meta %}
+  <meta name="description" content="Official website of the National Institute of Wind Energy (NIWE), an autonomous R&D institution under the Ministry of New and Renewable Energy, Government of India. NIWE promotes wind energy research, testing, certification, and training.">
+  <meta name="keywords" content="NIWE, Wind Energy, Renewable Energy, MNRE, India, Research, Wind Power, Certification, Training">
+{% endblock %}
+{% block title %} Home | National Institute of Wind Energy (NIWE), Ministry of New and Renewable Energy, Government of India {% endblock %}
+
+{% block content %} 
+{% load static %} 
+
+
+<!-- slider start -->
+
+<section class="container-fluid p-0 m-0 ">
+  <div class="row col-12 mx-auto" style="position:relative;">
+    <div class="col-md-12 col-12 p-0 m-0">
+      <div
+        id="carouselExampleControls"
+        class="carousel slide " 
+        data-bs-ride="carousel"
+      >
+        <div class="carousel-inner text-center w-100" >
+          <div class="carousel-item active">
+            <img
+              src="{% static '/images/slider/NIWE-CAMPUS1.jpg' %}" 
+              class="d-block "
+              alt="National Institute of Wind Energy"
+            />
+            <div class="carousel-caption-bottom-right">
+              National Institute of Wind Energy
+            </div>
+          </div>
+
+          
+            
+          <div class="carousel-item">
+            <img
+              src="{% static '/images/slider/slider2.jpg' %}"
+              class="d-block "
+              alt="NIWE signed a MOU with NCMRWF in the presence of Secretary MoES and JS MNRE"
+            />
+            <div class="carousel-caption-bottom-right">
+              NIWE signed a MOU with NCMRWF in the presence of Secretary MoES and JS MNRE
+            </div> 
+          </div>       
+          <div class="carousel-item">
+            <img
+              src="{% static '/images/slider/slide_img_01.jpg' %}"
+              class="d-block "
+              alt="Indo-Danish Centre of Excellence for Offshore Wind and RE"
+            />
+            <div class="carousel-caption-bottom-right">
+              Indo-Danish Centre of Excellence for Offshore Wind and RE
+            </div> 
+          </div>
+          <div class="carousel-item">
+            <img
+              src="{% static '/images/slider/slide_img_02.jpg' %}"
+              class="d-block "
+              alt="Indo-Danish Centre of Excellence for Offshore Wind and RE"
+            />
+            <div class="carousel-caption-bottom-right">
+              Indo-Danish Centre of Excellence for Offshore Wind and RE
+            </div> 
+          </div>
+          <div class="carousel-item">
+            <img
+              src="{% static '/images/slider/slide_img_03.jpg' %}"
+              class="d-block "
+              alt="Indo-Danish Centre of Excellence for Offshore Wind and RE"
+            />
+            <div class="carousel-caption-bottom-right">
+              Indo-Danish Centre of Excellence for Offshore Wind and RE
+            </div> 
+          </div>
+          
+          
+        </div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselExampleControls"
+          data-bs-slide="prev"
+          title="Previous slide"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselExampleControls"
+          data-bs-slide="next"
+          title="Next slide"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+
+
+      <button id="carouselPauseBtn" class="custom-carousel-btn" aria-label="Pause Slider">
+        <i id="carouselBtnIcon" class="fa fa-pause" aria-hidden="true"></i>
+      </button>
+    </div>
+  </div>
+</section>
+
+
+<!-- <section width="100%" id="divContent">
+  <div class="news">
+    <div class="news-side-div">
+      <h3>Latest News</h3>
+    </div>
+    <div class="running-news">
+      <div class="scrolling-text">
+        <div class="'scrolling-content">
+        
+          {% for datas in running_news_entry %}
+          
+            <a href="{{ datas.url_link }}"  target="_blank">
+              {{ datas.title }} 
+              {% if datas.New_Label %}
+                <span class="label_blink notranslate">NEW</span>
+              {% endif %}
+            </a> 
+          
+          {% endfor %}  
+
+        </div>
+      </div>
+    </div>
+  
+  </div>
+</section> -->
+
+<section id="divContent" class="w-100">
+  <div class="news d-flex align-items-stretch">
+   
+    <div class="news-side-div d-flex align-items-center px-3" style="background-color: #00899a; color: white;">
+      <h3 class="mb-0 me-2" title="Latest News">Latest News</h3>
+      <a href="{% url 'Running_news_full_view' %}" class="btn btn-sm btn-news-icon text-white" aria-label="Latest News Open" title="View All News">
+        <i class="fa fa-caret-right fa-2x" aria-hidden="true"></i>
+      </a>
+    </div>
+
+   
+    <div class="running-news ">
+      <div class="scrolling-text ">
+        <div class="scrolling-content">
+          {% for datas in running_news_entry %}
+            
+              {% if datas.url_link %}
+                <a href="{{ datas.url_link }}" target="_blank" title="{{ datas.title }}">
+                    {{ datas.title }}
+              {% else %}
+                <a href="javascript:void(0)" target="_blank" title="{{ datas.title }}">
+                  {{ datas.title }}
+              {% endif %}
+
+              {% if datas.New_Label %}
+                <span class="label_blink notranslate">NEW</span>
+              {% endif %}
+            </a>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- about section start -->
+
+<section class="about-div" id="divContent">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-12 col-12" >
+        <div class="about-section pt-4" > 
+          <h2><span class="notranslate director-message">Director's Message</span></h2>          
+          <div class="line"></div>
+
+          {% for data in dgm %}
+          <div class="row" > 
+            <div class="col-md-4 col-12">
+              <div class="director-img">
+                {% if data.Dirs_image %}
+                  <img src="{{data.Dirs_image.url}}" class="pb-1" alt="Director General Image" />
+                {% else %}
+                <img src="" class="pb-1" alt="Director General Image" />
+                {% endif %}
+                <h4 class="text-center">Dr.Rajesh Katyal</h4>
+                <h6 class="text-center">Director General</h6>
+              </div>
+            </div>
+            <div class="col-md-8 col-12"  id="divContent">
+              <p class="notranslate">{{data.description|striptags}}</p>
+            
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-12 col-12 p-3 mt-4"  id="divContent">
+        <ul class="nav nav-pills" id="pills-tab" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link active"
+              id="pills-home-tab"
+              data-bs-toggle="pill"
+              data-bs-target="#pills-home"
+              type="button"
+              role="tab"
+              aria-controls="pills-home"
+              aria-selected="true"
+              title="What's New"
+            >
+              What's New
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link mx-1"
+              id="pills-profile-tab"
+              data-bs-toggle="pill"
+              data-bs-target="#pills-profile"
+              type="button"
+              role="tab"
+              aria-controls="pills-profile"
+              aria-selected="false"
+              title="MNRE What's New"
+            >
+              New in MNRE
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link"
+              id="pills-contact-tab"
+              data-bs-toggle="pill"
+              data-bs-target="#pills-contact"
+              type="button"
+              role="tab"
+              aria-controls="pills-contact"
+              aria-selected="false"
+              title="Events"
+            >
+              Events
+            </button>
+          </li>
+        </ul>
+        <div class="tab-content" id="pills-tabContent" id="divContent">
+          <div class="tab-pane fade show active scrolling-container" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+            <div class = "running-news-vertical">
+              <ul class="scrolling-text-vertical ">            
+                {% for datas in whatsnew_entry %}
+                  <li > 
+                    <a href="{% if datas.url_link %}{{ datas.url_link }} {% else %} {{ datas.Pdf_File.url }}{% endif %}"  target="_blank" title="{{ datas.title }}">{{ datas.title }}
+                      {% if datas.New_Label %}
+                      <span class="label_blink notranslate">NEW</span>
+                    {% endif %}</a>
+                    </a> 
+                  </li>
+                  {% if datas.corrigendam.exists %}
+                    <ol style="list-style-type: disc" class="notranslate" >
+                      {% for corrigendum in datas.corrigendam.all %}
+                          <li>
+                              <a href =" {{ corrigendum.file.url }}" target="_blank">
+                                <span class="notranslate" >{{ corrigendum.title }}</span>
+                                {% if corrigendum.New_Label %}
+                                    <span class="label_blink notranslate">NEW</span>
+                                {% endif %}
+                              </a>
+                              
+                          </li>
+                      {% endfor %}
+                    </ol>
+                  {% endif %}
+          
+                {% endfor %}          
+              </ul>
+            </div>
+            <div class="view-more-container">
+              <a href="/Whatsnew_full_view" class="view-more-btn" title="Click to view more"> View more</a>  </li>
+            </div>
+          </div>
+
+          <!-- For mnre whats new update -->
+          <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab" >
+            <div class = "running-news-vertical">
+              <ul class="scrolling-text-vertical ">            
+                {% for update in mnre_entry %}
+                  <li > 
+                    <a href="{{ update.url_link }}"  target="_blank" title="{{ update.title }}">{{ update.title }}
+                      {% if update.New_Label %}
+                        <span class="label_blink notranslate">NEW</span>
+                      {% endif %}
+                    </a> 
+                  </li>
+                {% endfor %}          
+              </ul>
+            </div>
+            <div class="view-more-container">
+                 <a href="/mnre_updates_full_view" class="view-more-btn" title="Click to view more"> View more  </a>  </li>
+            </div>
+          </div>
+
+          <!-- For events update -->
+          <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab" >
+
+            <div class = "running-news-vertical">
+              <ul class="scrolling-text-vertical ">
+              
+                {% for data in Events_entry %}
+                  <li > 
+                    <a href="{{ data.url_link }}" target="_blank" title="{{ data.title }}">{{ data.title }}
+                      {% if data.New_Label %}
+                        <span class="label_blink notranslate">NEW</span>
+                      {% endif %}
+                    </a>
+                    
+                  </li>
+                {% endfor %}                                  
+
+              </ul>
+            </div>  
+            <div class="view-more-container">
+              <a href="/Events_full_view" class="view-more-btn" title="Click to view more"> View more  </a>  </li>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Manuals section -->
+
+<section class="container-fluid bg-light text-center mt-2" id="divContent">
+  <div class="container pt-4 pb-4">
+    <div class="row">
+      <!-- Panel 1: Manuals -->
+      <div class="col-lg-4 col-md-6 col-12">
+        <button
+          class="faq__question"
+          id="panel-button-1"
+          aria-expanded="false"
+          aria-controls="panel1"
+          title="Research & Development"
+        >
+          RESEARCH AND DEVELOPMENT (R&D)
+        </button>
+        <div class="faq__panel d-none" id="panel1">
+          <p class="faq__answer">
+            R&D supports time bound and mission oriented Research & Development
+            programmes to achieve world class, reliable and cost effective
+            technology in wind power systems. RDAF supports the industry to
+            analyse the big data obtained from wind and solar resource
+            measurements. <a href="{% url 'r&d' %}" class="view-more-link" title="Click here to view more">view more...</a>
+          </p>
+        </div>
+      </div>
+
+      <!-- Panel 2: Transfer & Posting -->
+      <div class="col-lg-4 col-md-6 col-12">
+        <button
+          class="faq__question"
+          id="panel-button-2"
+          aria-expanded="false"
+          aria-controls="panel2"
+          title="Certification & Information Technology"
+        >
+          CERTIFICATION & INFORMATION TECHNOLOGY
+        </button>
+        <div class="faq__panel d-none" id="panel2">
+          <p class="faq__answer">
+            The Division carries out Type certification of wind turbines based
+            on IS/IEC 61400-22, And also involved in creating the necessary IT
+            infrastructure for effective dissemination of information.
+            <a href="{% url 'certificate' %}" class="view-more-link" title="Click here to view more">view more...</a>
+          </p>
+        </div>
+      </div>
+
+      <!-- Panel 3: Standards and Regulation -->
+      <div class="col-lg-4 col-md-6 col-12">
+        <button
+          class="faq__question"
+          id="panel-button-3"
+          aria-expanded="false"
+          aria-controls="panel3"
+          title="Standards & Regulation"
+        >
+          STANDARDS AND REGULATION (S&R)
+        </button>
+        <div class="faq__panel d-none" id="panel3">
+          <p class="faq__answer">
+            The Division provides various services for the healthy and orderly growth of Wind Energy Sector 
+            such as: Standardization works in Wind Energy Sector, Facilitation for Grid Synchronization of 
+            Prototype of wind turbines and provides the technical support to MNRE for the implementation of 
+            Approved List of Models and Manufacturers (Wind) of wind turbines (i.e. ALMM (Wind)) 
+            <a href="{% url 's&d' %}" class="view-more-link" title="Click here to view more">view more..</a>
+          </p>
+        </div>
+      </div>
+
+      <!-- Panel 3: Testing -->
+      <div class="col-lg-4 col-md-6 col-12">
+        <button
+          class="faq__question"
+          id="panel-button-4"
+          aria-expanded="false"
+          aria-controls="panel4"
+          title="Testing"
+        >
+          TESTING
+        </button>
+        <div class="faq__panel d-none" id="panel4">
+          <p class="faq__answer">            
+            This Division carries out Wind Turbine Testing as per the National Lab policy of MNRE.
+            <a href="{% url 'testing_menu' %}" class="view-more-link" title="Click here to view more">view more..</a>
+          </p>
+        </div>
+      </div>
+
+      <!-- Panel 4: Suggestions -->
+      <div class="col-lg-4 col-md-6 col-12">
+        <button
+          class="faq__question"
+          id="panel-button-5"
+          aria-expanded="false"
+          aria-controls="panel5"
+          title="Wind Resource Assessment"
+        >
+          WIND RESOURCE ASSESSMENT
+        </button>
+        <div class="faq__panel d-none" id="panel5">
+          <p class="faq__answer">
+            The Division identifies resource rich regions in the country by
+            conducting wind resource micro survey and offers its services to the
+            wind farm developers. To prepare wind map for the nation, it is
+            assessing and analyzing wind resources.<a href="{% url 'wra' %}" class="view-more-link" title="Click here to view more">view more..</a>
+          </p>
+        </div>
+      </div>
+
+      <!-- Panel 5: Civil List -->
+      <div class="col-lg-4 col-md-6 col-12">
+        <button
+          class="faq__question"
+          id="panel-button-6"
+          aria-expanded="false"
+          aria-controls="panel6"
+          title="Offshore Wind development"
+        >
+          OFFSHORE WIND DEVELOPMENT
+        </button>
+        <div class="faq__panel d-none" id="panel6">
+          <p class="faq__answer">
+            As per the National Offshore Wind Energy Policy 2015, National Institute of Wind Energy is the nodal agency for 
+            offshore wind energy development in the country. NIWE is responsible for demarcation of offshore wind blocks 
+            based on offshore studies and surveys. NIWE also facilitates obtaining clearances from the Ministries/ departments 
+            for the development of offshore wind energy blocks.
+            <a href="{% url 'owd' %}" class="view-more-link" title="Click here to view more">view more..</a>
+          </p>
+        </div>
+      </div>
+
+      <!-- Panel 6: Ongoing/Upcoming Infrastructure Projects -->
+      <div class="col-lg-4 col-md-6 col-12">
+        <button
+          class="faq__question"
+          id="panel-button-7"
+          aria-expanded="false"
+          aria-controls="panel7"
+          title="Skill Development & Training"
+        >
+          SKILL DEVELOPMENT & TRAINING
+        </button>
+        <div class="faq__panel d-none" id="panel7">
+          <p class="faq__answer">
+            To serve as finest information centre in wind energy by collecting,
+            collating and analyzing the related information. National and
+            International training workshops are being organized regularly for
+            the benefit of stakeholders.
+            <a href="{% url 'sdt' %}" class="view-more-link" title="Click here to view more" >view more..</a>
+          </p>
+        </div>
+      </div>
+      
+      
+
+      <!-- Panel 7: Missing APAR/IPR
+      <div class="col-lg-4 col-md-6 col-12">
+        <button class="faq__question" id="panel-button-8" aria-expanded="false" aria-controls="panel8">
+          OFFSHORE PORTAL
+        </button>
+        <div class="faq__panel d-none" id="panel8">
+          <a href="https://offshore.niwe.res.in" target="_blank" rel="noopener noreferrer" class="external-link">Click here to view ..</a>
+        </div>
+      </div> -->
+
+      <!-- Panel 8: Half Yearly Brochure -->
+      <div class="col-lg-4 col-md-6 col-12">
+        <button class="faq__question" id="panel-button-9" aria-expanded="false" aria-controls="panel9" title="Vayumitra Skill Development Programme">
+          VAYUMITRA SKILL DEVELOPMENT PROGRAMME
+        </button>
+        <div class="faq__panel d-none" id="panel9">
+          <a href="https://vsdp.niwe.res.in" target="_blank" rel="noopener noreferrer" title="Click here to view" class="external-link view-more-link">Click here to view..</a>
+        </div>
+      </div>
+
+      <!-- Panel 9: Annual Vehicle Reports -->
+      <div class="col-lg-4 col-md-6 col-12">
+        <button class="faq__question" id="panel-button-10" aria-expanded="false" aria-controls="panel10" title="150m Map Portal">
+          150M MAP PORTAL
+        </button>
+        <div class="faq__panel d-none" id="panel10">
+          <a href="https://maps.niwe.res.in/resource_map/map/150" target="_blank" rel="noopener noreferrer" title="Click here to view" class="external-link view-more-link">Click here to view..</a>
+        </div>
+      </div>
+
+      <!-- Panel 10: Annual Vehicle Reports (Duplicate) -->
+      <div class="col-lg-4 col-md-6 col-12">
+        <button class="faq__question" id="panel-button-11" aria-expanded="false" aria-controls="panel11" title="120m / Hybrid map portal">
+          120M/HYBRID MAP PORTAL
+        </button>
+        <div class="faq__panel d-none" id="panel11">
+          <a href="https://maps.niwe.res.in/resource_map/map/150" target="_blank" rel="noopener noreferrer" title="Click here to view" class="external-link view-more-link">Click here to view..</a>
+        </div>
+      </div>
+
+      <!-- Panel 11: NIWE Annual Report -->
+      <div class="col-lg-4 col-md-6 col-12">
+        <button class="faq__question" id="panel-button-12" aria-expanded="false" aria-controls="panel12" title="NIWE annual report">
+          NIWE ANNUAL REPORT
+        </button>
+        <div class="faq__panel d-none" id="panel12">
+          <a href="/annual_reports" target="_blank" class="view-more-link" title="Click here to view">Click here to view..</a>
+        </div>
+      </div>
+
+      <!-- Panel 12: NIWE Newsletter -->
+      <div class="col-lg-4 col-md-6 col-12">
+        <button class="faq__question" id="panel-button-13" aria-expanded="false" aria-controls="panel13" title="NIWE Newsletter">
+          NIWE NEWSLETTER
+        </button>
+        <div class="faq__panel d-none" id="panel13">
+          <a href="/newsletters" target="_blank" class="view-more-link" title="Click here to view">Click here to view..</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Photo Gallery -->
+
+<section class="container">
+  <div class="gallery">
+      <div class="row align-items-center col-12 mx-auto">
+          <div class="col-lg-4 col-12">
+              <div class="content">
+                  <h4>Our Gallery</h4>
+                  <h5 class="h1">Explore Our Photos and Video Gallery</h5>
+                  <a href="{% url 'gallery' %}" aria-label="Open Gallery">
+                    <button class="view-btn mt-3" title="View Gallery">View All</button>
+                  </a>
+              </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 col-12">
+            <div class=gallery-slider>
+              <div class="carousel-wrap">
+                
+                  <div class="item">
+                    <div class="card gly-card">
+                      <h4 class="text-center">Corporate film about NIWE</h4>
+                      <div class="video-wrapper" style="width:100%; height:auto; overflow:hidden;">
+                        <!-- <video controls title="Corporate film about NIWE" style="object-fit:contain; width:100%; height: 100%;">
+                          <source src="static/video/Corporate_film_about_NIWE.mp4" type="video/mp4">
+                          <track src="/video/niweVideo.vtt" kind="captions" srclang="en" label="English">
+                        </video> -->
+                      </div>
+                    </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+
+          <div class="col-lg-4 col-md-6 col-12">
+              <div class="gallery-slider ">
+                  <div class="carousel-wrap">
+                      <div class="owl-carousel index-gallery " title="View Gallery">
+                          
+                          <div class="item">
+                            <div class="card gly-card" >
+                              <a href="{% url 'gallery' %}" aria-label="Open Gallery">
+                                <img src="/static/images/one.JPG" class=""  alt="Index gallery" />
+                              </a>
+                            </div>
+                        </div>
+                        <div class="item">
+                          <div class="card">
+                            <a href="{% url 'gallery' %}" aria-label="Open Gallery">
+                              <img src="/static/images/two.jpg" class=""  alt="Index gallery" />
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                  </div>  
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+
+{% endblock %}

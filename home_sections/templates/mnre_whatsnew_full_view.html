@@ -1,0 +1,99 @@
+{% extends 'base.html' %}
+
+{% block meta %}
+  <meta name="description" content="Latest updates under 'What's New' from the Ministry of New and Renewable Energy (MNRE) on the National Institute of Wind Energy (NIWE) website, Chennai, including news, announcements, policies, and developments in wind energy and renewable energy sectors.">
+  <meta name="keywords" content="MNRE latest news, what's new MNRE, NIWE Chennai, wind energy updates, renewable energy announcements, MNRE policies, wind energy developments, NIWE MNRE news, renewable energy news, MNRE updates">
+{% endblock %}
+
+{% block title %} MNRE What's New | National Institute of Wind Energy (NIWE), Ministry of New and Renewable Energy, Government of India {% endblock %}
+
+{% block content %}
+<section class="head-div">
+  <div class="overlay d-flex align-items-center">
+    <div class="container">
+      <h1 class="text-white">MNRE What's New</h1>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb bg-transparent p-0">
+      <li class="breadcrumb-item">
+        <a href="/">Home</a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">MNRE What's New</li>
+    </ol>
+  </nav>
+</div>
+
+<section class="dgm-div" id="div-content">
+  <div class="container">
+    <div class="d-flex justify-content-between align-items-center mb-3 flex-wrap">
+      <a href="{% url 'MNRE_archived_WhatsNew' %}" target="_blank" class="btn btn-archived" title="Archive">
+        Archive
+      </a>
+    </div>
+    <div class="table-responsive">
+    <table  class ="whats-new-table w-100">
+      <thead>
+        <tr>
+          <th class="sl-no">Sl No</th>
+          <th class="title">Title</th>
+          <th class="Published-Date">Published Date</th>
+          <th class="file">File</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for update in page_obj %}
+        <tr>
+          <td>{{ forloop.counter|add:page_obj.start_index|add:-1 }}</td>
+          <td>{{ update.title }} 
+            {% if update.New_Label %}
+            <span class="label_blink notranslate">NEW</span>
+            {% endif %}         
+          </td>          
+          <td>
+            {{ update.Published_Date |date:"d.m.Y" }}  
+          </td>
+          <td>
+            {% if update.url_link %}
+              <a href="{{ update.url_link }}" target="_blank" class="text-primary ms-2 ">
+                <i class="fa fa-external-link text-primary"></i> Link
+              </a>
+            {% elif update.Pdf_File %}
+              <a href="{{ update.Pdf_File.url }}" target="_blank" class="text-primary ms-2">
+                <i class="{{ update.file_icon_class }}"> {{ update.file_type }} </i>
+                <span class="text-muted">({{ update.file_size_display }})</span>
+              </a>
+            {% else %}
+              <span class="text-muted">No file available</span>
+            {% endif %}
+          </td> 
+        </tr>
+        {% endfor %}
+      </tbody>     
+    </table>
+    </div> 
+    <!-- Pagination Controls -->
+    <div class="pagination">
+      <ul class="pagination-list">
+        {% if page_obj.has_previous %}
+        <li><a href="?page={{ page_obj.previous_page_number }}">&laquo; Previous</a></li>
+        {% endif %}
+        {% for page in page_obj.paginator.page_range %}
+        <li class="{% if page == page_obj.number %}active{% endif %}">
+          <a href="?page={{ page }}">{{ page }}</a>
+        </li>
+        {% endfor %}
+        {% if page_obj.has_next %}
+        <li><a href="?page={{ page_obj.next_page_number }}">Next &raquo;</a></li>
+        {% endif %}
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+
+{% endblock %}

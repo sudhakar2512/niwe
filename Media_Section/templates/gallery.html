@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% block meta %}
+  <meta name="description" content="Gallery of the National Institute of Wind Energy (NIWE), Chennai, showcasing images, photographs, and visual documentation of wind energy projects, events, facilities, and activities under MNRE.">
+  <meta name="keywords" content="NIWE gallery, wind energy images, NIWE Chennai, MNRE India, wind turbine photographs, renewable energy visuals, wind energy projects gallery, NIWE events images, wind energy facilities photos, MNRE documentation">
+{% endblock %}
+
+{% block title %} Gallery | National Institute of Wind Energy (NIWE), Ministry of New and Renewable Energy, Government of India. {% endblock %}
+
+{% block content %}
+
+<section class="head-div">
+  <div class="overlay d-flex align-items-center">
+    <div class="container">
+      <h1 class="text-white">Gallery</h1>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb bg-transparent p-0">
+      <li class="breadcrumb-item">
+        <a href="/">Home</a>
+      </li>
+      <li class="breadcrumb-item" aria-current="page">
+        <a href="{% url 'medias' %}">Media</a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">Gallery</li>
+    </ol>
+  </nav>
+</div>
+
+<section class="main-div" id="divContent">
+  <div class="container">
+    <div class="row">
+      {% for album in albums %}
+        <div class="col-lg-3 col-md-4 col-sm-7 col-12 mb-3">
+          <a href="{% url 'sub_gallery' album.id %}" aria-label="{{ album.title }}">
+            <div class="card">
+              <img src="{{ album.cover_image.url }}" class="card-img-top" alt="{{ album.title }}" title="{{ album.title }}"/>
+              <div class="card-body gly-title-h">
+                <h6 class="card-title text-center">{{ album.title }}</h6>
+              </div>
+            </div>
+          </a>
+        </div>
+      {% endfor %}
+      <div class="col-lg-3 col-md-4 col-sm-7 col-12 mb-3">
+        <div class="card">
+          <a href="{% url 'think_tank' %}" aria-label="Technology Think Tank (TTT)">
+            <img src="/static/images/sub-gallery/think-tank_img.jpg" class="card-img-top" 
+            alt="technology-think-tank" />
+          <div class="card-body gly-title-h">
+            <h6 class="card-title text-center">Technology Think Tank (TTT)</h6>
+          </div>
+        </div>
+      </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,116 @@
+{% extends 'base.html' %}
+
+{% block meta %}
+  <meta name="description" content="Technical Reports page of the National Institute of Wind Energy (NIWE), Chennai, providing access to detailed reports, research findings, and technical studies in wind energy and renewable energy under MNRE.">
+  <meta name="keywords" content="NIWE technical reports, NIWE Chennai, MNRE India, wind energy research, renewable energy studies, wind sector technical findings, NIWE research publications, MNRE initiatives, wind energy documentation, technical studies">
+{% endblock %}
+
+{% block title %} Technical Reports | National Institute of Wind Energy (NIWE), Ministry of New and Renewable Energy, Government of India {% endblock %}
+
+{% block content %} 
+
+
+<section class="head-div">
+  <div class="overlay d-flex align-items-center">
+    <div class="container">
+      <h1 class="text-white">Technical Reports</h1>
+    </div>
+  </div>
+</section>
+<div class="container">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb bg-transparent p-0">
+      <li class="breadcrumb-item"><a href="/">Home</a></li>
+      <li class="breadcrumb-item" aria-current="page">
+        <a href="{% url 'document' %}">Documents</a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">
+        Technical Reports
+      </li>
+    </ol>
+  </nav>
+</div>
+
+<section class="rnd-div" id="divContent">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <!-- <div class="accordion" id="accordionExample">
+          {% for item in tech_reports %}
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="heading{{ forloop.counter }}">
+              <button
+                class="accordion-button {% if not forloop.first %}collapsed{% endif %}"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapse{{ forloop.counter }}"
+                aria-expanded="{% if forloop.first %}true{% else %}false{% endif %}"
+                aria-controls="collapse{{ forloop.counter }}"
+              >
+                {{ item.title|safe }}
+              </button>
+            </h2>
+            <div
+              id="collapse{{ forloop.counter }}"
+              class="accordion-collapse collapse {% if forloop.first %}hide{% endif %}"
+              aria-labelledby="heading{{ forloop.counter }}"
+              data-bs-parent="#sdtAccordion"
+            >
+              <div class="accordion-body">{{ item.description|safe }}</div>
+            </div>
+          </div>
+
+          {% endfor %}
+          
+        </div> -->
+        <div class="accordion" id="accordionExample">
+          {% for category in categories %}
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="heading{{ forloop.counter }}">
+                <button class="accordion-button {% if not forloop.first %}collapsed{% endif %}" 
+                        type="button" 
+                        data-bs-toggle="collapse" 
+                        data-bs-target="#collapse{{ forloop.counter }}" 
+                        aria-expanded="{% if forloop.first %}true{% else %}false{% endif %}" 
+                        aria-controls="collapse{{ forloop.counter }}">
+                  {{ category.name }}
+                </button>
+              </h2>
+              <div id="collapse{{ forloop.counter }}" 
+                   class="accordion-collapse collapse {% if forloop.first %}show{% endif %}" 
+                   aria-labelledby="heading{{ forloop.counter }}" 
+                   data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <ul class="list-unstyled">
+                    {% for file in category.files.all %}
+                      <li>
+                      
+                        <a href="{{ file.file.url }}" target="_blank">
+                          {{ file.title }} </a>
+                          {% if file.documents_info %}
+                                                
+                            <i class="fas {{ file.documents_info.icon }}">                                                 
+                            {{ file.documents_info.type }}, </i> 
+                              ({{ file.documents_info.size }})
+                          {% endif %}
+                        
+                        
+                      </li>
+                    {% empty %}
+                      <li>No files uploaded.</li>
+                    {% endfor %}
+                  </ul>
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+     
+      </div>
+
+     
+    </div>
+  </div>
+</section>
+
+{% endblock %}

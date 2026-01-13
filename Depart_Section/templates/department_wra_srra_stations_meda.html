@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+
+{% block meta %}
+  <meta name="description" content="Comprehensive list of SRRA (State Renewable Resource Assessment) stations with coordinates established in collaboration with MEDA under the Wind Resource Assessment (WRA) program by the National Institute of Wind Energy (NIWE), Chennai, to evaluate wind potential across Maharashtra.">
+  <meta name="keywords" content="SRRA MEDA stations, NIWE SRRA list, MEDA wind data, wind resource assessment Maharashtra, NIWE Chennai, SRRA coordinates, MNRE, renewable energy data, wind monitoring stations, wind energy potential Maharashtra">
+{% endblock %}
+
+{% block title %} List of SRRA Stations with Co-ordinates - MEDA | National Institute of Wind Energy (NIWE), Ministry of New and Renewable Energy, Government of India {% endblock %}
+
+{% block content %}
+<section class="head-div">
+  <div class="overlay d-flex align-items-center">
+    <div class="container">
+      <h1 class="text-white">List of SRRA Stations with Co-ordinates - MEDA</h1>
+    </div>
+  </div>
+</section>
+<div class="container">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb bg-transparent p-0">
+      <li class="breadcrumb-item"><a href="/">Home</a></li>
+      <li class="breadcrumb-item" aria-current="page">
+        <a href="{% url 'departments' %}">Department</a>
+      </li>
+      <li class="breadcrumb-item active">
+        <a href="{% url 'wra' %}">Wind Resource Assessment (WRA)</a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">
+        List of SRRA Stations with Co-ordinates - MEDA
+      </li>
+    </ol>
+  </nav>
+</div>
+
+<section class="rnd-div" id="divContent">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <div class="pt-2">
+          <h5>MEDA</h5>
+          <div class="table-responsive">
+          <table class="table table-bordered pt-2 w-100">
+            <thead>
+              <tr>
+                <th scope="col">Station ID</th>
+                <th scope="col">Station Name</th>
+                <th scope="col">Location</th>
+                <th scope="col">District</th>
+                <th scope="col">State</th>
+                <th scope="col">Date of commissioning</th>
+                <th scope="col">Latitude (N)</th>
+                <th scope="col">Longitude (E)</th>
+                <th scope="col">Elevation (m amsl)</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for item in station %}
+
+              <tr>
+                <td>{{ item.station_id}}</td>
+                <td>{{item.station_name}}</td>
+                <td>{{ item.location}}</td>
+                <td>{{item.district}}</td>
+                <td>{{item.state}}</td>
+                <td>{{ item.comission_date }}</td>
+                <td>{{ item.latitude}}</td>
+                <td>{{ item.longitude}}</td>
+                <td>{{ item.elavation}}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">{% include 'phase-tabs.html' %}</div>
+    </div>
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block meta %}
+  <meta name="description" content="Training Calendar page of the National Institute of Wind Energy (NIWE), Chennai, providing schedules, details, and registration information for wind energy and renewable energy training programs under MNRE.">
+  <meta name="keywords" content="NIWE training calendar, NIWE Chennai, MNRE India, wind energy training, renewable energy programs, training schedule, wind turbine courses, workshops, NIWE educational programs, MNRE initiatives">
+{% endblock %}
+
+{% block title %}Training Calendar | National Institute of Wind Energy (NIWE), Ministry of New and Renewable Energy, Government of India {% endblock %}
+
+{% block content %}
+
+<section class="head-div">
+  <div class="overlay d-flex align-items-center">
+    <div class="container">
+      <h1 class="text-white">
+        {% for national in national_data %} {{national.title}} {% endfor %}
+      </h1>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb bg-transparent p-0">
+      <li class="breadcrumb-item"><a href="/">Home</a></li>
+      <li class="breadcrumb-item">
+        <a href="{% url 'departments' %}">Department</a>
+      </li>
+      <li class="breadcrumb-item">
+        <a href="{% url 'sdt' %}">Skill Development & Training</a>
+      </li>
+      <li class="breadcrumb-item">
+        <a href="/training_calander/">Training Calendar</a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">
+        {% for national in national_data %} {{national.title}} {% endfor %}
+      </li>
+    </ol>
+  </nav>
+</div>
+  
+<section class="dgm-div" id="divContent">
+  <div class="container">
+    {% for national in national_data %} {{national.data|safe}} {% endfor %}
+  </div>
+</section>
+{% endblock %}

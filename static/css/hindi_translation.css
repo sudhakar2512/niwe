@@ -1,0 +1,22 @@
+/* For hindi translation */
+
+font[style="vertical-align: inherit;"] {
+    all: unset;
+    display: contents; 
+}
+
+/* font[class=""]{
+  all: unset;
+  vertical-align: inherit;
+  
+} */
+
+.notranslate{
+translate: none !important;
+}
+
+#goog-gt-tt{
+
+  display: none !important;
+
+}

@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block meta %}
+  <meta name="description" content="Records Retention Schedule of the National Institute of Wind Energy (NIWE), Chennai, detailing the management, storage, and retention periods of official documents, reports, and data under the Ministry of New and Renewable Energy (MNRE).">
+  <meta name="keywords" content="NIWE records retention, document management, NIWE Chennai, MNRE India, wind energy records, official data retention, renewable energy documentation, wind energy reports, archival policy, record keeping NIWE">
+{% endblock %}
+
+{% block title %} Records Retention Schedule | National Institute of Wind Energy (NIWE), Ministry of New and Renewable Energy, Government of India {% endblock %}
+
+{% block content %}
+
+{% load static %}
+
+<section class="head-div">
+  <div class="overlay d-flex align-items-center">
+    <div class="container">
+      <h1 class="text-white">Records Retention Schedule</h1>
+    </div>
+  </div>
+</section>
+<div class="container">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb bg-transparent p-0">
+      <li class="breadcrumb-item"><a href="/">Home </a></li>
+      <li class="breadcrumb-item" aria-current="page">
+        <a href="{% url 'document' %}">Documents</a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">
+        Records Retention Schedule
+      </li>
+    </ol>
+  </nav>
+</div>
+
+<section class="hwed-sec" id="divContent">  
+  <div class="container">
+
+    {% for item in record %}
+    <!-- <a href="/static/pdf/Ministry_approval.pdf" target="_blank"> -->
+      <a href="{{item.ministry_Approval.url}}" target="_blank">
+        <strong>Ministry Approval </strong> <i class="{{ item.ministry_Approval_info.icon }}"> 
+          {{ item.ministry_Approval_info.type }},  </i></a> 
+      ({{ item.ministry_Approval_info.size }})
+
+    <br>
+       
+      <a href="{{item.NIEW_Records_Retention_Schedule.url}}" target="_blank">
+        <strong> NIWE Records Retention Schedule </strong><i class="{{ item.NIEW_Records_Retention_Schedule_info.icon }}"> 
+          {{ item.NIEW_Records_Retention_Schedule_info.type }},  </i></a> 
+     ( {{ item.NIEW_Records_Retention_Schedule_info.size }})
+      {% endfor %}
+  </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,25 @@
+
+{% extends "admin/base.html" %}
+{% load static i18n %}
+
+{% block branding %}
+  <h1 id="site-name">
+    <a href="{% url 'admin:index' %}">{{ site_header|default:_('Django administration') }}</a>
+  </h1>
+{% endblock %}
+
+{% block title %}
+  {{ site_title|default:_('Django site admin') }}
+{% endblock %}
+
+{% block content-title %}
+  <h4>{{ title }}</h4>
+{% endblock %}
+
+{% block extrahead %}
+  {{ block.super }}   
+    <script src="{% static '/admin/js/disable_Rightclk_Autocomplete.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/gh/Joe12387/detectIncognito@main/dist/es5/detectIncognito.min.js"></script>
+    <script src="{% static '/js/privateModeDetection.js' %}" ></script>
+    
+{% endblock %}

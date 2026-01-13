@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% block meta %}
+  <meta name="description" content="Learn about the Purchase Department at the National Institute of Wind Energy (NIWE), Chennai. This page provides details on procurement processes, purchase policies, vendor management, tendering, and supply chain operations supporting wind energy projects under the Ministry of New and Renewable Energy.">
+  <meta name="keywords" content="NIWE purchase department, procurement processes NIWE, MNRE, NIWE Chennai, vendor management, tendering, supply chain operations, wind energy procurement, renewable energy purchases, NIWE purchasing policies">
+{% endblock %}
+
+{% block title %} Purchase Department | National Institute of Wind Energy (NIWE), Ministry of New and Renewable Energy, Government of India {% endblock %}
+
+{% block content %}
+
+<section class="head-div">
+  <div class="overlay d-flex align-items-center">
+    <div class="container">
+      <h1 class="text-white">Purchase</h1>
+    </div>
+  </div>
+</section>
+<div class="container">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb bg-transparent p-0">
+      <li class="breadcrumb-item"><a href="/">Home </a></li>
+      <li class="breadcrumb-item" aria-current="page">
+        <a href="{% url 'departments' %}">Department</a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">Purchase</li>
+    </ol>
+  </nav>
+</div>
+
+<section class="rnd-div" id="divContent">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <p>
+          <a
+            href="/static/pdf/Purchase_Procedure_Revised.pdf"
+            class="text-dark"
+            ><b>Purchase Procedure</b></a
+          >
+        </p>
+
+        <h6>Download</h6>
+        <ol style="list-style-type: disc">
+          {% for item in purchase %}
+          <a href="{{item.docs.url}}" target="_blank"> <li>{{item.annexure}}</li></a>
+          {% endfor %}
+        </ol>
+      </div>
+
+      <div class="col-md-4">{% include "depart-fa-side-tabs.html" %}</div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

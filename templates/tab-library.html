@@ -1,0 +1,288 @@
+{% extends 'base.html' %}
+
+{% block meta %}
+  <meta name="description" content="Library page of the National Institute of Wind Energy (NIWE), Chennai, providing access to books, research papers, journals, reports, and reference materials on wind energy and renewable energy under MNRE.">
+  <meta name="keywords" content="NIWE library, NIWE Chennai, MNRE India, wind energy resources, renewable energy research, books, journals, reports, reference materials, wind sector knowledge, MNRE initiatives">
+{% endblock %}
+
+{% block title %} Library | National Institute of Wind Energy (NIWE), Ministry of New and Renewable Energy, Government of India {% endblock %}
+
+{% block content %}
+
+<section class="head-div">
+  <div class="overlay d-flex align-items-center">
+    <div class="container">
+      <h1 class="text-white">Library</h1>
+    </div>
+  </div> 
+</section>
+<div class="container">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb bg-transparent p-0">
+      <li class="breadcrumb-item"><a href="/">Home</a></li>
+      <li class="breadcrumb-item">
+        <a href="{% url 'departments' %}">Department</a>
+      </li>
+      <li class="breadcrumb-item">
+        <a href="{% url 'sdt' %}">Skill Development & Training</a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">Library</li>
+    </ol>
+  </nav>
+</div>
+
+<section class="rnd-div" id="divContent">
+  <div class="container">
+    <div class="row col-12 mx-auto">
+      <div class="col-md-8 dgm-text">
+        <h5 class="font-italic">Prof. Anna Mani Information Centre</h5>
+        <p class="font-italic ps-3 pb-2">
+          &nbsp &nbsp &nbsp &nbsp The Library is an important source of
+          information to the NIWE for its development. NIWE library has been
+          named as "Prof. Anna Mani Information Centre". NIWE library provides
+          effective information support in different activities to the NIWE. The
+          library is being strengthened regularly by adding more books,
+          periodicals (Indian and foreign journals and magazine), standards,
+          reports and etc. The collection is mainly on the subjects like wind
+          energy, renewable energy, energy, sustainable energy and related
+          subjects like electrical, electronics, mechanical and environmental
+          sciences and has good collection in general and computer books also.
+        </p>
+        <div class="table-responsive">
+        <table class="table table-bordered w-100">
+          <thead>
+            <tr>
+              <th>Sl. No</th>
+              <th>Type</th>
+              <th colspan="2">Print and Online</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Books</td>
+              <td colspan="2">2200</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Donated Books</td>
+              <td colspan="2">457</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Standards (Hard Copy, CD ROM & PDF, NABL Standards)</td>
+              <td colspan="2">798</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>Thesis and Project Report</td>
+              <td colspan="2">94</td>
+            </tr>
+
+            <tr>
+              <td>5</td>
+              <td>Technical Report</td>
+              <td colspan="2">355</td>
+            </tr>
+            <tr>
+              <td>6</td>
+              <td>Conference & Proceedings</td>
+              <td colspan="2">446</td>
+            </tr>
+            <tr>
+              <td>7</td>
+              <td>Non-Book Materials</td>
+              <td colspan="2">166</td>
+            </tr>
+            <tr>
+              <td>8</td>
+              <td>Annual Report</td>
+              <td colspan="2">166</td>
+            </tr>
+            <tr>
+              <td>9</td>
+              <td>Subscribed Periodicals</td>
+              <td colspan="2">30</td>
+            </tr>
+
+            <tr>
+              <td colspan="2"></td>
+              <td>Print</td>
+              <td>Print and Online</td>
+            </tr>
+            <tr>
+              <th>9.1</th>
+              <td>International Journals</td>
+              <td>12</td>
+              <td>11</td>
+            </tr>
+            <tr>
+              <td>9.2</td>
+              <td>International Magazines</td>
+              <td>2</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td>9.3</td>
+              <td>National Journals</td>
+              <td>6</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td>9.4</td>
+              <td>National Magazine</td>
+              <td>9</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td>10</td>
+              <td>Back volume of periodicals</td>
+              <td colspan="2">560</td>
+            </tr>
+            <tr>
+              <td>11</td>
+              <td>Institutional Membership</td>
+              <td colspan="2">2</td>
+            </tr>
+
+            <tr>
+              <td>12</td>
+              <td>National Daily News papers</td>
+              <td colspan="2">13</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <table class="table table-bordered w-100">
+          <thead>
+            <tr>
+              <th>S.No.</th>
+              <th>Title of the Journals and Magazines</th>
+              <th>Subscription Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th colspan="3">International Journals</th>
+            </tr>
+            {% for item in Library %} {% if item.title_type == "InternationalJournals" %}
+
+            <tr>
+              <td>{{ item.serial}}</td>
+              <td>{{ item.title_of_magzines}}</td>
+              <td>{{ item.subcription_status}}</td>
+            </tr>
+            {% endif %} {% endfor %}
+
+            <tr>
+              <th colspan="3">International Magazines</th>
+            </tr>
+            {% for item in Library %} {% if item.title_type == "InternationalMagazines" %}
+
+            <tr>
+              <td>{{ item.serial}}</td>
+              <td>{{ item.title_of_magzines}}</td>
+              <td>{{ item.subcription_status}}</td>
+            </tr>
+            {% endif %} {% endfor %}
+
+            <tr>
+              <th colspan="3">National Journals</th>
+            </tr>
+            {% for item in Library %} {% if item.title_type == "NationalJournals" %}
+
+            <tr>
+              <td>{{ item.serial}}</td>
+              <td>{{ item.title_of_magzines}}</td>
+              <td>{{ item.subcription_status}}</td>
+            </tr>
+            {% endif %} {% endfor %}
+
+            <tr>
+              <th colspan="3">National Magazines</th>
+            </tr>
+            {% for item in Library %} {% if item.title_type == "NationalMagazines" %}
+
+            <tr>
+              <td>{{ item.serial}}</td>
+              <td>{{ item.title_of_magzines}}</td>
+              <td>{{ item.subcription_status}}</td>
+            </tr>
+            {% endif %} {% endfor %}
+
+            <tr>
+              <th colspan="3">Institutional Membership</th>
+            </tr>
+            {% for item in Library %} {% if item.title_type == "InstitutionalMembership" %}
+
+            <tr>
+              <td>{{ item.serial}}</td>
+              <td>{{ item.title_of_magzines}}</td>
+              <td>{{ item.subcription_status}}</td>
+            </tr>
+            {% endif %} {% endfor %}
+
+            <tr>
+              <th colspan="3">National Daily News Papers</th>
+            </tr>
+            {% for item in Library %} {% if item.title_type == "NationalDailyNewsPapers" %}
+
+            <tr>
+              <td>{{ item.serial}}</td>
+              <td>{{ item.title_of_magzines}}</td>
+              <td>{{ item.subcription_status}}</td>
+            </tr>
+            {% endif %} {% endfor %}
+          </tbody>
+
+        </table>
+        </div>
+        <div class="#">
+          <p>AutoLib Library Management Software Systems</p>
+          <p>
+            OPAC- Online Public Access :
+            <a href="http://itcsserver:8080/AutoLib/index.jsp" target="_blank">
+              http://itcsserver:8080/AutoLib/index.jsp
+            </a>
+          </p>
+        </div>
+
+        
+        <div class="accordion" id="general">
+         
+          {% for item in lib %}
+          
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="heading{{ forloop.counter }}">
+              <button
+                class="accordion-button {% if not forloop.first %}collapsed{% endif %}"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapse{{ forloop.counter }}"
+                aria-expanded="{% if forloop.first %}true{% else %}false{% endif %}"
+                aria-controls="collapse{{ forloop.counter }}"
+              >
+                {{ item.title|safe }} International Magazines
+            </button>
+            </h2>
+            <div
+              id="collapse{{ forloop.counter }}"
+              class="accordion-collapse collapse {% if forloop.first %}hide{% endif %}"
+              aria-labelledby="heading{{ forloop.counter }}"
+              data-bs-parent="#general"
+            >
+              <div class="accordion-body">
+                {{ item.description|safe }} 
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+      <div class="col-md-4">{% include "side-tab.html" %}</div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

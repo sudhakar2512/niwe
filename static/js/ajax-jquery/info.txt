@@ -1,0 +1,6 @@
+/*! jQuery v3.5.1 | (c) JS Foundation and other contributors | jquery.org/license */
+
+The file is taken from the below link
+https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js
+
+The version used is V3.5.1

@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+
+{% block meta %}
+  <meta name="description" content="Discover the role of Certification and Information Technology at the National Institute of Wind Energy (NIWE), Chennai. This page covers NIWE’s certification processes for wind power systems, sub-systems, and components, as well as the IT infrastructure supporting data management, testing, and reporting under MNRE standards.">
+  <meta name="keywords" content="NIWE certification IT, wind energy certification technology, MNRE, NIWE Chennai, wind turbine data management, renewable energy IT systems, wind power system certification, NIWE IT infrastructure, wind energy compliance, testing and reporting tools">
+{% endblock %}
+
+{% block title %} Certification and Information Technology | National Institute of Wind Energy (NIWE), Ministry of New and Renewable Energy, Government of India {% endblock %}
+
+{% block content %}
+<section class="head-div">
+  <div class="overlay d-flex align-items-center">
+    <div class="container">
+      <h1 class="text-white">Certification and Information Technology</h1>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb bg-transparent p-0">
+      <li class="breadcrumb-item"><a href="/">Home</a></li>
+      <li class="breadcrumb-item" aria-current="page">
+        <a href="{% url 'departments' %}">Department</a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">Certification</li>
+    </ol>
+  </nav>
+</div>
+
+<section class="main-div py-5 header"  >
+  <div class="container py-1">
+    <div class="row col-12 mx-auto">
+      <div class="col-md-9 mt-4 order-lg-1 order-2">
+        <div class="tab-content" id="v-pills-tabContent"  id="divContent">
+          <!--left side tab content-area -->
+
+          <div
+            class="tab-pane fade rounded bg-white show active"
+            id="wind-energy"
+            role="tabpanel"
+            aria-labelledby="wind-energy"
+          >
+            <div class="row col-12 mx-auto px-0">
+              <div class="col-lg-4 col-md-4 col-sm-6 col-12 mb-3">
+                <a href="{% url 'depart_certificate_menu' %}">
+                  <div class="card sm-card-design text-center px-8 py-4">
+                    <h6>{{report.0.Year_of_Report}}</h6>
+                    <h5>Certification Services</h5>
+                  </div>
+                </a>
+              </div>
+              <div class="col-lg-4 col-md-4 col-sm-6 col-12 mb-3">
+                <a href="{% url 'Inspection_menu' %}">
+                  <div class="card sm-card-design text-center px-3 py-4">
+                    <h6>{{report.1.Year_of_Report}}</h6>
+                    <h5>Inspection Services</h5>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <!--div close for row-->
+          </div>
+          <!--div close for tab-pane-->
+        </div>
+        <!--div close for tab content-->
+      </div>
+      <!--div close for col-md-9-->
+      <div class="col-md-3 mt-4 order-lg-2 order-1">
+        {% comment %} {% include 'side-tab.html'%} {% endcomment %}
+      </div>
+      <!--div close for col-md-3-->
+    </div>
+  </div>
+</section>
+
+{% endblock %}

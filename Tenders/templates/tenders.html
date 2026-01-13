@@ -1,0 +1,259 @@
+{% extends 'base.html' %}
+
+{% block meta %}
+  <meta name="description" content="Tenders issued by the National Institute of Wind Energy (NIWE), Chennai, including current tender notices, procurement details, and submission guidelines under the Ministry of New and Renewable Energy (MNRE).">
+  <meta name="keywords" content="tenders NIWE, NIWE Chennai, MNRE India, wind energy tenders, renewable energy procurement, NIWE tender notices, wind sector procurement, tender submission guidelines, NIWE procurement, MNRE tenders">
+{% endblock %}
+
+{% block title %} Tenders | National Institute of Wind Energy (NIWE), Ministry of New and Renewable Energy, Government of India {% endblock %}
+
+{% block content %}
+
+{% load static %}
+
+<section class="head-div">
+  <div class="overlay d-flex align-items-center">
+    <div class="container">
+      <h1 class="text-white notranslate">Tenders</h1>
+    </div>
+  </div>
+</section>
+<div class="container">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb bg-transparent p-0">
+      <li class="breadcrumb-item"><a href="/">Home </a></li>
+     
+      <li class="breadcrumb-item active notranslate " aria-current="page">Tenders</li>
+    </ol>
+  </nav>
+</div>
+
+<section class="tender-sec" id="divContent">
+  <div class="container">
+   
+      <div class="d-flex justify-content-between align-items-center mb-3 flex-wrap">
+        <div>
+          <strong class="blink_me text-danger">Information :</strong>
+          <a href="/static/pdf/tenders/Notice_for_GeM.pdf" class="text-primary" target="_blank" data-doc>
+            "All Vendors to get registered in Government e-Market place (GeM)"
+          </a>
+        </div>
+        
+        <a href="{% url 'archived-tenders' %}" class="btn btn-archived" title="Archive">
+          Archive
+        </a>
+      </div>
+      <p>
+        <a href="/static/pdf/tenders/e-procurement_notice.pdf" target="_blank" data-doc>
+          <b
+            >Important Notice : "Information for processing TENDERS through
+            e-procurement" - with effect from 22.09.2016</b><span class="text-secondary"> [Bilingual]</span>
+        </a>
+      </p>
+
+      <div class="row">
+        <div class="col-md-12">
+                    
+            <table class="tender-table">
+              <thead>
+                <tr>
+                  <th class="sl-no">Sno</th>
+                  <th class="title">Title</th>
+                  <th class="Open-Date">Published Date</th>
+                  <th class="Due-Date">Due Date</th>                  
+                  <th class="file">File</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for datas in page_obj %}
+                <tr>
+                  <td>{{ forloop.counter|add:page_obj.start_index|add:-1 }}</td>
+                  <td>{{ datas.Tender_Title }}
+                    {% if datas.New_Label %}
+                      <span class="label_blink notranslate">NEW</span>
+                    {% endif %} 
+                    {% if datas.corrigenda.exists %}
+                    <ol style="list-style-type:disc" class="notranslate">
+                      {% for corrigendum in datas.corrigenda.all %}
+                      <li>
+                        <a href="{{ corrigendum.file.url }}" target="_blank">
+                          
+                          <span class="notranslate">{{ corrigendum.title }}</span>                          
+                          <i class="{{ corrigendum.file_icon_class }}"> {{ corrigendum.file_type }}</i>
+                        </a>
+                        <span class="text-muted">({{ corrigendum.file_size_display }})</span>
+                        {% if corrigendum.New_Label %}
+                          <span class="label_blink notranslate">NEW</span>
+                        {% endif %}
+                      </li>
+                      {% endfor %}
+                    </ol>
+                    {% endif %}
+                  </td>
+                  <td>
+                    {{ datas.Published_Date |date:"d.m.Y" }} 
+                  </td>
+                  <td>
+                    {{ datas.Due_Date |date:"d.m.Y" }} Upto {{ datas.Due_Date |date:"g:i A" }}
+                  </td>                  
+                  
+                  <td>
+                    <a href="{{ datas.Tender_Pdf.url }}" target="_blank" class="text-primary ms-2">
+                      <i class="{{ datas.file_icon_class }}"> {{ datas.file_type }}</i>
+                      <span class="text-muted">({{ datas.file_size_display  }})[Bilingual]</span>
+                    </a>
+                  </td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+        
+            <!-- Pagination Controls -->
+            <div class="pagination">
+              <ul class="pagination-list">
+                {% if page_obj.has_previous %}
+                <li><a href="?page={{ page_obj.previous_page_number }}">&laquo; Previous</a></li>
+                {% endif %}
+                {% for page in page_obj.paginator.page_range %}
+                <li class="{% if page == page_obj.number %}active{% endif %}">
+                  <a href="?page={{ page }}">{{ page }}</a>
+                </li>
+                {% endfor %}
+                {% if page_obj.has_next %}
+                <li><a href="?page={{ page_obj.next_page_number }}">Next &raquo;</a></li>
+                {% endif %}
+              </ul>
+            </div>
+        </div>
+    </div>
+
+      
+   <br>
+
+    <!-- <li class="text-dark" style="list-style-type: none">
+        <b>
+          Purchase Order - all tenders (except) single tender and proprietary
+          tenders are being published though e-publishing portal Central Public
+          Procurement Portal (CPPP)
+        </b>
+      </li>
+      <ul class="text-success purchase_order pb-3">
+        <li>
+          <a href="/static/pdf/tenders/Purchase_order_released_from_01.11.2022_to_31.11.2022.pdf">
+            List of Purchase Orders released from 01.11.2022 to 31.11.2022</a> 
+        </li>
+        <li>
+          <a href=" /static/pdf/tenders/Purchase_order_released_from_01.10.2022_to_30.10.2022.pdf">
+            List of Purchase Orders released from 01.10.2022 to 30.10.2022</a>
+        </li>
+        <li>
+          <a  href="/static/pdf/tenders/Purchase_order_released_from_01.09.2022_to_31.09.2022.pdf">
+            List of Purchase Orders released from 01.09.2022 to 31.09.2022</a>
+        </li>
+        <li>
+          <a href="/static/pdf/tenders/Purchase_order_released_from_01.08.2022_to_30.08.2022.pdf">
+            List of Purchase Orders released from 01.08.2022 to 30.08.2022</a >
+        </li>
+        <li>
+          <a
+            href="/static/pdf/tenders/Purchase_order_released_from_01.07.2022_to_31.07.2022.pdf"
+          >
+            List of Purchase Orders released from 01.07.2022 to 31.07.2022</a
+          >
+        </li>
+        <li>
+          <a
+            href="/static/pdf/tenders/Purchase_order_released_from_01.06.2022_to_30.06.2022.pdf"
+          >
+            List of Purchase Orders released from 01.06.2022 to 30.06.2022</a
+          >
+        </li>
+        <li>
+          <a
+            href="/static/pdf/tenders/Purchase_order_released_from_01.05.2022_to_31.05.2022.pdf"
+            >List of Purchase Orders released from 01.05.2022 to 31.05.2022</a
+          >
+        </li>
+        <li>
+          <a
+            href="/static/pdf/tenders/Purchase_order_released_from_01.04.2022_to_30.04.2022.pdf"
+            >List of Purchase Orders released from 01.04.2022 to 30.04.2022</a
+          >
+        </li>
+        <li>
+          <a
+            href="/static/pdf/tenders/Purchase_order_released_from_01.04.2021_to_31.03.2022.pdf"
+            >List of Purchase Orders released from 01.04.2021 to 31.03.2022</a
+          >
+        </li>
+        <li>
+          <a
+            href="/static/pdf/tenders/Purchase_order_released_from_01.03.2021_to_31.03.2021.pdf"
+            >List of Purchase Orders released from 01.03.2021 to 31.03.2021</a
+          >
+        </li>
+        <li>
+          <a
+            href="/static/pdf/tenders/Purchase_order_released_from_01.04.2020_to_28.02.2021.pdf"
+          >
+            List of Purchase Orders released from 01.04.2020 to 28.02.2021</a
+          >
+        </li>
+        <li>
+          <a
+            href="/static/pdf/tenders/Purchase_order_released_from_01.04.2019_to_30.10.2019.pdf"
+          >
+            List of Purchase Orders released from 01.04.2019 to 30.10.2019</a
+          >
+        </li>
+        <li>
+          <a
+            href="/static/pdf/tenders/Purchase_Order_Released_from_01.04.2018_to_31.03.2019.pdf"
+            >List of Purchase Orders released from 01.04.2018 to 31.03.2019</a
+          >
+        </li>
+        <li>
+          <a
+            href="/static/pdf/tenders/Purchase_order_released_from_01.04.2017_to_31.03.2018.pdf"
+            >List of Purchase Orders released from 01.04.2017 to 31.03.2018</a
+          >
+        </li>
+        <li>
+          <a
+            href="/static/pdf/tenders/Purchase_Order_from_01.04.2016_to_31.03.2017.pdf"
+          >
+            List of Purchase Orders released from 01.04.2016 to 31.03.2017</a
+          >
+        </li>
+        <li>
+          <a
+            href="/static/pdf/tenders/List_of_purchase_01.04.2015_to_30.03.2016.pdf"
+            >List of Purchase Orders released from 01.04.2015 to 30.03.2016</a
+          >
+        </li>
+        <li>
+          <a
+            href="/static/pdf/tenders/List_of_purchase_01.04.2014_to_31.03.2015.pdf"
+            >List of Purchase Orders released from 01.04.2014 to 31.03.2015</a
+          >
+        </li>
+        <li>
+          <a href="/static/pdf/tenders/List_of_purchase_2013-2014.pdf"
+            >List of Purchase Orders released from 01.04.2013 to 31.03.2014</a
+          >
+        </li>
+      </ul> -->
+
+      <p class="text-dark" style="font-weight: bold;">
+        
+        <a href="{% url 'Purchase_order_list' %}" target="_blank" class="text-primary linkIcon" title = "Click here to view the list of Purchase orders">
+          Link:- Purchase Order – all tenders (except single tender and proprietary tenders) 
+        are being published through the e-publishing portal
+        </a>.
+      </p>
+  
+  </div>
+</section>
+
+
+{% endblock %}

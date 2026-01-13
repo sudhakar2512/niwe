@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+
+{% block meta %}
+  <meta name="description" content="Global Wind Day page by the National Institute of Wind Energy (NIWE), Chennai, celebrating wind energy awareness, initiatives, events, and educational activities under MNRE.">
+  <meta name="keywords" content="Global Wind Day, NIWE Chennai, MNRE India, wind energy awareness, renewable energy events, wind power celebrations, educational activities, wind sector initiatives, NIWE events, MNRE programs">
+{% endblock %}
+
+{% block title %} Global Wind Day | National Institute of Wind Energy (NIWE), Ministry of New and Renewable Energy, Government of India {% endblock %}
+
+{% block content %} 
+
+<section class="head-div">
+  <div class="overlay d-flex align-items-center">
+    <div class="container">
+      <h1 class="text-white">Global Wind Day</h1>
+    </div>
+  </div>
+</section>
+<div class="container">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb bg-transparent p-0">
+      <li class="breadcrumb-item"><a href="/">Home</a></li>
+      <li class="breadcrumb-item">
+        <a href="{% url 'departments' %}">Department</a>
+      </li>
+      <li class="breadcrumb-item">
+        <a href="{% url 'sdt' %}">Skill Development & Training</a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">
+        Global Wind Day
+      </li>
+    </ol>
+  </nav>
+</div>
+
+<section class="rnd-div" id="divContent">
+  <div class="container">
+    <div class="row col-12 mx-auto">
+      <div class="col-md-8">
+        <div class="col-12">
+           <h3 class="text-center text-primary">GLOBAL WIND DAY</h3> 
+           <h5 class="text-dark text-center pb-3 pt-1">INTRODUCTION</h5> 
+         
+          <p>
+            &nbsp &nbsp &nbsp &nbsp Global Wind Day is a worldwide event that is
+            supported by Global Wind Energy Council (GWEC) every year jointly
+            with the European Wind Energy Association - (EWEA) on June 15. It is
+            a day for discovering wind, its power and the possibilities it holds
+            to change our world. In more than 100 countries around the world,
+            wind farms are in operation, generating energy from a clean and
+            renewable source. Thousands of individuals are involved in the
+            production of energy from wind, but for many people, wind energy is
+            a mystery. The day started as a European one in 2007 and went Global
+            in 2009. On 15 June, hundreds of public events are organized all
+            over the world, to create awareness on Wind Power.
+          </p>
+          {% for item in globals %}
+            {% if item.type == "url" %}
+
+              <div class="training-list-item">
+                <p class="entry-text">               
+                  <a href="{% url 'gloabl_sub_wind_day' item.id %}" target="_blank" aria-label="{{ item.title }}" class="entry-link">
+                    {{ item.serial}} &nbsp &nbsp {{ item.title }}
+                  </a>
+                </p>
+              </div>
+            {% endif %}
+            {% if item.type == "docs" %}
+            
+              <div class="training-list-item">
+                <p class="entry-text">             
+                  <a href="{{item.docs.url}}" target="_blank" aria-label="open {{ item.title }} document" data-doc class="entry-link">
+                    {{ item.serial}} &nbsp &nbsp {{ item.title }}
+                  </a>
+                </p>
+              </div>
+          {% endif %}
+
+          {% endfor %}
+
+          
+        </div>
+      </div>
+      <div class="col-md-4">{% include "side-tab.html" %}</div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

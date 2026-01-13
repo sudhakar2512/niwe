@@ -1,0 +1,82 @@
+# =========================
+# Python
+# =========================
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.log
+
+# =========================
+# Virtual Environments
+# =========================
+venv/
+env/
+.venv/
+
+# =========================
+# Django
+# =========================
+db.sqlite3
+staticfiles/
+media/
+uploads/
+
+# =========================
+# Django Migrations
+# (keep __init__.py only)
+# =========================
+*/migrations/*.py
+!*/migrations/__init__.py
+
+# =========================
+# Static / Large files
+# =========================
+static/video/
+static/pdf/
+*.mp4
+*.mov
+*.avi
+*.mkv
+*.pdf
+
+# =========================
+# Node / Frontend
+# =========================
+node_modules/
+npm-debug.log*
+yarn-error.log*
+
+# =========================
+# Environment variables
+# =========================
+.env
+.env.*
+
+# =========================
+# Database dumps / backups
+# =========================
+*.sqlite3
+*.db
+*.bak
+*.sql
+
+# =========================
+# IDE / OS
+# =========================
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+.DS_Store
+Thumbs.db
+
+# =========================
+# Test / Coverage
+# =========================
+htmlcov/
+.coverage
+coverage.xml
+nosetests.xml
+*.cover
+*.py,cover

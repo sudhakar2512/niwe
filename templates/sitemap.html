@@ -1,0 +1,118 @@
+{% extends 'base.html' %}
+
+{% block meta %}
+  <meta name="description" content="Sitemap page of the National Institute of Wind Energy (NIWE), Chennai, providing a structured overview of all website sections, pages, and resources for easy navigation and access under MNRE guidelines.">
+  <meta name="keywords" content="NIWE sitemap, NIWE Chennai, MNRE India, website structure, website navigation, wind energy resources, renewable energy sections, NIWE pages overview, MNRE compliance, wind energy information">
+{% endblock %}
+
+{% block title %} Sitemap  | National Institute of Wind Energy (NIWE), Ministry of New and Renewable Energy, Government of India {% endblock %}
+
+{% block content %}
+
+{% load static %}
+
+<section class="head-div">
+    <div class="overlay d-flex align-items-center">
+      <div class="container">
+        <h1 class="text-white">Sitemap</h1>
+      </div>
+    </div>
+  </section>
+  <div class="container">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb bg-transparent p-0">
+        <li class="breadcrumb-item"><a href="/">Home </a></li>
+        <li class="breadcrumb-item active" aria-current="page">Sitemap</li>
+      </ol>
+    </nav>
+  </div> 
+
+<div id=divContent>
+    <div class="container mt-4 ">
+<h2>Primary Menu</h2>
+        <!-- Home Page Section -->
+         <section class="mb-4">
+            <h4> <a href="/"> Home </a> </h4>
+        </section>
+
+        <!-- About Us Section -->
+        <section class="mb-4">
+            <h4> <a href="{% url 'us' %}">About Us </a> </h4>
+            <ul class="list-group">
+                <li class="list-group-item"><a href="{% url 'dgm' %}">Director General's Message</a></li>
+                <li class="list-group-item"><a href="{% url 'background' %}">Background</a></li>
+                <li class="list-group-item"><a href="{% url 'charter' %}">The Charter</a></li>
+                <li class="list-group-item"><a href="{% url 'org' %}">Organizational Structure</a></li>
+                <li class="list-group-item"><a href="{% static '/images/ISO_CERTIFICATE.pdf/' %}">Quality Policy</a></li>
+                <li class="list-group-item"><a href="{% url 'dg_staff' %}" class="notranslate">Staff Profile</a></li>
+                  
+            </ul>
+        </section>
+        <section class="mb-4">
+            <h4> <a href="{% url 'departments' %}"> Department</a> </h4>
+              <ul class="list-group">
+                        <li class="list-group-item"><a href="{% url 'r&d' %}">Research and Development</a></li>
+                        <li class="list-group-item"><a href="{% url 'certificate' %}">Certification and Information Technology</a></li>
+                        <li class="list-group-item"><a href="{% url 's&d' %}">Standards & Regulation</a></li>
+                        <li class="list-group-item"><a href="{% url 'testing_menu' %}">Testing</a></li>
+                        <li class="list-group-item"><a href="{% url 'wra' %}">Wind Resource Assessment</a></li>
+                        <li class="list-group-item"><a href="{% url 'owd' %}">Offshore Wind Development</a></li>
+                        <li class="list-group-item"><a href="{% url 'sdt' %}">Skill Development & Training</a></li>
+                        <li class="list-group-item"><a href="{% url 'finance' %}">Finance & Administration</a></li>
+                    </ul>
+        </section>
+
+        <section class="mb-4">
+            <h4> <a href="{% url 'medias' %}"> Media</a> </h4>
+            <ul class="list-group">
+                
+                <li class="list-group-item"><a href="{% url 'awards' %}">Awards</a></li>
+                <li class="list-group-item"><a href="{% static '/images/NIWE_Citizen_Charter-2022.pdf' %}">Citizen Charter</a></li>
+                <li class="list-group-item"><a href="{% url 'gallery' %}">Gallery</a></li>
+                <li class="list-group-item"><a href="{% url 'events' %}">Events</a></li>
+                
+            </ul>
+
+        </section>
+
+            <section class="mb-4">
+            <h4> <a href="/services/"> Services</a> </h4>
+            </section>
+
+            <section class="mb-4">
+            <h4> <a href="{% url 'career' %}"> Careers</a> </h4>
+            </section>
+
+            <section class="mb-4">
+            <h4> <a class ="notranslate" ref="/tenders/"> Tenders</a> </h4>
+            </section>
+
+            <section class="mb-4">
+            <h4> <a href="{% url 'rti' %}"> RTI</a> </h4>
+            </section>
+
+         
+             <section class="mb-4">
+            <h4> <a href="{% url 'document' %}"> Documents</a> </h4>
+            <ul class="list-group">
+                <li class="list-group-item"><a href="{% url 'GenInfo' %}">General Information</a></li>
+                <li class="list-group-item"><a href="{% url 'newsletters' %}">Newsletter</a></li>
+                <li class="list-group-item"><a href="{% url 'annual_reports' %}">Annual Reports</a></li>                
+                <li class="list-group-item"><a href="{% url 'technical_reports' %}">Technical Reports</a></li>
+                <li class="list-group-item"><a href="{% url 'hwed' %}">Revised Guidelines for Wind Power Project</a></li>
+                <li class="list-group-item"><a href="{% url 'power_policy' %}">Wind Power Policy</a></li>
+                <li class="list-group-item"><a href="{% url 'information_weg_installation' %}">WEG Installation</a></li>                
+                <li class="list-group-item"><a href="{% url 'related_links' %}">Related Links</a></li>
+                <li class="list-group-item"><a href="{% url 'retention' %}" >Records Retention Schedule </a></li>                     
+                <li class="list-group-item"><a href="{% url 'faq' %}">FAQ</a></li>
+            </ul>
+        </section>
+
+        <section class="mb-4">
+            <h4> <a href="{% url 'contact' %}"> Contact Us</a> </h4>
+        </section>
+    </div>
+</div>
+
+{% endblock %}
+

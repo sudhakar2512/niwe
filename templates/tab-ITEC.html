@@ -1,0 +1,101 @@
+{% extends 'base.html' %}
+
+{% block meta %}
+  <meta name="description" content="ITEC Training page of the National Institute of Wind Energy (NIWE), Chennai, providing information on international training programs, workshops, and collaborative initiatives in wind energy and renewable energy under MNRE.">
+  <meta name="keywords" content="NIWE ITEC training, NIWE Chennai, MNRE India, international wind energy training, renewable energy workshops, collaborative programs, wind sector education, global training initiatives, MNRE programs, NIWE initiatives">
+{% endblock %}
+
+{% block title %} ITEC Training | National Institute of Wind Energy (NIWE), Ministry of New and Renewable Energy, Government of India {% endblock %}
+
+{% block content %}
+
+<section class="head-div">
+  <div class="overlay d-flex align-items-center">
+    <div class="container">
+      <h1 class="text-white">ITEC Training</h1>
+    </div>
+  </div>
+</section>
+<div class="container">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb bg-transparent p-0">
+      <li class="breadcrumb-item"><a href="/">Home</a></li>
+      <li class="breadcrumb-item">
+        <a href="{% url 'departments' %}">Department</a>
+      </li>
+      <li class="breadcrumb-item">
+        <a href="{% url 'sdt' %}">Skill Development & Training</a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">ITEC Training</li>
+    </ol>
+  </nav>
+</div>
+
+<section class="rnd-div" id="divContent">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="itec-img-div">
+          <div class="row col-12 ms-auto mb-2 tab-itec-div">
+            <div class="col-auto mb-3">
+              <a href="/itec/" class="tab-itec" aria-label="ITEC"> ITEC </a>
+            </div>
+
+            <div class="col-auto mb-3">
+              <a href="{% url 'itec_training' %}" class="tab-itec" aria-label="Open Training">
+                TRAININGS
+              </a>
+            </div>
+            <div class="col-auto mb-3"> 
+              <a href="{% url 'itec_countries' %}" class="tab-itec" aria-label="Open Countries">
+                COUNTRIES
+              </a>
+            </div>
+
+            <div class="col-auto mb-3">
+              <a href="{% url 'itec_feedback' %}" class="tab-itec" aria-label="Open Feedback">
+                FEEDBACK
+              </a>
+            </div>
+          </div>
+          <img src="/static/images/itec-collage.png" alt="img-itec" style="max-width:100%;" />
+        </div>
+
+        <p>
+          Ever since 2004, NIWE has been in the fore front of conducing
+          International Training programmes primarily to inculcate technical
+          knowledge on wind energy among the people in the industry, refreshers,
+          and freshers for enriching their knowledge. NIWE has organized about
+          40 International training courses sponsored by MNRE, Government of
+          India, under Indian Technical & Economic Cooperation Programme (ITEC),
+          Special Commonwealth Assistance for Africa Programme (SCAAP), India
+          Africa Forum Summit - II & III (IAFS-II & III) and Association of
+          Southeast Asian Nations (ASEAN) Cooperation programme.
+        </p>
+        <p>
+          As part of the international training programme NIWE has been
+          organizing the training for Indian Technical and Economic Cooperation
+          (ITEC) Countries since 2010, sponsored by the Development Partner
+          Administration (DPA-II) Division of Ministry of External Affairs
+          (MEA), Government of India. As of now, 25 such training programmes
+          have been conducted in which 606 participants were benefited by the
+          training.
+        </p>
+        <p>
+          The training course is designed in such a way to be useful even for
+          the fresher in the industry. Apart from the class room lectures,
+          practical sessions, study tour are also arranged during the training,
+          which was well received by the participants of earlier training
+          courses. As part of study tour, participants will be taken in and
+          around kayathar and kanyakumari to visit Wind Turbine Test Station
+          (WTTS), Wind Turbine Research Station (WTRS), Wind Resource Assessment
+          Monitoring Station and working Wind Farms to gain practical knowledge
+          and hands-on experience. Participants will also have opportunities to
+          visit few important places to have glimpses of India's cultural
+          heritage during their visit.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

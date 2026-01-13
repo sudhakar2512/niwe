@@ -1,0 +1,452 @@
+{% load static %}
+<!-- <meta name="google-site-verification" content="mFqwUDfq6rai4vo6r0MIscIddTTymu8uJSBsG8XjSQI" /> -->
+
+
+  <link rel="icon" href="{% static '/images/title-logo.png' %}" type="image/x-icon" />
+  <!-- bootstrap 5.0  --> 
+  <link href="{% static '/css/bootstrap.min.css' %}" rel="stylesheet" />
+  <link href="{% static '/css/external.css' %}" rel="stylesheet" />
+
+  <!-- fa fa icons -->
+  <link rel="stylesheet" href="{% static '/css/owl.carousel.min.css' %}" />
+  
+  <link  rel="stylesheet" href="{% static '/remixicon/css/remixicon.css' %}" />
+  <link  rel="stylesheet" href="{% static '/fontawesome/css/font-awesome.min.css' %}"     /> 
+  <!-- custom css  -->
+  <link rel="stylesheet" href="{% static '/css/style.css' %}" />
+  <link rel="stylesheet" href="{% static '/css/custom.css' %}" />
+  <link rel="stylesheet" href="{% static '/css/simple-lightbox.css' %}" />
+  <link rel="stylesheet" href="{% static '/css/responsive.css' %}" />
+  <link rel="stylesheet" href="{% static '/css/hindi_translation.css' %}" />
+  <link rel="stylesheet" href="{% static '/css/runningnews.css' %}" />
+
+  
+  <script src="{% static '/js/googletranslate.js' %}" ></script>
+  <script src="{% static '/js/buttonpanel.js' %}" ></script>   
+  <script src = "{% static '/js/jquery_min/jquery.js' %}"></script>
+  <script src="{% static '/js/accessibility-icons.js' %}" defer></script>
+  <!-- <script src="https://cdn.jsdelivr.net/gh/Joe12387/detectIncognito@main/dist/es5/detectIncognito.min.js"></script> -->
+  <script src="{% static '/js/detectIncognito.js' %}" defer></script> 
+  <script src="{% static '/js/privateModeDetection.js' %}" defer></script>
+  <!-- Google Translate API Script -->
+
+  <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  <script  src="https://cse.google.com/cse.js?cx=73e0304d0105a42e2"></script>
+ 
+
+  <style>
+      .VIpgJd-ZVi9od-xl07Ob-OEVmcd{
+      position: absolute;
+    }
+</style>
+  </head>
+
+   
+  <body>
+    <!-- header first -->
+    <header class="main-head">
+      <!-- ************************************ Top Bar HTML ************************************ -->
+      <div class="top-bar">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2 col-md-6 col-12 m-0 p-0 top-bar-content">
+                    <div class="small-image">                        
+                        <a href = "https://www.india.gov.in" target="_blank" aria-label="Visit Indian Government Website" class="external-link gov-text" rel="noopener noreferrer" 
+                          title="भारत सरकार | GOVERNMENT OF INDIA">
+                          <span class="notranslate"><b>भारत सरकार | GOVERNMENT OF INDIA</b></span>
+                        </a>
+                    </div>
+                </div>
+    
+                <div class="col-lg-10 col-md-6 col-12 d-flex justify-content-end align-items-center">
+                    <ul class="icon-list">
+                        <li>
+                            <a href="#home" title="Skip to Main Content" aria-label="Skip to main content">
+                                <img src="/static/images/skip-to-maincontent.svg"  width="30" height="27" alt="Skip to Main Content">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'screen-reader-access' %}" title="Screen Reader" aria-label="Open Screen Reader">
+                                <i class="fa fa-volume-up fa-lg" aria-hidden="true"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'sitemap' %}" title="Sitemap" aria-label="Open Sitemap">
+                                <img src="/static/images/sitemap.svg"  width="30" height="20" alt="SiteMap">
+                            </a>
+                        </li>
+                        
+                        <li class="accessibility-container">
+                          <button class="accessibility-btn" aria-label="Accessibility Options" title="Accessibility Options">
+                              <img src="/static/images/accessibility_icon.svg"  alt="Accessibility">  </button>
+                          <ul id="accessibility-dropdown" >
+                              <li><button id="linkIncrease" title="Increase Font Size"><i class="fa fa-angle-double-up" aria-hidden="true"></i> Increase Font Size</button></li>
+                              <li><button id="linkReset" title="Reset Font Size"><i class="fa fa-undo" aria-hidden="true"></i>  Reset Font Size</button></li>
+                              <li><button id="linkDecrease" title="Decrease Font Size"><i class="fa fa-angle-double-down" aria-hidden="true"></i>  Decrease Font Size</button></li>
+                              <li><button id="toggleLineHeight" title="Line Height"><i class="fa fa-text-height" aria-hidden="true"></i>  Line Height</button></li>
+                              <li><button id="toggleTextSpacing" title="Text Spacing"><i class="fa fa-text-width" aria-hidden="true"></i>  Text Spacing</button></li>
+                              <li><button id="toggleContrast" title="High Contrast"><i class="fa fa-adjust" aria-hidden="true"></i>  High Contrast</button></li>
+                          </ul>
+                      </li>
+                     <li>
+                       <button id="increase-font" class="fs-6 btn-sm fw-bold" aria-label="Increase the font Size">A+</button>
+                       |
+                       <button id="decrease-font" class="fs-6 btn-sm fw-bold" aria-label="decrease the font Size">A–</button>
+                     </li>
+                     <li title="Translate">
+                       <div id="google_translate_element" tabindex="0" role="button" aria-label="Change language"></div>
+                     </li>
+                     
+                        <li>
+                            <div class="social-dropdown">
+                                <button class="social-btn" aria-label="Open Social Media">
+                                    <img src="/static/images/social_media.svg" width="30" height="27" title="Social Media" alt="Social Media">
+                                </button>
+                                <div class="social-menu">
+                                    <a href="https://www.facebook.com/niwechennai" aria-label="Visit Facebook Page" target="_blank" title="Facebook">
+                                        <i class="fa fa-facebook-f me-2" aria-hidden="true"> Facebook</i>
+                                    </a>
+                                    <a href="https://twitter.com/niwe_chennai" aria-label="Visit Twitter Page" target="_blank" title="Twitter">
+                                        <i class="fa fa-twitter me-2" aria-hidden="true"> Twitter</i>
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="search-container" id="search-container">
+                          <div class="search-icon"  title="Search" >
+                              <i class="fa fa-search" id="search-trigger" tabindex="0" aria-label="Search Here"></i>
+                          </div>
+                          <div class="search-form" >
+                              <form action="{% url 'search_results' %}" method="GET" id="search-form">
+                                  <input type="text" name="q" placeholder="Search..." id="search-input" aria-label="Search Here" class="hidden" autocomplete="off">
+                                  <button type="submit" style="display: none;">Submit Search</button>                                   
+                              </form> 
+                          </div>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+      <!-- ************************************ Top Bar HTML ************************************ -->
+    </header>
+    <!-- header second -->
+    <header class="second-div py-2">
+      <div class="container">
+        <div class="row align-items-center">
+          <!-- NIWE Logo -->
+          <div class="col-lg-1 col-md-2 col-4 text-center">
+            <a href="https://niwe.res.in" title="Go to Home" aria-label="Go to Home">
+              <img src="{% static 'images/niwe-logo.png' %}" class="img-fluid mobile-img" alt="National Institute of Wind Energy, Ministry of New and Renewable Energy, Government of India">
+            </a>
+          </div>
+    
+          <!-- Header Text -->
+          <div class="col-lg-8 col-md-8 col-12 text-md-start text-center">
+            <div class="header-text" title="National Institute of Wind Energy">
+              <h1 class="mb-1" aria-label="NATIONAL INSTITUTE OF WIND ENERGY">NATIONAL INSTITUTE OF WIND ENERGY</h1>
+              <span class="h5" aria-label="Ministry of New and Renewable Energy, Government of India">Ministry of New and Renewable Energy, Government of India</span>
+            </div>
+          </div>
+    
+          <!-- Emblem -->
+          <div class="col-lg-1 col-md-2 col-4 text-center">
+            <a href="https://mnre.gov.in/" class="external-link" rel="noopener noreferrer" target="_blank" aria-label="Ministry of New and Renewable Energy" title="Ministry of New and Renewable Energy">
+              <img src="{% static 'images/emblem.png' %}" class="img-fluid sidelogo small-img" alt="National Emblem of India" >
+            </a>
+          </div>
+    
+          <!-- Azadi Ka Amrit Mahotsav Logo -->
+          <div class="col-lg-2 col-md-12 col-4 text-center mt-2 mt-lg-0">
+            <a href="https://amritmahotsav.nic.in/" class="external-link" rel="noopener noreferrer" target="_blank" aria-label="Azadi Ka Amrit Mahotsav" title="Azadi Ka Amrit Mahotsav">
+              <img src="{% static 'images/azadi_75_logo.jpg' %}" class="img-fluid amritimg" alt="Azadi Ka Amrit Mahotsav Logo" >
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- navbar -->
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-0">
+      <div class="container">
+        <!-- Navbar toggle -->
+        <button  class="navbar-toggler ms-auto"  type="button"  data-bs-toggle="collapse"  data-bs-target="#navbarCollapse"  aria-controls="navbarCollapse"  aria-expanded="false"  aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- <img
+          src="{% static '/images/logo-niwe.png' %}"
+          class="mobile-nav img-responsive" alt="logo-niwe" 
+        /> -->
+
+        <!-- Collapse -->
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <!-- Nav -->
+          <ul class="navbar-nav mx-lg-auto">
+            <li class="dropdown">
+              <a
+                class="nav-item nav-link"
+                id="home"
+                href="/"
+                aria-current="page" title="Home"
+                >Home</a
+              >
+            </li>           
+
+            <li class="nav-item dropdown">
+              <a
+                class="nav-item nav-link"
+                href="{% url 'us' %}"
+                aria-current="page" title="About Us"
+                >About Us</a
+              >
+
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li>
+                  <a class="dropdown-item" href=" {% url 'dgm' %} " title="Director's Message"
+                    >Director's Message</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="{% url 'background' %}" title="Background"
+                    >Background</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="{% url 'charter' %}" title="Charter"
+                    >Charter</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="{% url 'org' %}" title="Organizational Chart"
+                    >Organizational Chart</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="{% url 'quality' %}" title="Quality Policy"
+                    >Quality Policy</a
+                  >
+                </li>
+
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="{% static '/images/ISO_CERTIFICATE.pdf' %}" target="_blank" title="Management System Certificate"
+                    >Management System Certificate</a
+                  >
+                </li>
+           
+               <li>
+                  <a class="dropdown-item notranslate" href="{% url 'dg_staff' %}" title="Staff Profile"
+                    >Staff Profile</a
+                  >
+                </li>
+              
+              </ul>
+            </li>
+            {% comment %} drop-down {% endcomment %}
+            <li class="nav-item dropdown">
+              <a
+                class="nav-item nav-link"
+                href="{% url 'departments' %}"
+                aria-current="page" title="Departments"
+                >Departments</a
+              >
+
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                {% comment %}
+                <li>
+                  <a class="dropdown-item" href="{% url 'departments' %}" title="Department"
+                    >Department</a
+                  >
+                </li>
+                {% endcomment %}
+                <li>
+                  <a class="dropdown-item" href="{% url 'r&d' %}" title="Research & Development"
+                    >Research And Development</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="{% url 'certificate' %}" title="Certification & Information Technology"
+                    >Certification And Information Technology</a
+                  >
+                </li>
+                <li>                  
+                  <a class="dropdown-item" href="{% url 's&d' %}" title="Standards & Regulation"
+                    >Standards & Regulation</a
+                  >
+                </li>
+                <li>                 
+                  <a class="dropdown-item" href="{% url 'testing_menu' %}" title="Testing"
+                    >Testing</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="{% url 'wra' %}" title="Wind Resource Assessment"
+                    >Wind Resource Assessment</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="{% url 'owd' %}" title="Offshore Wind Development"
+                    >Offshore Wind Development</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="{% url 'sdt' %}" title="Skill Development & Training"
+                    >Skill Development & Training</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="{% url 'finance' %}" title="Finance & Administration"
+                    >Finance & Administration</a
+                  >
+                </li>
+              </ul>
+            </li>
+            {% comment %} media {% endcomment %}
+            <li class="nav-item dropdown">
+              <a
+                class="nav-item nav-link"
+                href="{% url 'medias' %}"
+                aria-current="page" title="Media"
+                >Media
+              </a>
+
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li>
+                  <a class="dropdown-item" href="{% url 'awards' %}" title="Awards">Awards</a>
+                </li>
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="{% static '/images/NIWE_Citizen_Charter-2022.pdf' %}" title="Citizen Charter"
+                    >Citizen Charter</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="{% url 'gallery' %}" title="Gallery"
+                    >Gallery</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="{% url 'events' %}" title="Events">Events</a>
+                </li>
+              </ul>
+            </li>
+            {% comment %} serivces {% endcomment %}
+            <li class="dropdown">
+              <a class="nav-item nav-link" href="/services/" aria-current="page" title="Services"
+                >Services</a
+              >
+            </li>
+            {% comment %} Careers {% endcomment %}
+            <li class="dropdown">
+              <a
+                class="nav-item nav-link"
+                href="{% url 'career' %}"
+                aria-current="page" title="Careers"
+                >Careers</a
+              >
+            </li>
+            <li class="dropdown">
+              <a class="nav-item nav-link notranslate" href="{% url 'tender_data' %}" aria-current="page" title="Tenders"
+                >Tenders</a
+              >
+            </li>
+            <li class="dropdown">
+              <a
+                class="nav-item nav-link"
+                href="{% url 'rti' %}"
+                aria-current="page" title="RTI"
+                >RTI</a
+              >
+            </li>
+            {% comment %} Documents {% endcomment %}
+            <li class="nav-item dropdown">
+              <a
+                class="nav-item nav-link"
+                href="{% url 'document' %}"
+                aria-current="page" title="Documents"
+                >Documents</a
+              >
+
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li>
+                  <a class="dropdown-item" href="{% url 'GenInfo' %}" title="General Information"
+                    >General Information</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="{% url 'newsletters' %}" title="Newsletter"
+                    >Newsletter</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="{% url 'annual_reports' %}" title="Annual Reports"
+                    >Annual Reports</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="{% url 'technical_reports' %}" title="Technical Reports"
+                    >Technical Reports</a
+                  >
+                </li>
+                
+                <li>
+                  <a class="dropdown-item" href="{% url 'hwed' %}" title="Revised Guidelines For Wind Power Project"
+                    >Revised Guidelines For Wind Power Project</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="{% url 'power_policy' %}" title="Wind Power Policy"
+                    >Wind Power Policy</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="{% url 'information_weg_installation' %}" title="WEG Installation"
+                    >WEG Installation</a
+                  >
+                </li>              
+                               
+                <li>
+                  <a class="dropdown-item" href="{% url 'related_links' %}" title="Related Links"
+                    >Related Links</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="{% url 'retention' %}" title="Records Retention Schedule"
+                    >Records Retention Schedule</a
+                  >
+                </li>
+               
+                <li>
+                  <a class="dropdown-item" href="{% url 'faq' %}" title="FAQS">FAQS</a> 
+                </li>
+              </ul>
+            </li>
+            {% comment %} contact {% endcomment %}
+            <li class="dropdown">
+              <a
+                class="nav-item nav-link"
+                href="{% url 'contact' %}"
+                aria-current="page" title="Contact Us"
+                >Contact Us</a
+              >
+            </li>
+
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="dearch-div hidden">
+      <div class="container">
+
+
+      
+      </div>
+    </div>
+  </body>
+</html>
+
+

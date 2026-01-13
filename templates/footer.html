@@ -1,0 +1,440 @@
+<!-- footer -->
+{% load static %}
+<footer class="footer">
+    <div class="container">
+        <div class="footer-top">
+            <div class="row">
+                <div class="col-sm-6 col-lg-3 col-12 my-4">
+                    <ul class="footer-link">
+                        <h5 class="mb-3" title="About Us">ABOUT US</h5>
+
+                        <li>
+                            <a href="{% url 'dgm' %} " title="Director General's Message" >
+                                Director General's Message
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'background' %} " title="Background"  >
+                                Background
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'charter' %} " title="Charter"  >
+                                Charter
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'org' %} "  title="Organizational Chart"  >
+                                Organizational Chart
+                            </a>
+                        </li>
+                        <li>
+                            <a  href="{% url 'quality' %} "  title="Quality Policy"  >
+                                Quality Policy
+                            </a>
+                        </li>
+                        <li>
+                            <a  href="{% url 'dg_staff' %} "  class="notranslate"  title="Staff Profile"  >
+                                Staff Profile
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="footer-link">
+                        <h5 class="h6 mb-2" title="Events">EVENTS</h5>
+
+                        <li>
+                            <a  href="{% url 'global_windday_2022' %}"  title="Global Wind Day 2022 & Silver Jubilee Celebration of NIWE" >
+                                Global Wind Day 2022 & Silver Jubilee Celebration of NIWE
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'gallery' %}" title="Gallery">
+                                Gallery
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/national-training/" title="National Training" >
+                                National Training
+                            </a>
+                        </li>
+                        <li>
+                            <a  href="/training_calander/"  title="Training Calendar 2025-26">
+                                Training Calendar 2025-26
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-sm-6 col-lg-3 col-12 my-4">
+                    <ul class="footer-link">
+                        <h5 class="mb-3" title="Departments">DEPARTMENTS</h5>
+
+                        <li>
+                            <a  href="{% url 'r&d' %} "  title="Research and Development" >
+                                Research and Development
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'certificate' %} "  title="Certification & Information Technology" >
+                                Certification & Information Technology
+                            </a>
+                        </li>
+                        <li>
+                            <a  href="{% url 's&d' %} "  title="Standards & Regulation" >
+                                Standards & Regulation</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'testing_menu' %} " title="Testing" >
+                                Testing
+                            </a>
+                        </li>
+                        <li>
+                            <a  href="{% url 'wra' %} "  title="Wind Resource Assessment"  >
+                                Wind Resource Assessment
+                            </a>
+                        </li>
+                        <li>
+                            <a  href="{% url 'owd' %} "  title="Offshore Wind Development">
+                                  Offshore Wind Development
+                            </a>
+                        </li>
+                        <li>
+                            <a  href="{% url 'sdt' %} "  title="Skill Development & Training"> 
+                                 Skill Development & Training
+                            </a>
+                        </li>
+                        <li>
+                            <a  href="{% url 'finance' %} "  title="Finance & Administration">
+                                 Finance & Administration
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-sm-6 col-lg-3 col-12 my-4">
+                    <ul class="footer-link">
+                        <h5 class="mb-3" title=" Information">INFORMATION</h5>
+
+                        <li>
+                            <a href="{% url 'GenInfo' %}" title="General Information" >
+                                General Information
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/offshore_EPD_Gujarat/"    title="Offshore Wind Energy Portal">
+                                Offshore Wind Energy Portal
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/static/pdf/NIWE-AAP_Internship_Programme.pdf" >Internship Programme for UG/PG students</a >
+                        </li>
+                        <li>
+                            <a href="{% url 'apprenticeship_training' %}"  title="Apprenticeship Training" >Apprenticeship Training</a>
+                        </li>
+                        <li>
+                            <a href="/library/" title="Library">Library</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'career' %} " title="Careers"  >Careers</a>
+                        </li>
+                        <li>
+                            <a  class="notranslate"  href="{% url 'tender_data' %}"  title="Tenders"  >Tenders</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'windSolar_DateSale' %}" title="Wind/Solar Data Sale" >Wind/Solar Data Sale</a>
+                        </li>
+                        <li>
+                            <a href="/static/pdf/calibration_under_commercial_mode.pdf">Calibration of Solar Instruments</a>
+                        </li>
+                        <li>
+                            <a href="{% static '/pdf/NIWE_website_securtiy_audit_certificate_2025.pdf' %}" target="_blank">
+                                NIWE Website Security Audit
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Events -->
+                <div class="col-sm-6 col-lg-3 col-12 my-4">
+                    <ul class="footer-link">
+                        <h5 class="h6 mb-2" title="Events">SOCIAL MEDIA</h5>
+                        <div class="socl-card">
+                            <div class="card-header facebook-header">
+                                <i class="fa fa-facebook socl-icon" aria-hidden="true"></i>
+                                NIWE Chennai on Facebook
+                            </div>
+                            <div class="socl-card-content">
+                                <!-- Facebook Page Plugin -->
+                                <div class="fb-page" data-href="https://www.facebook.com/niwechennai" data-tabs="timeline" data-width="" data-height="600" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false"   data-show-facepile="true"  style="width: 100%">
+                                    <blockquote cite="https://www.facebook.com/niwechennai" class="fb-xfbml-parse-ignore">
+                                        <a href="https://www.facebook.com/niwechennai">
+                                            NIWE Chennai
+                                        </a>
+                                    </blockquote>
+                                </div>
+                                <div class="fallback-message" id="facebook-fallback">
+                                    <i class="fab fa-facebook"  aria-hidden="true"></i>
+                                    <p>Facebook feed failed to load.</p>
+                                    <p>
+                                        Visit our
+                                        <a href="https://www.facebook.com/niwechennai"  target="_blank" >Facebook page</a>
+                                        directly.
+                                    </p>
+                                </div>
+                            </div>
+                            <div id="fb-root"></div>
+                        </div>
+                        
+                        <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v17.0"></script>
+                    </ul>
+                </div>
+                <!-- Start slider for web-links-->
+
+                <section class="main-content container">
+                    <div class="owl-carousel owl-theme">
+                        <div class="item card">
+                            <a
+                                href="https://amritmahotsav.nic.in/"
+                                target="_blank"
+                                class="h-100 external-link"
+                                rel="noopener noreferrer"
+                                aria-label="Visit Azadi Ka Amrit Mahotsav official website"
+                                title="Azadi ka Amrit Mahotsav"
+                            >
+                                <img
+                                    src="{% static '/images/icon/azadi.png' %}"
+                                    alt="Azadi ka Amrit Mahotsav"
+                                />
+                            </a>
+                        </div>
+
+                        <div class="item card">
+                            <a
+                                href="https://mnre.gov.in/"
+                                target="_blank"
+                                class="h-100 external-link"
+                                rel="noopener noreferrer"
+                                aria-label="Visit Ministry of New and Renewable Enery official website"
+                            >
+                                <img
+                                    src="{% static '/images/icon/MNRE.JPG' %}"
+                                    title="Ministry of New and Renewable Enery"
+                                    alt="Visit Ministry of New and Renewable Enery official website"
+                                />
+                            </a>
+                        </div>
+
+                        <div class="item card">
+                            <a
+                                href="https://www.ireda.in/"
+                                target="_blank"
+                                class="h-100 external-link"
+                                rel="noopener noreferrer"
+                                aria-label="Visit Indian Renewable Energy Development Agency Website"
+                                title="Indian Renewable Energy Development Agency "
+                            >
+                                <img
+                                    src="/static/images/icon/ireda.png"
+                                    alt="Indian Renewable Energy Development Agency"
+                                />
+                            </a>
+                        </div>
+
+                        <div class="item card">
+                            <a
+                                href="http://windpro.org/"
+                                target="_blank"
+                                class="h-100 external-link"
+                                rel="noopener noreferrer"
+                                aria-label="Visit Indian Wind Power Association Website"
+                                title="Indian Wind Power Association"
+                            >
+                                <img
+                                    src="/static/images/icon/Iwpa.jpeg"
+                                    alt="Indian Wind Power Association"
+                                />
+                            </a>
+                        </div>
+
+                        <div class="item card">
+                            <a
+                                href="http://indianwindpower.com/index.php"
+                                target="_blank"
+                                class="h-100 external-link"
+                                rel="noopener noreferrer"
+                                aria-label="Visit Indian Wind Turbine Manufacturers Association Website"
+                                title="Indian Wind Turbine Manufacturers Association"
+                            >
+                                <img
+                                    src="/static/images/icon/iwtma.jpeg"
+                                    alt="Indian Wind Turbine Manufacturers Association"
+                                />
+                            </a>
+                        </div>
+
+                        <div class="item card">
+                            <a
+                                href="https://nise.res.in/"
+                                target="_blank"
+                                class="h-100 external-link"
+                                rel="noopener noreferrer"
+                                aria-label="Visit National Institute of Solar Energy Website"
+                                title="National Institute of Solar Energy"
+                            >
+                                <img
+                                    src="/static/images/icon/nise.jpeg"
+                                    alt="National Institute of Solar Energy"
+                                />
+                            </a>
+                        </div>
+
+                        <div class="item card">
+                            <a
+                                href="http://seci.co.in/"
+                                target="_blank"
+                                class="h-100 external-link"
+                                rel="noopener noreferrer"
+                                aria-label="Visit Solar Energy Corporation of India Ltd Website"
+                                title="Solar Energy Corporation of India Ltd"
+                            >
+                                <img
+                                    src="/static/images/icon/seci-logo.png"
+                                    alt="Solar Energy Corporation of India Ltd."
+                                />
+                            </a>
+                        </div>
+
+                        <div class="item card">
+                            <a
+                                href="http://nibe.res.in/"
+                                target="_blank"
+                                class="h-100 external-link"
+                                rel="noopener noreferrer"
+                                aria-label="Visit Sardar swaran singh national institute of bio-energy Website"
+                                title="Sardar swaran singh national institute of bio-energy"
+                            >
+                                <img
+                                    src="/static/images/icon/swarn-singh01.jpg"
+                                    alt="sardar swaran singh national institute of bio-energy"
+                                />
+                            </a>
+                        </div>
+                        <div class="item card">
+                            <a
+                                href="https://www.digitalindia.gov.in/"
+                                target="_blank"
+                                class="h-100 external-link"
+                                rel="noopener noreferrer"
+                                aria-label="Visit Digital India Website"
+                                title="Digital India"
+                            >
+                                <img
+                                    src="/static/images/icon/digital_india.JPG"
+                                    alt="Digital India"
+                                />
+                            </a>
+                        </div>
+                        <div class="item card">
+                            <a
+                                href="https://www.mygov.in/"
+                                target="_blank"
+                                class="h-100 external-link"
+                                rel="noopener noreferrer"
+                                aria-label="Visit MyGov Website"
+                                title="MyGov"
+                            >
+                                <img
+                                    src="/static/images/icon/MyGov.JPG"
+                                    alt="MyGov"
+                                />
+                            </a>
+                        </div>
+                    </div>
+                </section>
+                <!-- End slider for web-links-->
+            </div>
+        </div>
+    </div>
+</footer>
+
+<div class="footer-middel">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-12 footer-links">
+                <p>
+                    <a href="{% url 'web_ploicy' %}" title="Website Policies">
+                        Website Policies
+                    </a>
+                    |
+                    <a href="/disclaimer/" title="Disclaimer"> Disclaimer </a> |
+                    <a href="/glossary/" title="Glossary">Glossary </a> |
+                    <a href="/help_page/" title="Help">Help </a> |
+                    <a href="{% url 'WebInformationManager' %} "
+                        >Web Information Manager
+                    </a>
+                    <span>|</span>
+                    <a href="{% url 'sitemap' %} " title="Sitemap">Sitemap </a>
+                    |
+                    <a href="/static/pdf/routemap-niwe.pdf"> Route Map</a>
+                    |
+                    <a
+                        class="notranslate"
+                        href="{% url 'tender_data' %}"
+                        title="Tenders"
+                    >
+                        Tenders</a
+                    >
+                    |
+                    <a href="{% url 'career' %}" title="Careers"> Careers</a> |
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- footer second -->
+
+<div class="footer-bottom">
+    <div class="container text-center">
+        <div class="footer-sec">
+            <p class="copyright">
+                © All Rights Reserved | Content Owned by National Institute of
+                Wind Energy
+            </p>
+            <p class="last-update">
+                Last update on : {{update_info.last_update|date:"M d,Y"}}
+            </p>
+            <p class="visitors">Total Visitors: {{visitor_count}}</p>
+        </div>
+    </div>
+</div>
+
+<!-- bootstrap js link -->
+{% comment %}
+<!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
+<script src="{% static '/js/jquery_min/jquery.js' %}"></script>
+
+{% endcomment %}
+
+<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script> -->
+<script src="{% static '/js/bootstrap/bootstrap_bundle.js' %}"></script>
+
+<!-- <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"></script> -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+<script src="{% static '/js/jquery_slim_min/jquery.js' %}"></script>
+<script src="{% static '/js/popper-min/popper.js' %}"></script>
+
+<!-- custom js -->
+<script src="{% static '/js/main.js' %}"></script>
+
+{% comment %}
+
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+<script src="{% static '/js/ajax-jquery/jquery.js' %}"></script>
+
+{% endcomment %}
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script> -->
+<script src="{% static '/js/owl-carousel/owl-carousel.js' %}"></script>
+
+<script src="{% static '/js/simple-lightbox.js' %}"></script>
+<script src="{% static '/js/photo-gallery.js' %}"></script>
+<script src="{% static '/js/footer.js' %}"></script>
+

@@ -1,0 +1,139 @@
+{% extends 'base.html' %}
+
+{% block meta %}
+  <meta name="description" content="Estimation of installable wind power potential at 80-meter hub height across India, conducted by the National Institute of Wind Energy (NIWE), Chennai, providing detailed analysis of wind resource availability and renewable energy capacity mapping under MNRE.">
+  <meta name="keywords" content="installable wind power potential, 80m wind data India, NIWE wind assessment, wind resource mapping, MNRE India, wind energy potential, renewable energy India, NIWE Chennai, wind power capacity estimation, wind atlas India">
+{% endblock %}
+
+{% block title %} Estimation of Installable Wind Power Potential at 80 m level in India | National Institute of Wind Energy (NIWE), Ministry of New and Renewable Energy, Government of India {% endblock %}
+
+{% block content %}{% load static %}
+
+<section class="head-div">
+  <div class="overlay d-flex align-items-center">
+    <div class="container">
+      <h1 class="text-white">
+        Estimation of Installable Wind Power Potential at 80 m level in India
+      </h1>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb bg-transparent p-0">
+      <li class="breadcrumb-item"><a href="/">Home</a></li>
+      <li class="breadcrumb-item" aria-current="page">
+        <a href="{% url 'departments' %}">Department</a>
+      </li>
+      <li class="breadcrumb-item active">
+        <a href="{% url 'wra' %}">Wind Resource Assessment (WRA)</a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">
+        Estimation of Installable Wind Power Potential at 80 m level in India
+      </li>
+    </ol>
+  </nav>
+</div>
+
+<section class="rnd-div" id="divContent">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <p style="text-align: justify;">
+          &nbsp &nbsp &nbsp &nbsp In order to estimate the installable potential
+          of the country, the KAMM generated meso scale wind power density map
+          of 50 m level was integrated with the wind power density map generated
+          with actual measurements (wherever data is available) and re-plotted
+          the final wind power density maps by using GIS tool. Weightage is
+          given only for the topographical features of the area. Later the total
+          area of each wind power density range is calculated. Due to various
+          reasons (habitat, forest, water bodies etc.), the entire land area
+          covered by the isopleths cannot be expected to be available for
+          installing wind farms. As land availability assessment was not a part
+          of the project, the real land availability for wind farm development
+          is not assessed for estimating the installable potential. On a
+          conservative consideration, a fraction of uniform 2% land availability
+          for all states except for Himalayan states, Northeastern states and
+          Andaman Nicobar Islands has been assumed for energy estimation. In
+          Himalayan states, Northeastern states and Andaman & Nicobar Islands,
+          it is assumed as 0.5%. However the potential would change as per the
+          real land availability in the windy area of each state. The
+          installable wind power potential (name plate power) is calculated for
+          each wind power density range by assuming 9 MW could be installed per
+          square kilometer area . Finally the potential in the country at 50 m
+          level with clearly stated assumptions is estimated as 49 GW (Refer
+          Indian Wind Atlas published by NIWE for more information).
+        </p>
+        <p>
+          &nbsp &nbsp &nbsp &nbsp Similar exercise without any validation has
+          been carried out for 80 m level with the KAMM generated meso scale map
+          and the results are calculated and given in an attached table. The
+          estimated installable potential at 80 m level is found to be 102788 MW
+          (See the Table.1.). Wind power density map at 80 m level is given in
+          figure 1.
+        </p>
+        <div class="col-md-8 offset-md-2">
+          <div class="table-responsive">
+            <table class="table table-bordered">
+                <thead>
+                  <tr class="text-center">
+                    <th rowspan="2">S.NO</th>
+                    <th rowspan="2">State/UTs</th>
+                    <th colspan="2">Estimated potential (MW)M</th>
+                  </tr>
+    
+                  <tr>
+                    <th>@ 50 m ($)</th>
+                    <th>@ 80 m (* #$)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for item in power %}
+                  <tr>
+                    <td>{{ item.serial}}</td>
+                    <td>{{ item.state_ut}}</td>
+                    <td>{{ item.potential_50m}}</td>
+                    <td>{{ item.potential_80m}}</td>
+                  </tr>
+                  {% endfor %}
+                  <tr>
+                    <td colspan="2">Total</td>
+                    <td>49130</td>
+                    <td>102788</td>
+                  </tr>
+                </tbody>
+            </table>
+          </div>
+        </div>
+        <p class="fs-6 fst-italic">
+          Table 1. Estimation of installable wind power potential at 80 m level
+        </p>
+        <p>
+          * Wind potential has yet to be validated with actual measurements.
+        </p>
+        <p>
+          # Estimation is based on meso scale modelling (Indian Wind Atlas).
+        </p>
+        <p>
+          $ As actual land assessment is not done on a conservative
+          consideration 2 % land availability for all states except Himalayan &
+          North eastern states, Andaman Nicobar Islands and Poor windy states
+          has been assumed. In other area 0.5% land availability has been
+          assumed.
+        </p>
+        <div class="col-md-6 offset-md-2">
+          <img
+            class="img-fluid"
+            src="{%  static '/images/sub-gallery/Wind_power_density_map.jpg' %}"
+            alt="Wind power density map"
+          />
+          <p class="fs-6">Figure 1. Wind power density map at 80 m level</p>
+        </div>
+      </div>
+      <div class="col-md-4">{% include 'depart-side-tabs.html' %}</div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

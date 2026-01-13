@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+
+{% block meta %}
+  <meta name="description" content="Annual Accounts page of the National Institute of Wind Energy (NIWE), Chennai, providing financial statements, budget reports, and accounting details for wind energy and renewable energy initiatives under MNRE.">
+  <meta name="keywords" content="NIWE annual accounts, NIWE Chennai, MNRE India, financial statements, budget reports, accounting details, wind energy finance, renewable energy funding, MNRE initiatives, NIWE financial reports">
+{% endblock %}
+
+{% block title %} Annual Accounts | National Institute of Wind Energy (NIWE), Ministry of New and Renewable Energy, Government of India {% endblock %}
+{% block content %} 
+
+<section class="head-div">
+    <div class="overlay d-flex align-items-center">
+        <div class="container">
+            <h1 class="text-white">Annual Accounts</h1>
+        </div>
+    </div>
+</section>
+
+<div class="container">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb bg-transparent p-0">
+            <li class="breadcrumb-item"><a href="/">Home </a></li>
+            <li class="breadcrumb-item"><a href="{% url 'rti' %}">Right To Information</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Annual Accounts</li>
+        </ol>
+    </nav>
+</div>
+
+<section class="main-div py-5 header">
+    <div class="container py-1">
+        <div class="row">
+
+            <div class="col-md-9 mt-4 order-lg-1 order-2">
+
+                <div class="tab-content" id="v-pills-tabContent"><!--left side tab content-area -->
+
+                    <div class="tab-pane fade rounded bg-white show active" id="wind-energy" role="tabpanel"
+                        aria-labelledby="wind-energy">
+
+                        <div class="row col-12 mx-auto px-0">
+                            {% for reports in account %}
+                            <div class="col-lg-3 col-md-2 col-sm-6 col-12 mb-3"> <!-- Adjusted column size -->
+                                <a href="{{ reports.pdf_link.url }}" target="_blank">
+                                    <div class="card sm-card-design text-center px-3 py-4">
+                                        <h6>{{ reports.year }}</h6>
+                                        {% if reports.documents_info %}
+                                               
+                                            <i class="fas {{ reports.documents_info.icon }}" aria-hidden="true">                                                 
+                                            {{ reports.documents_info.type }} ,
+                                            {{ reports.documents_info.size }}</i> 
+                                        {% endif %}
+                                    </div>
+                                </a>
+                            </div>
+                            {% endfor %}
+                        </div><!--div close for row-->
+                    </div><!--div close for tab-pane-->
+
+                </div><!--div close for tab content-->
+            </div><!--div close for col-md-9-->
+
+        </div>
+    </div>
+</section>
+
+<!-- footer -->
+
+{% endblock %}

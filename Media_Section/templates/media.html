@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+{% block meta %}
+  <meta name="description" content="Media section of the National Institute of Wind Energy (NIWE), Chennai, featuring news coverage, press releases, interviews, and media resources related to wind energy and renewable energy initiatives under MNRE.">
+  <meta name="keywords" content="NIWE media, press releases, NIWE Chennai, MNRE India, wind energy news, renewable energy media coverage, interviews, wind sector announcements, NIWE news resources, wind energy updates">
+{% endblock %}
+
+{% block title %} Media  | National Institute of Wind Energy (NIWE), Ministry of New and Renewable Energy, Government of India {% endblock %}
+
+{% block content %} {% load static %}
+
+<section class="head-div">
+  <div class="overlay d-flex align-items-center">
+    <div class="container">
+      <h1 class="text-white">Media</h1>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb bg-transparent p-0">
+      <li class="breadcrumb-item"><a href="/">Home</a></li>
+      <li class="breadcrumb-item" aria-current="page">Media</li>
+    </ol>
+  </nav>
+</div>
+
+<section class="main-div" id="divContent">
+  <div class="container">
+    <!--SESI awards row-->
+    <div class="row col-12 mx-auto">
+      <div class="col-md-12">
+        <div class="grd-box">
+          <div class="head1">
+            <h4>Media</h4>
+          </div>
+          <div class="mt-4">
+            <ol type="I" class="event-list">
+              <li class="li-items">
+                <a href="{% url 'awards' %}" title="Awards"> Awards </a>
+              </li>
+              <li class="li-items">
+                <a href="{{charter.document_File.url}}" title="Citizen Charter"> Citizen Charter </a>
+              </li>
+               <li class="li-items">
+                <a href="{% url 'gallery' %}" title="Gallery"> Gallery</a>
+              </li>
+              <li class="li-items">
+                <a href="{% url 'events' %}" title="Events"> Events </a>
+              </li>
+             
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--div close for row-->
+  </div>
+  <!--div close for the main container-->
+</section>
+
+<!-- footer -->
+
+{% endblock %}

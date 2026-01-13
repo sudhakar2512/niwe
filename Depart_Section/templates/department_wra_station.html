@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+
+{% block meta %}
+  <meta name="description" content="Consolidated list of Phase-I, Phase-II, MEDA SRRA stations, and AMS established by the National Institute of Wind Energy (NIWE), Chennai, for comprehensive wind resource assessment and monitoring across India under the MNRE.">
+  <meta name="keywords" content="SRRA stations list, NIWE wind resource assessment, Phase I and II SRRA, MEDA SRRA, AMS stations, wind data monitoring, MNRE India, NIWE Chennai, wind potential sites, renewable energy assessment">
+{% endblock %}
+
+{% block title %} Consolidated list of Phase-I, II, MEDA SRRA stations & AMS | National Institute of Wind Energy (NIWE), Ministry of New and Renewable Energy, Government of India {% endblock %}
+
+{% block content %}
+
+<section class="head-div">
+  <div class="overlay d-flex align-items-center">
+    <div class="container">
+      <h1 class="text-white">
+        Consolidated list of Phase-I, II, MEDA SRRA stations & AMS 
+        {% for item in wra_station %} {{ item.head}} {% endfor %}
+      </h1>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb bg-transparent p-0">
+      <li class="breadcrumb-item"><a href="/">Home</a></li>
+      <li class="breadcrumb-item" aria-current="page">
+        <a href="{% url 'departments' %}">Department</a>
+      </li>
+      <li class="breadcrumb-item active">
+        <a href="{% url 'wra' %}">Wind Resource Assessment (WRA)</a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">
+        Consolidated list of Phase-I, II, MEDA SRRA stations & AMS 
+        {% for item in wra_station %} {{ item.head}} {% endfor %}
+      </li>
+    </ol>
+  </nav>
+</div>
+
+<section class="rnd-div" id="divContent">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <div class="table-responsive">
+        <table class="table table-bordered w-100">
+          <thead>
+            <tr>
+              <th rowspan="2">SI.NO</th>
+              <th rowspan="2">State/UT</th>
+              <th colspan="3">SRRA Stations</th>
+              <th colspan="2">Consultancy SRRA stations</th>
+              <th rowspan="2">Total</th>
+            </tr>
+            <tr>
+              <th>Phase-I</th>
+              <th>Phase-II</th>
+              <th>AMS</th>
+              <th>MEDA</th>
+              <th>ANERT</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for item in wra_station %}
+            <tr>
+              <td>{{ item.serial }}</td>
+              <td>{{ item.state_ut }}</td>
+              <td>{{ item.phase1 }}</td>
+              <td>{{ item.phase2 }}</td>
+              <td>{{ item.ams }}</td>
+              <td>{{ item.meda }}</td>
+              <td>{{ item.anert }}</td>
+              <td>{{ item.total }}</td>
+            </tr>
+            {% endfor %}
+
+            <tr>
+              <td colspan="2">Total</td>
+              <td>51</td>
+              <td>60</td>
+              <td>4</td>
+              <td>8</td>
+              <td>2</td>
+              <td>125</td>
+            </tr>
+          </tbody>
+        </table>
+        </div>
+      </div>
+
+      <div class="col-md-4">{% include 'depart-side-tabs.html' %}</div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

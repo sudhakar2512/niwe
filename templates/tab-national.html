@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% block meta %}
+  <meta name="description" content="National Training page of the National Institute of Wind Energy (NIWE), Chennai, providing information on in-country training programs, workshops, and capacity-building initiatives in wind energy and renewable energy under MNRE.">
+  <meta name="keywords" content="NIWE national training, NIWE Chennai, MNRE India, wind energy training programs, renewable energy workshops, capacity-building initiatives, wind sector education, in-country training, MNRE initiatives, NIWE programs">
+{% endblock %}
+
+{% block title %} National Training | National Institute of Wind Energy (NIWE), Ministry of New and Renewable Energy, Government of India {% endblock %}
+
+{% block content %}
+
+<section class="head-div">
+  <div class="overlay d-flex align-items-center">
+    <div class="container">
+      <h1 class="text-white">National Training</h1>
+    </div>
+  </div>
+</section>
+<div class="container">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb bg-transparent p-0">
+      <li class="breadcrumb-item"><a href="/">Home</a></li>
+      <li class="breadcrumb-item">
+        <a href="{% url 'departments' %}">Department</a>
+      </li>
+      <li class="breadcrumb-item">
+        <a href="{% url 'sdt' %}">Skill Development & Training</a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">
+        National Training
+      </li>
+    </ol>
+  </nav>
+</div>
+     
+
+<section class="rnd-div" id="divContent">
+  <div class="container">
+    <div class="row col-12 mx-auto">
+      <div class="col-md-8">
+        {% for item in national %}
+        <div class="training-list-item">
+          <p class="entry-text">            
+
+            <a href="{% url 'national_training_data' item.slug %}" target="_blank" aria-label="{{ item.title }}" class="entry-link" title="{{ item.title }}">
+              {{ item.serial}} . {{ item.title }}
+              {% if item.New_Label %}
+                  <span class="label_blink notranslate">NEW</span>
+              {% endif %}
+            </a>
+          </p>
+        </div>
+        {% endfor %}
+      </div>
+
+      <div class="col-md-4">{% include "side-tab.html" %}</div>
+    </div>
+  </div>
+</section>
+{% endblock %}

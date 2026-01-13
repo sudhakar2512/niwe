@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+{% block meta %}
+  <meta name="description" content="Head of Department (HoD) - Executive Director / Director General page of the National Institute of Wind Energy (NIWE), Chennai, providing profiles, roles, and responsibilities of the senior leadership overseeing wind energy and renewable energy initiatives under MNRE.">
+  <meta name="keywords" content="NIWE Executive Director, Director General, NIWE Chennai, MNRE India, Head of Department, wind energy leadership, renewable energy management, MNRE initiatives, senior officials, NIWE HoD profiles">
+{% endblock %}
+
+{% block title %}  Head of Department(HoD) - Executive Director / Director General | National Institute of Wind Energy (NIWE), Ministry of New and Renewable Energy, Government of India {% endblock %}
+
+{% block content %} 
+
+<section class="head-div">
+  <div class="overlay d-flex align-items-center">
+    <div class="container">
+      <h1 class="text-white">Right To Information</h1>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb bg-transparent p-0">
+      <li class="breadcrumb-item"><a href="/">Home</a></li>
+      <li class="breadcrumb-item"><a href="{% url 'rti' %}">Right To Information</a></li>    
+
+      <li class="breadcrumb-item active" aria-current="page">
+        Head of Department(HoD) - Executive Director / Director General 
+      </li>
+    </ol>
+  </nav>
+</div>
+
+<section class="dgm-div" id="divContent">
+  <div class="container col-12">
+    <div class="col-md-8">
+      <table class="table table-bordered">
+        <thead class="text-center">
+          <tr>
+            <th>Sl.No.</th>
+            <th>Name</th>
+            <th>Designation</th>
+            <th>from</th>
+            <th>To</th>
+            <th>Remarks, If any</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          {% for data in HOD_details %}
+          <tr>
+            <td>{{ data.s_no }}</td>
+            <td>{{ data.Name }}</td>
+            <td>{{ data.Designation }}</td>
+            <td>{{ data.From_Date }} </td>
+            <td>{{ data.To_Date }}</td>
+            <td>{{ data.Remarks }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+
+{% block meta %}
+  <meta name="description" content="Staff profile of Offshore Wind Development page of the National Institute of Wind Energy (NIWE), Chennai, providing details of team members, their roles, and responsibilities in offshore wind energy research, projects, and development under MNRE.">
+  <meta name="keywords" content="NIWE staff profile, Offshore Wind Development team, NIWE Chennai, MNRE India, offshore wind energy staff, renewable energy projects, MNRE initiatives, NIWE team members, wind sector professionals, offshore wind research">
+{% endblock %}
+
+{% block title %} Staff profile of Offshore Wind Development | National Institute of Wind Energy (NIWE), Ministry of New and Renewable Energy, Government of India {% endblock %}
+
+{% block content %}
+
+<section class="head-div">
+  <div class="overlay d-flex align-items-center">
+    <div class="container">
+      <h1 class="text-white">Contact Us</h1>
+    </div>
+  </div>
+</section>
+ 
+<div class="container py-2">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb bg-transparent p-0">
+      <li class="breadcrumb-item"><a href="/">Home</a></li>
+      <li class="breadcrumb-item" aria-current="page">
+        <a href="{% url 'contact' %}">Contact Us</a>
+      </li>
+      <li class="breadcrumb-item active">
+        <a href="{% url 'staff_owd' %}"> Offshore Wind Development (OWD)</a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">
+        {{ staff.name }}
+      </li>
+    </ol>
+  </nav>
+</div>
+
+<section class="about-div pt-4" id="divContent"> 
+  <div class="container">
+    <div class="row">
+      {% for image in photos %}
+      <div class="col-md-4 text-center pt-4"  style="height:60%; width:30%; max-width:100%;">
+        <img src="{{ image.photo.url }}" alt="owd profile image" />
+        <h4 class="pt-2">{{ staff.name }}</h4>
+      </div>
+      <div class="col-md-8">
+        <div class="table-responsive">
+        <table class="table table-borderless w-100">
+          <tbody>
+            <tr>
+              <td ><b>Designation :</b></td>
+              <td colspan="2">{{image.Designation}}</td>
+            </tr> 
+
+            <tr>
+              <th scope="row">Qualification :</th>
+              <td>{{image.Qualification}}</td>
+            </tr>
+            <tr>
+              <th scope="row">Specialization :</th>
+              <td>{{image.Specialization}}</td>
+            </tr>
+            <tr>
+              <th scope="row">Areas of Interest :</th>
+              <td>{{image.Areas_Of_Interest}}</td>
+            </tr>
+            <tr>
+              <th scope="row">Year of Joining :</th>
+              <td>{{image.Year_of_Joining}}</td>
+            </tr>
+            <tr>
+              <th scope="row">Contact No :</th>
+              <td>{{image.contact}}</td>
+            </tr>
+            <tr>
+              <th scope="row">Email :</th>
+              <td>{{image.email}}</td>
+            </tr>
+          </tbody>
+        </table>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+<!-- footer -->
+
+{% endblock %}

@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% block meta %}
+  <meta name="description" content="Webinar page of the National Institute of Wind Energy (NIWE), Chennai, providing information on upcoming and recorded online seminars, workshops, and training sessions in wind energy and renewable energy under MNRE.">
+  <meta name="keywords" content="NIWE webinars, NIWE Chennai, MNRE India, online seminars, wind energy workshops, renewable energy webinars, virtual training sessions, wind sector education, MNRE initiatives, NIWE online events">
+{% endblock %}
+
+{% block title %} Webinar | National Institute of Wind Energy (NIWE), Ministry of New and Renewable Energy, Government of India {% endblock %}
+
+{% block content %} 
+<section class="head-div">
+  <div class="overlay d-flex align-items-center">
+    <div class="container">
+      <h1 class="text-white">Webinar</h1>
+    </div>
+  </div>
+</section>
+<div class="container">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb bg-transparent p-0">
+      <li class="breadcrumb-item"><a href="/">Home</a></li>
+      <li class="breadcrumb-item">
+        <a href="{% url 'departments' %}">Department</a>
+      </li>
+      <li class="breadcrumb-item">
+        <a href="{% url 'sdt' %}">Skill Development & Training</a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">Webinar</li>
+    </ol>
+  </nav>
+</div>
+
+<section class="rnd-div" id="divContent">
+  <div class="container">
+    <div class="row col-12 mx-auto">
+      <div class="col-md-8" >
+        {% for item in webinar %}
+
+        <h4 class="font-italic mb-1"> NIWE Webinar Schedule</h4>
+        <div class="card mx-auto">
+          <div class="col-lg-2 col-md-2 col-sm-6 offset-md-4 mb-3">
+            <a href="{{ item.docs.url }}" target="_blank" aria-label="Schedule Image">
+              <div class="sm-card-design text-center">
+                <img
+                  src=" {{ item.image.url }}  "
+                  alt="Webinar Schedule images"
+                  class="img-fluid"
+                />
+              </div>
+            </a>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+      <div class="col-md-4">{% include "side-tab.html" %}</div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

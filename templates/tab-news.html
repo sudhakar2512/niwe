@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+
+{% block meta %}
+  <meta name="description" content="Newsletter page of the National Institute of Wind Energy (NIWE), Chennai, featuring updates, news, articles, and developments in wind energy and renewable energy under MNRE.">
+  <meta name="keywords" content="NIWE newsletter, NIWE Chennai, MNRE India, wind energy updates, renewable energy news, articles, wind sector developments, MNRE initiatives, NIWE updates, wind energy information">
+{% endblock %}
+
+{% block title %} Newsletter | National Institute of Wind Energy (NIWE), Ministry of New and Renewable Energy, Government of India {% endblock %}
+
+{% block content %} 
+
+<section class="head-div">
+  <div class="overlay d-flex align-items-center">
+    <div class="container">
+      <h1 class="text-white">Newsletter</h1>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb bg-transparent p-0">
+      <li class="breadcrumb-item"><a href="/">Home</a></li>
+      <li class="breadcrumb-item" aria-current="page">
+        <a href="{% url 'document' %}">Documents</a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">Newsletter</li>
+    </ol>
+  </nav>
+</div>  
+
+<section class="rnd-div" id="divContent">
+  <div class="container ">
+    <div class="row col-12 mx-auto">
+      <div class="col-md-8  mt-4 order-lg-1 order-2">
+        <p>
+          NIWE brought out its quarterly newsletter "PAVAN" to create awareness
+          and disseminate information on the activities and role of the
+          Institute besides local and global developments in the wind energy
+          sector. The newsletter highlights the activities of NIWE and feature
+          focused articles, success stories, interviews with experts in wind
+          energy sector, Government's new rules/policies, and the latest news/
+          views/ trends.
+        </p>
+        <p>
+          NIWE's Quarterly Newsletter - PAVAN is published regularly in Hindi
+          and English; and it is also available on the website of NIWE.
+        </p>
+        <div class="tab-content" id="v-pills-tabContent">
+          <!--left side tab content-area -->
+
+          <div
+            class="tab-pane fade rounded bg-white show active"
+            id="wind-energy"
+            role="tabpanel"
+            aria-labelledby="wind-energy"
+          >
+            <div class="row col-12 mx-auto px-0">
+              {% for item in news %}
+              <div class="col-lg-3 col-md-2 col-sm-6 col-12 mb-3">
+                <!-- <a href="{{ item.docs.url }}" target="_blank"> -->
+                  <a href="{% url 'news_letter_reports_details' item.issue %}" aria-label="Newsletter for {{ item.year}}" title="Newsletter for {{ item.year}}">
+                    <div class="card sm-card-design text-center px-8 py-4 mt-4">
+                      <h5 class="card-title">{{ item.issue|safe }}</h5>
+                      <h6 class="card-subtitle mb-2 text-muted">{{ item.year|safe }}</h6>
+                    </div>
+                  </a>
+              </div>
+              {% endfor %}
+            </div>
+
+            <!--div close for row-->
+          </div>
+          <!--div close for tab-pane-->
+        </div>
+        <!--div close for tab content-->
+      </div>
+      <!--div close for col-md-9-->
+        <div class="col-md-4 mt-4 order-lg-2 order-1">
+        {% include 'side-tab.html' %}
+      </div>
+
+      <!--div close for col-md-3-->
+    </div>
+  </div>
+</section>
+
+{% endblock %}

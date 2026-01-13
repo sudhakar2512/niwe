@@ -1,0 +1,302 @@
+{% extends 'base.html' %}
+
+{% block meta %}
+  <meta name="description" content="View the complete list of certified wind power system models approved by the National Institute of Wind Energy (NIWE), Chennai. This page provides details on certified wind turbines, sub-systems, and components that meet national and international standards under the Ministry of New and Renewable Energy.">
+  <meta name="keywords" content="NIWE certified models, wind turbine certification, certified wind power systems, MNRE, NIWE Chennai, wind energy standards, wind power system list, renewable energy compliance, wind turbine types, NIWE approvals">
+{% endblock %}
+
+{% block title %} List of Certified Models | National Institute of Wind Energy (NIWE), Ministry of New and Renewable Energy, Government of India {% endblock %}
+
+{% block content %}
+<section class="head-div">
+  <div class="overlay d-flex align-items-center">
+    <div class="container">
+      <h1 class="text-white">List of Certified Model</h1>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb bg-transparent p-0">
+      <li class="breadcrumb-item"><a href="/">Home </a></li>
+      <li class="breadcrumb-item" aria-current="page">
+        <a href="{% url 'departments' %}">Department</a>
+      </li>
+      <li class="breadcrumb-item" aria-current="page">
+        <a href="{% url 'certificate' %}">Certification</a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">
+        Certification Services
+      </li>
+    </ol>
+  </nav>
+</div>
+
+<section class="rnd-div" id="divContent">
+  <div class="container mt-5">
+    <div class="row col-12 mx-auto">
+      <div class="col-md-4">{% include 'certification_sidenav.html' %}</div>
+      <div class="col-md-8 ">
+        <!-- code -->
+        <div class="dgm-text">
+          <div class="table">
+            <table class="table table-bordered">
+              <thead class="thead-light text-center">
+                <tr>
+                  <th >S.no</th>
+                  <th >Client Name and Address</th>
+                  <th >Wind Turbine Model & Capacity</th>
+                  <th >Certification Scheme</th>
+                  <th >Certificate Number</th>
+                  <th >Validity up to</th>
+                  <th >Present Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="text-center">1</td>
+                  <td
+                    data-toggle="tooltip"
+                    title="M/s. Suzlon Energy Limited, Tree Lounge, Level 0 One Earth, Opp. Magarpatta City, Hadapsar, Pune-411028"
+                  >
+                    M/s. Suzlon Energy Limited,<br />
+                    Tree Lounge, Level 0 One Earth,<br />
+                    Opp. Magarpatta City,<br />
+                    Hadapsar, Pune-411028
+                  </td>
+                  <td>S-60 / 1000 kW</td>
+                  <td>TAPS-2000</td>
+                  <td>PTC-III-003</td>
+                  <td>Issued - Valid upto 30.06.2003</td>
+                  <td>Expired</td>
+                </tr>
+                <tr>
+                  <td class="text-center">2</td>
+                  <td
+                    data-toggle="tooltip"
+                    title="M/s. Enercon (India) Limited, 'Enercon Tower', A-9, Veera Industrial Estate, Veera Desai Road, Andheri (West), Mumbai - 400 053"
+                  >
+                    M/s. Enercon (India) Limited,<br />
+                    "Enercon Tower", A-9,<br />
+                    Veera Industrial Estate,<br />
+                    Veera Desai Road,<br />
+                    Andheri (West),<br />
+                    Mumbai - 400 053
+                  </td>
+                  <td>E-30 - 230 kW</td>
+                  <td>TAPS-2000</td>
+                  <td>PTC-I-005-R2</td>
+                  <td>Renewed - Valid upto 15.04.2005</td>
+                  <td><span>Expired</span></td>
+                </tr>
+                <tr>
+                  <td class="text-center">3</td>
+                  <td
+                    data-toggle="tooltip"
+                    title="M/s. Suzlon Energy Limited, Tree Lounge, Level 0 One Earth, Opp. Magarpatta City, Hadapsar, Pune-411028"
+                  >
+                    M/s. Suzlon Energy Limited,<br />
+                    Tree Lounge, Level 0 One Earth,<br />
+                    Opp. Magarpatta City,<br />
+                    Hadapsar, Pune-411028
+                  </td>
+                  <td>N-3335/350 kW and N-3330/300 kW</td>
+                  <td>TAPS-2000</td>
+                  <td>PTC-II-002-R2</td>
+                  <td>Renewed - Valid upto 24.11.2005</td>
+                  <td><span>Expired</span></td>
+                </tr>
+                <tr>
+                  <td class="text-center">4</td>
+                  <td
+                    data-toggle="tooltip"
+                    title="M/s. Chiranjeevi Wind Energy Limited, No.26-A, Kamaraj Road, Mahalingapuram"
+                  >
+                    M/s. Chiranjeevi Wind Energy Limited,<br />
+                    No.26-A, Kamaraj Road,<br />
+                    Mahalingapuram,<br />
+                    Pollachi, Tamilnadu - 642 002
+                  </td>
+                  <td>C2920 / 250 kW</td>
+                  <td>TAPS-2000</td>
+                  <td>PTC-I-010</td>
+                  <td>Issued - Valid upto 30.09.2006</td>
+                  <td><span>Expired</span></td>
+                </tr>
+                <tr>
+                  <td class="text-center">5</td>
+                  <td
+                    data-toggle="tooltip"
+                    title="M/s. Pioneer Wincon Private Limited, 30/1A, Harrington Chambers, 2nd Floor, 'A' Block, Abdul Razaq, 1st Street, Saidapet, Chennai - 600 015"
+                  >
+                    M/s. Pioneer Wincon Private Limited,<br />
+                    30/1A, Harrington Chambers, 2nd Floor, 'A' Block, Abdul Razaq,<br />
+                    1st Street, Saidapet, Chennai - 600 015
+                  </td>
+                  <td>W 250/29 -250 kW</td> 
+                  <td>TAPS-2000</td>
+                  <td>PTC-I-008</td>
+                  <td>Issued - Valid upto 31.03.2007</td>
+                  <td><span>Expired</span></td>
+                </tr>
+                <tr>
+                  <td class="text-center">6</td>
+                  <td
+                    data-toggle="tooltip"
+                    title=" M/s. Vestas Wind Technology India Private Limited"
+                  >
+                    M/s. Vestas Wind Technology India Private Limited,<br />
+                    298,Rajiv Gandhi Salai, <br />
+                    Sholinganalluar,Chennai - 600 119
+                  </td>
+                  <td>NM 48/750 / 750 kW</td>
+                  <td>TAPS-2000</td>
+                  <td>PTC-I-011-R2</td>
+                  <td>Renewed - Valid upto 25.08.2007</td>
+                  <td><span>Expired</span></td> 
+                </tr>
+                <tr>
+                  <td class="text-center">7</td>
+                  <td
+                    data-toggle="tooltip"
+                    title="M/s RRB Energy Limited"
+                  >
+                    M/s RRB Energy Limited,<br />
+                    No.17, Vembuliamman koil street,<br />
+                    K K Nagar(West),Chennai - 600078
+                  </td>
+                  <td>Pawan Shakthi - 600 kW /600 kW</td>
+                  <td>TAPS-2000</td>
+                  <td>PTC-II-014-R12</td>
+                  <td>Renewed -Valid upto 31.03.2019</td>                                                                       	
+                  <td><span>Expired</span></td>
+                </tr>
+                <tr>
+                  <td class="text-center">8</td>
+                  <td
+                    data-toggle="tooltip"
+                    title="M/s. Southern Wind Farms Limited"
+                  >
+                    M/s. Southern Wind Farms Limited,<br />
+                    No.15, Soundarapandian Salai,<br />
+                    Ashok Nagar,Chennai - 600 083
+                  </td>
+                  <td>GWL 225 / 225 kW</td>
+                  <td>TAPS-2000</td>
+                  <td>PTC-III-004-R16</td>
+                  <td>Renewed -Valid upto 30.09.2019</td>                    	 	
+                  <td><span>Expired</span></td>
+                </tr>
+                <tr>
+                  <td class="text-center">9</td>
+                  <td
+                    data-toggle="tooltip"
+                    title="M/s RRB Energy Limited,"
+                  >
+                    M/s RRB Energy Limited,<br />
+                    No.17, Vembuliamman koil street,<br />
+                    K K Nagar(West),Chennai - 600078
+                  </td>
+                  <td>V39-500 kW with 47m rotor / 500 kW</td>
+                  <td>TAPS-2000</td>
+                  <td>PTC-II-001-R17</td>
+                  <td>Renewed-Valid upto 31.03.2019</td>
+                  <td><span>Expired</span></td>                   
+                </tr>
+                <tr>
+                  <td class="text-center">10</td>
+                  <td
+                    data-toggle="tooltip"
+                    title="M/s. Siva Windturbine India Private Limited"
+                  >
+                    M/s. Siva Windturbine India Private Limited,<br />
+                    12-A, Kandampalayam, Perundurai-638052<br />
+                    Erode District, Tamilnadu, India
+                  </td>
+                  <td>Siva 250/50 and 250 kW</td>
+                  <td>IS/IEC 61400-22:2010</td>
+                  <td>TC-1542-01/Rev.00</td>
+                  <td>21.07.2026</td>
+                  <td><span>Valid</span></td>               
+                   	 	 	 	 	
+                </tr>
+                <tr>
+                  <td class="text-center">11</td>
+                  <td
+                    data-toggle="tooltip"
+                    title="M/s.Southern Wind Farms Limited"
+                  >
+                    M/s.Southern Wind Farms Limited,<br />
+                    No.14, First floor, Brindhavan Street Extension,<br />
+                    West Mambalam,Chennai-600033, India
+                  </td>
+                  <td>GWL225 and 225/40 kW</td>
+                  <td>IS/IEC 61400-22:2010</td>
+                  <td>TC-1543-02/Rev.00 </td>
+                  <td>26.07.2026</td>
+                  <td><span>Valid</span></td> 
+                </tr>
+                <tr>
+                  <td class="text-center">12</td>
+                  <td
+                    data-toggle="tooltip"
+                    title="M/s.Siva Windturbine India Private Limited"
+                  >
+                  M/s.Siva Windturbine India Private Limited<br />
+                  12-A, Kandampalayam,<br />
+                  Perundurai - 638052, Erode District, Tamilnadu, India
+                  </td>
+                  <td>Siva 225/40 and 225 kW</td>
+                  <td>IS/IEC 61400-22:2010</td>
+                  <td>TC-1555-03/Rev.00</td>
+                  <td>27.10.2026</td>
+                  <td><span>Valid</span></td> 
+                    	 	 	 	 	
+                </tr>
+                <tr>
+                  <td class="text-center">13</td>
+                  <td
+                    data-toggle="tooltip"
+                    title="M/s. PowerWind Limited"
+                  >
+                  M/s. PowerWind Limited,<br />
+                  Plot No. 352-353, HSIIDC Industrial Area,<br />
+                  Rewari, Bawal, Haryana, India - 123501
+                  </td>
+                  <td>PowerWind 56</td>
+                  <td>IS/IEC 61400-22: 2010</td>
+                  <td>TC-1686-04, Rev. 00</td>
+                  <td>03.07.2029</td>
+                  <td><span>Valid</span></td>  
+                    	 	 	 	 	
+                </tr>                
+                <tr>
+                  <td class="text-center">14</td>
+                  <td
+                    data-toggle="tooltip"
+                    title="M/s. Inox Wind Limited"
+                  >
+                  M/s. Inox Wind Limited,<br />
+                  Plot No 1, Khasra No - 264 to 267, Industrial Area,
+                  Village - Basol, District - Una, Himachal Pradesh - 174303
+                  </td>
+                  <td>INOX DF/3000/145 3.0 MW Power Booster Mode 3.3 MW Rotor Blade Type SR71 V2 <br>(T-Bolt)/
+                    WBSR146-3.0 Hub Height 100m/122.5m/140m IEC WT Class IIIB/Class S</td>
+                  <td>IS/IEC 61400-22: 2010</td>
+                  <td>TC-1700-05, Rev. 02</td>
+                  <td>18.02.2028</td>
+                  <td><span>Valid</span></td> 
+                    	 	 	 	 	
+                </tr>
+                <!-- Additional rows can be added here -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

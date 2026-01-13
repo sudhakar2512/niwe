@@ -1,0 +1,1 @@
+The currently used version of fontawesome is V4.7.0

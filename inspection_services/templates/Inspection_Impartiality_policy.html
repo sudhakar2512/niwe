@@ -1,0 +1,102 @@
+
+{% extends 'base.html' %}
+
+{% block meta %}
+  <meta name="description" content="Impartiality Policy of the National Institute of Wind Energy (NIWE), Chennai, outlining principles, procedures, and commitments to ensure unbiased and fair practices in testing, certification, and wind energy services under MNRE.">
+  <meta name="keywords" content="impartiality policy NIWE, NIWE Chennai, MNRE India, unbiased practices, fair testing procedures, wind energy certification, renewable energy impartiality, NIWE guidelines, wind energy services, MNRE standards">
+{% endblock %}
+
+{% block title %} Impartiality Policy  | National Institute of Wind Energy (NIWE), Ministry of New and Renewable Energy, Government of India {% endblock %}
+
+{% block content %}
+
+<section class="head-div">
+  <div class="overlay d-flex align-items-center">
+    <div class="container">
+      <h1 class="text-white">Impartiality Policy</h1>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb bg-transparent p-0">
+      <li class="breadcrumb-item"><a href="/">Home </a></li>
+      <li class="breadcrumb-item" aria-current="page">
+        <a href="{% url 'departments' %}">Department</a>
+      </li>
+      <li class="breadcrumb-item" aria-current="page">
+        <a href="{% url 'certificate' %}">Certification</a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">
+        Inspection Services
+      </li>
+    </ol>
+  </nav>
+</div>
+
+<section class="rnd-div" id="divContent">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">{% include 'inspection_sidenav.html' %}</div>
+      <div class="col-md-8">
+        <div class="dgm-text">
+          <!--  code -->
+          <h5>Impartiality Policy</h5>
+
+          <ul>
+            <p>NIWE is the legal entity responsible for Inspection Services.</p>
+
+            <p>
+              NIWE ensures impartiality in all our inspection services which will increase the confidence and trust of our clients. NIWE acts Transparent, Neutral, and this is intended to ensure impartiality. Our inspection services are insulated from conflict of interest, bias and prejudice.
+            </p>
+            <p>
+              NIWE is committed to ensure that inspection services are undertaken in an impartial and unbiased manner with open-mindedness. NIWE personnel either internal or external committees thereof who could influence any inspection services are obliged to act impartially and shall not allow commercial, financial or other pressure that would compromise their impartiality in any way.
+            </p>
+            <p>
+              Top management of NIWE is committed to impartiality. The inspection services are independent and the division is isolated from any other activities except for administrative approvals.
+            </p>
+            <p>
+              Within NIWE, the certification division conducts risk assessment annually and where required in relation to specific activities or contracts on impartiality and potential conflict of interest relating to inspection services are reviewed by the impartiality committee.
+            </p>
+          </ul>
+          <!--  principles-->
+          <h5>Principles</h5>
+          <ol style="list-style-type:disc">
+            <p>
+              To ensure impartiality, the following principles have been established and practiced.
+            </p>
+
+            <li>
+              NIWE as an Inspection Body does not offer (and has never offered) any consultancy or any other form of consultancy to companies or individuals.
+            </li>
+
+            <li>
+              Every inspection report prepared by an Inspector will be reviewed by the Technical Manager (TM) to ensure that no conflict of interest shall predominate. 
+            </li>
+            <li>
+              NIWE as an Inspection Body shall not state or imply that inspection would be simpler, easier, faster or less expensive.
+            </li>
+
+            <li>
+              Individuals employed by or otherwise contracted to NIWE and involved in inspection services are required to document and record their current and past relationships with all companies. Any situation in the past or present which may present a potential conflict of interest is to be declared. NIWE will use the information to identify any threats to impartiality and will not use that individual in any capacity unless they can demonstrate that there is no conflict of interest.
+            </li>
+
+            <li>
+              The inspectors involved in the inspection services shall not and will not be put under any pressure (e.g. financial, trade, administrative, competitive, moral and other) and the execution of their obligations as an inspection body according to ISO/IEC 17020:2012 will not be affected.
+            </li>
+            <li>
+              NIWE's Certification Division retains authority of Inspection Services.
+            </li>
+
+            <li>
+              NIWE as an Inspection Body will take action to respond to any risks to its impartiality, arising from the actions of other persons, bodies or organizations, of which it become aware of.
+            </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

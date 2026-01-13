@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block meta %}
+  <meta name="description" content="Hindi version of the Corporate Film of the National Institute of Wind Energy (NIWE), Chennai, showcasing wind energy initiatives, projects, and achievements under the Ministry of New and Renewable Energy (MNRE).">
+  <meta name="keywords" content="NIWE corporate film Hindi, NIWE Chennai, MNRE India, wind energy initiatives, renewable energy projects, wind sector achievements, NIWE films, Hindi video, wind energy awareness, MNRE initiatives">
+{% endblock %}
+
+{% block title %} Hindi Version of Corporate film | National Institute of Wind Energy (NIWE), Ministry of New and Renewable Energy, Government of India {% endblock %}
+
+{% block content %}
+
+
+<section class="head-div">
+  <div class="overlay d-flex align-items-center">
+    <div class="container">
+      <h1 class="text-white">Hindi Version of Corporate film</h1>
+    </div>
+  </div>
+</section>
+ 
+<div class="container">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb bg-transparent p-0">
+      <li class="breadcrumb-item">
+        <a href="/">Home</a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">Hindi Version of Corporate film</li>
+    </ol>
+  </nav>
+</div>
+
+<section class="dgm-div" id="div-content">
+  <div class="container">
+    <h1>Hindi Version of Corporate film</h1>
+    <!-- <video class="h-100" controls>
+      <source src="static/video/Corporate_film_about_NIWE.mp4" type="video/mp4" class="h-100" />
+    </video> -->
+      <video controls title="Corporate film about NIWE" style="object-fit:contain; width:100%; height: 100%;">
+        <source src="static/video/Corporate_film_about_NIWE.mp4" type="video/mp4">
+        <track src="/video/niweVideo.vtt" kind="captions" srclang="en" label="English">
+      </video>
+  </div>
+</section>
+
+
+{% endblock %}

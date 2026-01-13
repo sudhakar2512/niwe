@@ -1,0 +1,202 @@
+{% extends 'base.html' %}
+
+{% block meta %}
+  <meta name="description" content="Awards and recognitions received by the National Institute of Wind Energy (NIWE), Chennai, highlighting achievements, excellence in wind energy research, development, and services under the Ministry of New and Renewable Energy (MNRE).">
+  <meta name="keywords" content="NIWE awards, wind energy recognitions, NIWE Chennai, MNRE India, wind power achievements, renewable energy excellence, NIWE honors, wind energy research awards, NIWE accolades, MNRE awards">
+{% endblock %}
+
+{% block title %} Awards | National Institute of Wind Energy (NIWE), Ministry of New and Renewable Energy, Government of India {% endblock %}
+
+{% block content %}
+
+<section class="head-div">
+    <div class="overlay d-flex align-items-center">
+        <div class="container">
+            <h1 class="text-white">Awards</h1>
+        </div>
+    </div>
+</section>
+
+ <div class="container">
+          <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb bg-transparent p-0">
+                        <li class="breadcrumb-item"><a href="/">Home</a></li>
+                        <li class="breadcrumb-item " aria-current="page"><a href="{% url 'medias' %}" >Media</a></li>
+                        <li class="breadcrumb-item active" aria-current="page"  > Awards</li>
+                    </ol>
+            </nav>
+        </div>
+
+<section class="main-div" id="divContent">
+    <div class="container">
+        
+        <div class="row col-12 mx-auto">
+            <div class="col-md-12">
+               <div class="grd-box">
+                  <div class="head1">
+                    <h4>{{award.0.title|safe}}</h4>
+                  </div>
+                    {{award.0.description|safe}}
+               </div>
+               
+            </div>
+            <div class="container row col-12 mt-5 mx-auto " >
+               <div class="col-lg-4 col-md-8 col-sm-12 mx-auto text-center awrd-img"> 
+                 <img src="/media/{{ award.0.image_1 }}" class="img-fluid " alt="Wind Energry">
+               </div>
+            </div>
+        </div><!--div close for row-->
+        <!--Special Institution Awards row-->
+         <div class="row col-12 mx-auto mt-5">
+            <div class="col-md-12">
+               <div class="grd-box">
+                  <div class="head1">
+                    <h4>{{award.1.title|safe}}
+                  </div>
+                        {{award.1.description|safe}}
+               </div>
+               
+            </div>
+
+            <div class="container row col-12 mx-auto d-flex justify-content-center">
+                <div class="col-lg-5 col-md-6 col-sm-12  mt-5 text-center awrd-img">
+                    <img src="/media/{{award.1.image_1}}" class="img-fluid" alt="Wind Energry">
+                </div>
+                <div class="col-lg-5 col-md-6 col-sm-12  mt-5 text-center awrd-img">
+                    <img src="/media/{{award.1.image_2}}" class="img-fluid " alt="Wind Energry">
+                </div>
+            </div>
+
+        </div><!--div close for row-->
+
+        <!--Best Stall Awards row-->
+        <div class="row col-12 mx-auto mt-5">
+            <div class="col-md-12">
+               <div class="grd-box">
+                  <div class="head1">
+                    <h4>{{award.2.title|safe}}</h4>
+                  </div>
+                        {{award.2.description|safe}}
+               </div>
+            </div>
+            <div class="container row col-12 mx-auto d-flex justify-content-center">
+                <div class="col-lg-5 col-md-6 col-sm-12  mt-5 text-center awrd-img">
+                    <img src="/media/{{award.2.image_1}}" class="img-fluid" alt="Wind Energry">
+                </div>
+                <div class="col-lg-5 col-md-6 col-sm-12  mt-5 text-center awrd-img">
+                    <img src="/media/{{award.2.image_2}}" class="img-fluid " alt="Wind Energry">
+                </div>
+            </div>
+        </div><!--div close for the row-->
+
+        <!--BID AWARD GENEVA  row-->
+        <div class="row col-12 mx-auto mt-5">
+            <div class="col-md-12">
+               <div class="grd-box">
+                  <div class="head1">
+                        <h4>{{award.3.title|safe}}</h4>
+                  </div>
+                            {{award.3.description|safe}}
+               </div>
+            </div>
+            <div class="container row col-12 mx-auto  d-flex justify-content-center">
+                <div class="col-lg-5 col-md-6 col-sm-12  mt-5 text-center awrd-img">
+                    <img src="/media/{{award.3.image_1}}" class="img-fluid" alt="Wind Energry">
+                </div>
+                <div class="col-lg-5 col-md-6 col-sm-12  mt-5 text-center awrd-img">
+                    <img src="/media/{{award.3.image_2}}" class="img-fluid " alt="Wind Energry">
+                </div>
+            </div>
+        </div><!--div close for the row-->
+
+        <!--Skoch Order-of-Merit Award  row-->
+        <div class="row col-12 mx-auto mt-5">
+            <div class="col-md-12">
+               <div class="grd-box">
+                  <div class="head1">
+                        <h4> {{award.4.title|safe}}</h4>
+                  </div>
+                        {{award.4.description|safe}}
+               </div>
+            </div>
+            <div class="container row col-12 mx-auto  d-flex justify-content-center">
+                <div class="col-lg-5 col-md-6 col-sm-12 mt-5 text-center awrd-img">
+                    <img src="/media/{{award.4.image_1}}" class="img-fluid" alt="Wind Energry">
+                </div>
+            </div>
+        </div><!--div close for the row-->
+
+        <!-- Vijayavani National Educational Leadership Award  row-->
+        <div class="row col-12 mx-auto mt-5">
+            <div class="col-md-12">
+               <div class="grd-box">
+                  <div class="head1">
+                       <h4>{{award.5.title|safe}}</h4> 
+                  </div>
+                           {{award.5.description|safe}}
+               </div>
+            </div>
+            <div class="container row col-12 mx-auto  d-flex justify-content-center">
+                <div class="col-lg-4 col-md-5 col-sm-6 col-6 mt-5 text-center awrd-img">
+                    <img src="/media/{{award.5.image_1}}" class="img-fluid" alt="Wind Energry">
+                </div>
+                <div class="col-lg-4 col-md-5 col-sm-6 col-6 mt-5 text-center awrd-img">
+                    <img src="/media/{{award.5.image_2}}" class="img-fluid" alt="Wind Energry">
+                </div>
+            </div>
+        </div><!--div close for the row-->
+
+        <!--Africa Education Leadership Award row-->
+        <div class="row col-12 mx-auto mt-5">
+            <div class="col-md-12">
+               <div class="grd-box">
+                  <div class="head1">
+                      <h4>{{award.6.title|safe}}</h4>
+                  </div>
+                          {{award.6.description|safe}}
+               </div>
+            </div>
+            <div class="container row col-12 mx-auto  d-flex justify-content-center">
+                <div class="col-lg-4 col-md-5 col-sm-6 col-6 mt-5 text-center awrd-img">
+                    <img src="/media/{{award.6.image_1}}" class="img-fluid" alt="Wind Energry">
+                </div>
+                <div class="col-lg-4 col-md-5 col-sm-6 col-6 mt-5 text-center awrd-img">
+                    <img src="/media/{{award.6.image_2}}" class="img-fluid" alt="Wind Energry">
+                </div>
+            </div>
+        </div><!--div close for the row-->
+
+
+        <!--Education Leadership Award - NIWE row-->
+        <div class="row col-12 mx-auto mt-5">
+            <div class="col-md-12">
+               <div class="grd-box">
+                  <div class="head1">
+                     <h4>{{award.7.title|safe}}</h4>
+                    {% comment %} <h4>Education Leadership Award - NIWE</h4> {% endcomment %}
+                  </div>
+                         {{award.7.description|safe}}
+
+                  <div class="head1">
+                     <h4>{{award.8.title|safe}}</h4>
+                    {% comment %} <h4>National eGovernance Award 2018-19</h4> {% endcomment %}
+                  </div>
+                         {{award.8.description|safe}}
+               </div>
+            </div>
+            <div class="container row col-12 mx-auto  d-flex justify-content-center">
+                <div class="col-lg-5 col-md-5 col-sm-12 mt-5 text-center awrd-img d-flex align-items-center">
+                    <img src="/media/{{award.8.image_1}}" class="img-fluid" alt="Wind Energry">
+                </div>
+                <div class="col-lg-4 col-md-5 col-sm-12 mt-5 text-center awrd-img">
+                    <img src="/media/{{award.8.image_2}}" class="img-fluid" alt="Wind Energry">
+                </div>
+            </div>
+        </div><!--div close for the row-->
+        
+    </div><!--div close for the main container-->
+</section>
+
+<!-- footer -->
+
+{% endblock %}

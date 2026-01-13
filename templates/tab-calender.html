@@ -1,0 +1,120 @@
+{% extends 'base.html' %}
+
+{% block meta %}
+  <meta name="description" content="Training Calendar page of the National Institute of Wind Energy (NIWE), Chennai, providing schedules, details, and registration information for wind energy and renewable energy training programs under MNRE.">
+  <meta name="keywords" content="NIWE training calendar, NIWE Chennai, MNRE India, wind energy training, renewable energy programs, training schedule, wind turbine courses, workshops, NIWE educational programs, MNRE initiatives">
+{% endblock %}
+
+{% block title %}Training Calendar | National Institute of Wind Energy (NIWE), Ministry of New and Renewable Energy, Government of India {% endblock %}
+
+{% block content %}
+
+<section class="head-div">
+  <div class="overlay d-flex align-items-center">
+    <div class="container">
+      <h1 class="text-white">Training Calendar for 2025-26</h1>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb bg-transparent pt-2">
+      <li class="breadcrumb-item"><a href="/">Home</a></li>
+      <li class="breadcrumb-item">
+        <a href="{% url 'departments' %}">Department</a>
+      </li>
+      <li class="breadcrumb-item">
+        <a href="{% url 'sdt' %}">Skill Development & Training</a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">
+        Training Calendar
+      </li>
+    </ol>
+  </nav>
+</div>
+
+<section class="rnd-div" id="divContent">
+  <div class="container">
+    <div class="row col-12 mx-auto">
+      <div class="col-md-8">
+        <h3 class="font-italic mb-1 text-center text-primary pb-4">
+          Training Calendar 2025-26
+        </h3>
+        <div class="table-responsive">
+        <table class="table table-bordered pt-3">
+          <thead>
+            <tr class="table">
+              <th colspan="5" class="bg-success text-white">
+                <h5 class="text-center">National Training Courses</h5>
+              </th>
+            </tr>
+            <tr>
+              <th scope="col">S.No</th> 
+              <th scope="col">Description</th>
+              <th scope="col">From</th>
+              <th scope="col">To</th>
+              <th scope="col">Duration</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for item in national %}
+            {% if item.training_type == "National"%}
+
+            <tr>
+              <th scope="row">{{ item.serial }}</th>
+              <td class="text-dark">
+                <a href="{% url 'training_calander_sub' item.id %}" >
+                  {{ item.description }}
+                </a>
+              </td>
+              <td>{{ item.date_from|date:"d.m.Y" }}</td>
+              <td>{{ item.date_To|date:"d.m.Y" }}</td>
+              <td>{{ item.duration }}</td>
+            </tr>
+            {% endif %}
+            {% endfor %}
+          </tbody>
+        </table>
+        </div>
+        <!-- <table class="table table-bordered pt-3">
+          <thead>
+            <tr class="table">
+              <th colspan="5" class="bg-primary text-white">
+                <h3 class="text-center">Customized Training Courses</h3>
+              </th>
+            </tr>
+            <tr>
+              <th scope="col">S.No</th>
+              <th scope="col">Description</th>
+              <th scope="col">From</th>
+              <th scope="col">To</th>
+              <th scope="col">Duration</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for item in national %} 
+            {% if item.training_type == "CUSTOMIZED"%}
+ 
+            <tr>
+              <th scope="row">{{ item.serial }}</th>
+              <td class="text-dark">
+                <a href="#">
+                  {{ item.description }}
+                </a>
+              </td>
+              <td>{{ item.date_from }}</td>
+              <td>{{ item.date_To }}</td>
+              <td>{{ item.duration }}</td>
+            </tr>
+            {% endif %} {% endfor %}
+          </tbody>
+        </table> -->
+      </div>
+
+      <div class="col-md-4">{% include "side-tab.html" %}</div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

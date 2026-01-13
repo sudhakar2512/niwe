@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+
+{% block meta %}
+  <meta name="description" content="Workshop and Conference page of the National Institute of Wind Energy (NIWE), Chennai, providing information on upcoming and past workshops, conferences, and training events in wind energy and renewable energy under MNRE.">
+  <meta name="keywords" content="NIWE workshops, NIWE conferences, NIWE Chennai, MNRE India, wind energy events, renewable energy training, wind sector workshops, energy seminars, MNRE initiatives, NIWE training events">
+{% endblock %}
+
+{% block title %} Workshop and Conference | National Institute of Wind Energy (NIWE), Ministry of New and Renewable Energy, Government of India {% endblock %}
+
+{% block content %} 
+
+<section class="head-div">
+  <div class="overlay d-flex align-items-center">
+    <div class="container">
+      <h1 class="text-white">Workshop and Conference</h1>
+    </div>
+  </div>
+</section>
+<div class="container">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb bg-transparent p-0">
+      <li class="breadcrumb-item"><a href="/">Home</a></li>
+      <li class="breadcrumb-item">
+        <a href="{% url 'departments' %}">Department</a>
+      </li>
+      <li class="breadcrumb-item">
+        <a href="{% url 'sdt' %}">Skill Development & Training</a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">
+        Workshop and Conference
+      </li>
+    </ol>
+  </nav>
+</div>
+
+<!-- <section class="rnd-div" id="divContent">
+  <div class="container">
+    <div class="row col-12">
+      <div class="col-md-8">
+        {% for item in workshop %}
+
+        <p style="background: #eadcc2">
+          
+          <a href="{% url 'workshop_confrence_year' item.id %}" style="color: rgb(9, 5, 49);">
+            {{ item.title }} </a
+          >
+        </p>
+
+        {% endfor %}
+      </div>
+      <div class="col-md-4">{% include "side-tab.html" %}</div>
+    </div>
+  </div>
+</section> -->
+
+
+<section class="rnd-div" id="divContent">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        {% for item in workshop %}
+        <div class="training-list-item">
+          <p class="entry-text">
+            <a href="{% url 'workshop_confrence_year' item.id %}" class="entry-link" aria-label="open {{ item.title }}">
+              {{ item.title }}
+            </a>
+          </p>
+        </div>
+        {% endfor %}
+      </div>
+      <div class="col-md-4">{% include "side-tab.html" %}</div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

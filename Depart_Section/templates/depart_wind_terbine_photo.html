@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{% block meta %}
+  <meta name="description" content="Learn about the Wind Turbine Test Station established by the National Institute of Wind Energy (NIWE), Chennai at Kayathar, Tamil Nadu. This page provides details of testing facilities, turbine performance evaluation, certification support, and research initiatives under the Ministry of New and Renewable Energy.">
+  <meta name="keywords" content="NIWE wind turbine test station, wind energy testing, MNRE, NIWE Chennai, turbine performance evaluation, wind power system testing, wind energy research facilities, renewable energy certification, wind turbine experiments, NIWE test station">
+{% endblock %}
+
+{% block title %} Gallery - Wind Turbine Test Station | National Institute of Wind Energy (NIWE), Ministry of New and Renewable Energy, Government of India {% endblock %}
+
+{% block content %}
+<section class="head-div">
+  <div class="overlay d-flex align-items-center">
+    <div class="container">
+      <h1 class="text-white">Gallery</h1>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb bg-transparent p-0">
+      <li class="breadcrumb-item"><a href="/">Home</a></li>
+      <li class="breadcrumb-item">
+        <a href="{% url 'departments' %}">Department</a>
+      </li>
+      <li class="breadcrumb-item">
+        <a href="{% url 'testing_menu' %}"> Testing </a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">
+        Wind Turbine Test Station
+      </li>
+    </ol>
+  </nav>
+</div>
+
+<section class="main-div">
+  <div class="container">
+    <h2>Wind Turbine Test Station</h2>
+<div class="container">
+   <div class="row mx-auto gallery col-12">
+      {% for photo in terbine_photo %}
+      <div class="col-lg-3 col-md-3 col-sm-6 col-12 mb-3">
+        <a href="{{ photo.terbine_photo.url }}" class="big" aria-label="wind terbine">
+          <div class="card sub-gallery-card p-0">
+            <div class="card-body text-center p-2 sub-gallery-img">
+              <img
+                src="{{ photo.terbine_photo.url }} "
+                class="card-img-top"
+                alt="wind terbine photo"
+              />
+            </div>
+          </div>
+        </a>
+      </div>
+      {% endfor %}
+    </div>
+</div>
+
+  </div>
+</section>
+
+{% endblock %}

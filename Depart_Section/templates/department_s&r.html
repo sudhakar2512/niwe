@@ -1,0 +1,98 @@
+{% extends 'base.html' %}
+
+{% block meta %}
+  <meta name="description" content="Learn about the Standards and Regulation framework managed by the National Institute of Wind Energy (NIWE), Chennai. This page covers wind turbine standards, testing protocols, certification guidelines, compliance requirements, and regulatory support under the Ministry of New and Renewable Energy.">
+  <meta name="keywords" content="NIWE standards regulation, wind energy standards, turbine certification guidelines, MNRE, NIWE Chennai, wind turbine testing protocols, compliance requirements, renewable energy regulations, wind energy governance, NIWE certification rules">
+{% endblock %}
+
+{% block title %} Standards & Regulation | National Institute of Wind Energy (NIWE), Ministry of New and Renewable Energy, Government of India {% endblock %}
+
+{% block content %}
+
+<section class="head-div">
+  <div class="overlay d-flex align-items-center">
+    <div class="container">
+      <h1 class="text-white"> Standards & Regulation</h1>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb bg-transparent p-0">
+      <li class="breadcrumb-item"><a href="/">Home</a></li>
+      <li class="breadcrumb-item" aria-current="page">
+        <a href="{% url 'departments' %}">Department</a>
+      </li>
+      <!-- <li class="breadcrumb-item active" aria-current="page">
+        <a href = "{% url 'testing_snr' %}">Standards & Regulation</a>
+      </li> -->
+      <li class="breadcrumb-item active" aria-current="page">
+         Standards & Regulation
+      </li>
+    </ol>
+  </nav>
+</div>
+
+<section class="rnd-div" id="divContent">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="accordion" id="TestingAccordion">
+          {% for item in snr %}
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="heading{{ forloop.counter }}">
+              <button
+                class="accordion-button {% if not forloop.first %}collapsed{% endif %}"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapse{{ forloop.counter }}"
+                aria-expanded="{% if forloop.first %}true{% else %}false{% endif %}"
+                aria-controls="collapse{{ forloop.counter }}"
+              >
+                {{ item.title|safe }}
+              </button>
+            </h2>
+            <div
+              id="collapse{{ forloop.counter }}"
+              class="accordion-collapse collapse {% if forloop.first %}hide{% endif %}"
+              aria-labelledby="heading{{ forloop.counter }}"
+              data-bs-parent="#TestingAccordion"
+            >
+              <div class="accordion-body">{{ item.description|safe }}</div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+       
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+  // Select only anchor tags that are inside <li> elements
+  const links = document.querySelectorAll("h6 a[href]");
+  
+  links.forEach(link => {
+    const href = link.getAttribute("href").toLowerCase().trim();
+
+    // Match file types and add appropriate data-doc
+    if (href.endsWith(".pdf")) {
+      link.setAttribute("data-doc", "pdf");
+    } else if (href.endsWith(".doc") || href.endsWith(".docx")) {
+      link.setAttribute("data-doc", "doc");
+    } else if (href.endsWith(".xls") || href.endsWith(".xlsx")) {
+      link.setAttribute("data-doc", "excel");
+    } else if (href.endsWith(".ppt") || href.endsWith(".pptx")) {
+      link.setAttribute("data-doc", "ppt");
+    } else if (href.endsWith(".png") || href.endsWith(".jpg") || href.endsWith(".jpeg") || href.endsWith(".gif") || href.endsWith(".webp")) {
+      link.setAttribute("data-doc", "image");
+    } else if (href.endsWith(".txt")) {
+      link.setAttribute("data-doc", "text");
+    }
+  });
+});
+</script>
+{% endblock %}

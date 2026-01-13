@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+
+{% block meta %}
+  <meta name="description" content="Brief report on the Online Training Program on Solar Energy conducted by the National Institute of Wind Energy (NIWE), Chennai, highlighting course objectives, participants, curriculum, and outcomes under the Ministry of New and Renewable Energy.">
+  <meta name="keywords" content="NIWE online training solar energy, MNRE, NIWE Chennai, solar energy training program, renewable energy online course, wind and solar training, professional development, energy sector training, capacity building, NIWE training report">
+{% endblock %}
+
+{% block title %} Online Training Program on Solar Energy | National Institute of Wind Energy (NIWE), Ministry of New and Renewable Energy, Government of India {% endblock %}
+
+{% block content %}
+
+<section class="head-div">
+  <div class="overlay d-flex align-items-center">
+    <div class="container">
+      <h1 class="text-white">Online Training Program on Solar Energy</h1>
+    </div>
+  </div>
+</section>
+
+<section class="main-div">
+  <div class="container">
+    <div class="col-12 row mx-auto">
+      <div class="grd-box">
+        <div class="mt-4">
+          <ol type="I" class="event-list">
+            <li class="li-items">
+              <a href= "{% url 'report' %}"
+                class="linkIcon">Brief Report on One day Program</a
+              >
+            </li>
+            <li class="li-items">
+              <a href="{% url 'training_solar_energy' %}" class="linkIcon"> Event Photos </a>
+            </li>
+            <li class="li-items">
+              <a href="/static/pdf/Press_report_on_solar _energy _13.12.2016.pdf" data-doc>
+                Press release by DG prepared in connection with the program
+              </a>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+
+    <div class="row col-12 mx-auto d-flex justify-content-evenly">
+      <div class="col-lg-2 col-md-4 col-sm-6 col-6 mt-5">
+        <a href="https://mnre.gov.in/" aria-label="Visit Ministry of New and Renewable Energy Government of India website">
+          <div class="card gov-img-icon-card">
+            <img src="/static/images/renew.jpg" alt="Ministry of New and Renewable Energy logo" />
+          </div>
+        </a>
+      </div>
+      <div class="col-lg-2 col-md-4 col-sm-6 col-6 mt-5">
+        <a href="https://nise.res.in/" aria-label="Visit National Institute of Solar Energy (NISE)">
+          <div class="card gov-img-icon-card">
+            <img src="/static/images/nise.png" alt="National Institute of Solar Energy (NISE) logo" />
+          </div>
+        </a>
+      </div>
+      <div class="col-lg-2 col-md-4 col-sm-6 col-6 mt-5">
+        <a href="https://seci.gov.in/" aria-label="Visit Solar Energy Corporation of India Ltd Website">
+          <div class="card gov-img-icon-card">
+            <img src="/static/images/seci-logo.jpg" alt=" Solar Energy Corporation of India Ltd Website logo" />
+          </div>
+        </a>
+      </div>
+      <div class="col-lg-2 col-md-4 col-sm-6 col-6 mt-5">
+        <a href="https://sscgj.in/" aria-label="Visit Skill Council for Green Jobs (SCGJ)">
+          <div class="card gov-img-icon-card">
+            <img src="/static/images/scgj.png" alt="Skill Council for Green Jobs (SCGJ) logo" />
+          </div>
+        </a>
+      </div>
+      <div class="col-lg-2 col-md-4 col-sm-6 col-6 mt-5">
+        <a href="https://www.iacharya.in/site/" aria-label="Visit ICA Silicon Institute website">
+          <div class="card gov-img-icon-card">
+            <img src="/static/images/ica-silicon.png" alt="ICA Silicon Institute logo" />
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+  <!--div close for the main container-->
+</section>
+
+<!-- footer -->
+
+{% endblock %}

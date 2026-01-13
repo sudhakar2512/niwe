@@ -1,0 +1,7 @@
+/*! jQuery v3.7.1 -ajax,-ajax/jsonp,-ajax/load,-ajax/script,-ajax/var/location,-ajax/var/nonce,-ajax/var/rquery,-ajax/xhr,-manipulation/_evalUrl,-deprecated/ajax-event-alias,-effects,-effects/animatedSelector,-effects/Tween | (c) OpenJS Foundation and other contributors | jquery.org/license */
+
+
+This is file is taken from the below link
+https://code.jquery.com/jquery-3.7.1.slim.min.js
+
+version used is 3.7.1

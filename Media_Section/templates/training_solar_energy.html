@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+
+{% block meta %}
+  <meta name="description" content="Event photos from the Online Training Program on Solar Energy organized by the National Institute of Wind Energy (NIWE), Chennai, showcasing participants, training sessions, and activities in solar and renewable energy under MNRE.">
+  <meta name="keywords" content="online solar energy training photos, NIWE Chennai, MNRE India, solar energy event images, renewable energy training program, NIWE event photos, solar energy workshop photos, wind and solar training, NIWE training activities, renewable energy program images">
+{% endblock %}
+
+{% block title %} Online Training Program on Solar Energy - Event Photos | National Institute of Wind Energy (NIWE), Ministry of New and Renewable Energy, Government of India {% endblock %}
+
+{% block content %} 
+
+<section class="head-div">
+  <div class="overlay d-flex align-items-center">
+    <div class="container">
+      <h1 class="text-white">Events</h1>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb bg-transparent p-0">
+      <li class="breadcrumb-item"><a href="/">Home</a></li>
+      <li class="breadcrumb-item">
+        <a href="{% url 'medias' %}">Media</a>
+      </li>
+      <li class="breadcrumb-item">
+        <a href="{% url 'events' %}"> Events</a>
+      </li>
+      <li class="breadcrumb-item">
+        <a href="{% url 'department_srra_online_training' %}"> NIWE, Ministry of New & Renewable Energy, Launches Online
+            Training Program on Solar Energy</a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">
+        Event Photos
+      </li>
+    </ol>
+  </nav>
+</div>
+
+<section class="main-div">
+  <div class="container">
+    <h2>Online Training Program on Solar Energy - Event Photos </h2>
+<div class="container">
+   <div class="row mx-auto gallery">
+      {% for photo in solar_energy_photo %}
+      <div class="col-lg-3 col-md-3 col-sm-6 col-12">
+        <a href="{{ photo.training_photo.url }}" class="big" aria-label="open Online Training Program on Solar Energy - Event Photos" >
+          <div class="card sub-gallery-card p-0">
+            <div class="card-body text-center p-2 sub-gallery-img">
+              <img
+                src="{{ photo.training_photo.url }} "
+                class="card-img-top"
+                alt="Online Training Program on Solar Energy - Event Photos"
+              />
+            </div>
+          </div>
+        </a>
+      </div>
+      {% endfor %}
+    </div>
+</div>
+
+  </div>
+</section>
+
+{% endblock %}

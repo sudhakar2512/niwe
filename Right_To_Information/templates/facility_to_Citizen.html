@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block meta %}
+  <meta name="description" content="Particulars of Facilities Available to Citizens for Obtaining Information page of the National Institute of Wind Energy (NIWE), Chennai, detailing the services, procedures, and resources provided to citizens for accessing information under MNRE guidelines.">
+  <meta name="keywords" content="NIWE citizen information facilities, NIWE Chennai, MNRE India, information access, citizen services, wind energy resources, renewable energy information, MNRE guidelines, public access to data, NIWE services">
+{% endblock %}
+
+{% block title %} Particulars of Facilities Available to Citizen for Obtaining Information | National Institute of Wind Energy (NIWE), Ministry of New and Renewable Energy, Government of India {% endblock %}
+{% block content %} 
+
+<section class="head-div">
+  <div class="overlay d-flex align-items-center">
+    <div class="container">
+      <h1 class="text-white"> Particulars of Facilities Available to Citizen for Obtaining Information</h1>
+    </div>
+  </div>
+</section>
+<div class="container">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb bg-transparent p-0">
+      <li class="breadcrumb-item"><a href="/">Home </a></li>
+      <li class="breadcrumb-item" aria-current="page">
+        <a href="{% url 'rti' %}">Right To Information</a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">
+        Particulars of Facilities Available to Citizen for Obtaining Information
+      </li>
+    </ol>
+  </nav>
+</div>
+
+<section class="dgm-div" id="divContent">  
+  <div class="container">
+    {% for item in detail %}
+        {{item.description|safe}}
+    {% endfor %}
+  </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% block meta %}
+  <meta name="description" content="Gallery of Workshop and Conference page of the National Institute of Wind Energy (NIWE), Chennai, showcasing photos and highlights from workshops, conferences, and training events in wind energy and renewable energy under MNRE.">
+  <meta name="keywords" content="NIWE gallery, NIWE Chennai, MNRE India, workshop photos, conference images, wind energy events, renewable energy training, event highlights, wind sector workshops, MNRE initiatives, NIWE event gallery">
+{% endblock %}
+
+{% block title %} Gallery of Workshop and Conference | National Institute of Wind Energy (NIWE), Ministry of New and Renewable Energy, Government of India {% endblock %}
+
+{% block content %} 
+
+<section class="head-div">
+  <div class="overlay d-flex align-items-center">
+    <div class="container">
+      <h1 class="text-white">{{ item.title }}</h1>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb bg-transparent p-0">
+      <li class="breadcrumb-item"><a href="/">Home</a></li>
+      <li class="breadcrumb-item">
+        <a href="{% url 'departments' %}">Department</a>
+      </li>
+      <li class="breadcrumb-item">
+        <a href="{% url 'sdt' %}">Skill Development & Training</a>
+      </li>
+      <li class="breadcrumb-item">
+        <a href="{% url 'workshop_confrence' %}">Workshop and Conference</a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">
+        {{ item.title }}
+      </li>
+    </ol>
+  </nav>
+</div> 
+
+<section class="dgm-div" id="divContent">
+  <div class="container">
+    <h2>{{ item.title }}</h2>
+
+    <div class="row mx-auto gallery">
+      {% for photo in photos %}
+      <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-3">
+        <a href="{{ photo.image.url }}" class="big" aria-label="workshop image">
+          <div class="card sub-gallery-card p-0">
+            <div class="card-body text-center  sub-gallery-img">
+              <img
+                src="{{ photo.image.url }} "
+                class="card-img-top"
+                alt="workshop image"
+              />
+            </div>
+          </div>
+        </a>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% endblock %}

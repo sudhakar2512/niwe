@@ -1,0 +1,108 @@
+{% extends 'base.html' %}
+
+{% block meta %}
+  <meta name="description" content="Information on Azadi ka Amrit Mahotsav 2022-23 initiatives and events organized by the National Institute of Wind Energy (NIWE), Chennai, celebrating 75 years of India's independence under the Ministry of New and Renewable Energy (MNRE).">
+  <meta name="keywords" content="Azadi ka Amrit Mahotsav 2022-23, NIWE Chennai, MNRE India, independence celebration, wind energy events, renewable energy initiatives, 75 years of India, NIWE programs, national celebrations, energy sector events">
+{% endblock %}
+
+{% block title %}Azadi ka Amrit Mahotsav 2022-23 | National Institute of Wind Energy (NIWE), Ministry of New and Renewable Energy, Government of India {% endblock %}
+
+{% block content %}
+
+<section class="head-div">
+  <div class="overlay d-flex align-items-center">
+    <div class="container">
+      <h1 class="text-white">
+        Azadi ka Amrit Mahotsav 2022-23 to commemorate the 75 years of
+        progressive Independent India
+      </h1>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <nav aria-label="breadcrumb"> 
+    <ol class="breadcrumb bg-transparent p-0">
+      <li class="breadcrumb-item"><a href="/">Home</a></li>
+      <li class="breadcrumb-item">
+        <a href="{% url 'departments' %}">Department</a>
+      </li>
+      <li class="breadcrumb-item">
+        <a href="{% url 'sdt' %}">Skill Development & Training</a>
+      </li>
+      <li class="breadcrumb-item active">
+        <a href="{% url 'amrit_mahotsav' %}"> Azadi ka Amrit Mahotsav</a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">
+        2022-23
+      </li>
+    </ol>
+  </nav>
+</div>
+
+<section class="main-div py-2 header">
+  <div class="container py-1">
+    <div class="row col-12 mx-auto">
+      <div class="col-lg-8 mt-4 order-lg-1 order-2">
+        <div class="tab-content" id="v-pills-tabContent">
+          <!--left side tab content-area -->
+
+          <div
+            class="tab-pane fade rounded bg-white show active"
+            id="wind-energy"
+            role="tabpanel"
+            aria-labelledby="wind-energy"
+          >
+            <div class="row col-12 mx-auto px-0">
+              <div class="txt-clr2 text-center">
+                <h3>Azadi Ka Amrit Mahotsav (AKAM) – 2022-23</h3>
+                <h6>
+                  to commemorate the 75 Years of progressive Independent India
+                </h6>
+              </div>
+              <h5 class="text-center mt-4"><u>EVENTS SCHEDULE</u></h5>
+              <p>
+                NIWE with the support of MNRE has scheduled sixteen (16) events
+                for Azadi ka Amrit Mahotsav to commemorate the 75 years of
+                progressive Independent India.
+              </p>
+
+              <div class="table-responsive">
+                <table  class="table table-bordered table-hover table-striped table-responsive w-100 lh-sm akam-table">
+                  <thead>
+                    <tr class="bg-color text-white">
+                      <th style="width: 20px" class="py-3">S.No.</th>
+                      <th style="width: 160px" class="py-3">Dates</th>
+                      <th class="py-3">Topic</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {% for event in akamevents %}
+                    <tr>
+                      <td>{{ forloop.counter }}</td>
+                      <td>{{ event.date }}</td>
+                      <td>
+                        {{ event.title }}
+                        
+                          <a href="{% url 'report_detail_22_23' event.id  %}" aria-label="Open {{ event.title }} report" class="txt-clr" target="_blank"> (Report) </a>
+                       
+                      </td>
+                    </tr>
+                    {% endfor %}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 mt-4 order-lg-2 order-1">
+        {% include 'side-tab.html' %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- footer -->
+
+{% endblock %}

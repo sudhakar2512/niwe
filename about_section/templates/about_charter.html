@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% block meta %}
+  <meta name="description" content="Learn about the Vision, Mission, and Objectives of the National Institute of Wind Energy (NIWE), Chennai. NIWE serves as the technical focal point for wind energy in India, promoting research, development, testing, certification, human resource development, and supporting the wind turbine industry to achieve high-quality, reliable wind energy solutions.">
+  <meta name="keywords" content="NIWE vision, NIWE mission, NIWE objectives, wind energy India, MNRE, National Institute of Wind Energy Chennai, wind power research, wind turbine testing, wind energy standards, wind resource assessment, renewable energy India, NIWE consultancy, wind energy development">
+{% endblock %}
+
+{% block title %}Vision, Mission & Objectives | National Institute of Wind Energy (NIWE), Ministry of New and Renewable Energy, Government of India{% endblock %}
+
+{% block content %}
+
+<section class="head-div">
+  <div class="overlay d-flex align-items-center">
+    <div class="container">
+      <h1 class="text-white">The Charter</h1>
+    </div>
+  </div>
+</section>
+<div class="container">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb bg-transparent p-0">
+      <li class="breadcrumb-item"><a href="/">Home</a></li>
+      <li class="breadcrumb-item" aria-current="page">
+        <a href="{% url 'us' %}">About Us</a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">Charter</li>
+    </ol>
+  </nav>
+</div>
+
+{% for data in chart %}
+
+<section class="dgm-div" id="divContent">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">{% include 'aboutsidenav.html' %}</div>
+      <div class="col-md-8">
+        <div class="dgm-text mb-3">
+          <!-- <h3 class="pt-3">Preamble</h3> -->
+
+          <p>{{data.preamble|safe}}</p>
+
+          <h3 class="pt-3">MISSION</h3>
+
+          <p>{{data.mission|safe}}</p>
+        </div>
+
+        <div class="col-md-12">
+        <div class="dgm-text mb-3">
+          <h3 class="pt-3">OBJECTIVES</h3>
+
+          {{data.objectives|safe}} 
+        </div>
+      </div>
+      </div>
+    </div>
+    <div class="row">
+      
+    </div>
+  </div>
+</section>
+{% endfor %}
+
+{% endblock %}

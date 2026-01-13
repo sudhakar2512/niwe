@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+
+{% block meta %}
+ <meta name="description" content="Archived purchase orders of the National Institute of Wind Energy (NIWE), Chennai, providing records of past procurement activities, orders, and documentation under the Ministry of New and Renewable Energy (MNRE).">
+ <meta name="keywords" content="archived purchase orders NIWE, NIWE Chennai, MNRE India, past procurement records, wind energy procurement, renewable energy purchase documentation, NIWE orders archive, procurement history, wind sector orders, MNRE procurement records">
+{% endblock %}
+
+{% block title %} Archived Purchase orders | National Institute of Wind Energy (NIWE), Ministry of New and Renewable Energy, Government of India {% endblock %}
+
+{% block content %}
+
+<section class="head-div">
+  <div class="overlay d-flex align-items-center">
+    <div class="container">
+      <h1 class="text-white">Archived Purchase orders</h1>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb bg-transparent p-0">
+      <li class="breadcrumb-item">
+        <a href="/">Home</a>
+      </li>
+      <li class="breadcrumb-item">
+        <a href="{% url 'tender_data' %}">Tenders</a>
+      </li>
+      <li class="breadcrumb-item">
+        <a href="{% url 'Purchase_order_list' %}">Purchase orders</a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">Archived Purchase orders</li>
+    </ol>
+  </nav>
+</div>
+
+
+<section class="dgm-div" id="div-content">
+  <div class="container">
+    {% if page_obj.object_list %}
+    <div class="table-responsive">
+
+      <table class="whats-new-table w-100">
+        <thead>
+          <tr>
+            <th class="sl-no">Sl no</th>
+            <th class="title">Title</th>            
+            <th class="file">File</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for datas in page_obj %}
+            <tr>
+                <td>{{ forloop.counter|add:page_obj.start_index|add:-1 }}</td>
+                <td>
+                {{ datas.title }}         
+                </td>
+                                
+                <td>
+                <a href="{{ datas.PO_file.url }}" target="_blank" class="text-primary ms-2">
+                    <i class="{{ datas.file_icon_class }}" aria-hidden="true">  {{ datas.file_type }}</i>
+                    <span class="text-muted">({{ datas.file_size_display  }})</span>
+                </a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+      </table>
+    </div>
+
+      <!-- Pagination Controls -->
+      <div class="pagination">
+        <ul class="pagination-list">
+          {% if page_obj.has_previous %}
+          <li><a href="?page={{ page_obj.previous_page_number }}">&laquo; Previous</a></li>
+          {% endif %}
+          {% for page in page_obj.paginator.page_range %}
+          <li class="{% if page == page_obj.number %}active{% endif %}">
+            <a href="?page={{ page }}">{{ page }}</a>
+          </li>
+          {% endfor %}
+          {% if page_obj.has_next %}
+          <li><a href="?page={{ page_obj.next_page_number }}">Next &raquo;</a></li>
+          {% endif %}
+        </ul>
+      </div>
+
+    {% else %}
+    <p class="text-center mt-4"> No archived data found</p>
+    {% endif %}
+
+  </div>
+</section>
+
+
+{% endblock %}

@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block meta %}
+  <meta name="description" content="Global Wind Day page by the National Institute of Wind Energy (NIWE), Chennai, celebrating wind energy awareness, initiatives, events, and educational activities under MNRE.">
+  <meta name="keywords" content="Global Wind Day, NIWE Chennai, MNRE India, wind energy awareness, renewable energy events, wind power celebrations, educational activities, wind sector initiatives, NIWE events, MNRE programs">
+{% endblock %}
+
+{% block title %} Global Wind Day | National Institute of Wind Energy (NIWE), Ministry of New and Renewable Energy, Government of India {% endblock %}
+
+{% block content %} 
+
+<section class="head-div">
+  <div class="overlay d-flex align-items-center">
+    <div class="container">
+      <h1 class="text-white">
+        {% for national in sub_global %} {{national.title}} {% endfor %}
+      </h1>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb bg-transparent p-0">
+      <li class="breadcrumb-item"><a href="/">Home</a></li>
+      <li class="breadcrumb-item">
+        <a href="{% url 'departments' %}">Department</a>
+      </li>
+      <li class="breadcrumb-item">
+        <a href="{% url 'sdt' %}">Skill Development & Training</a>
+      </li>
+      <li class="breadcrumb-item">
+        <a href="{% url 'global_wind_day' %}">Global Wind Day</a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">
+        {% for national in sub_global %} {{national.title|safe}} {% endfor %}
+      </li>
+    </ol>
+  </nav>
+</div>
+
+<section class="dgm-div" id="divContent">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="">
+          {% for national in sub_global %} {{national.description|safe}} {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

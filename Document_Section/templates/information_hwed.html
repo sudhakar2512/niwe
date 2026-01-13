@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+
+{% block meta %}
+  <meta name="description" content="Revised guidelines for Wind Power Projects issued by the National Institute of Wind Energy (NIWE), Chennai, providing updated procedures, standards, and regulations for the development, installation, and operation of wind energy projects under MNRE.">
+  <meta name="keywords" content="Revised wind power guidelines, NIWE Chennai, wind energy project standards, MNRE India, wind project regulations, wind turbine installation guidelines, renewable energy policies, wind energy development, NIWE wind guidelines, wind power procedures">
+{% endblock %}
+
+{% block title %}Revised Guidelines for Wind Power Project | National Institute of Wind Energy (NIWE), Ministry of New and Renewable Energy, Government of India {% endblock %}
+
+{% block content %}
+
+<section class="head-div">
+  <div class="overlay d-flex align-items-center">
+    <div class="container">
+      <h1 class="text-white">Revised Guidelines for Wind Power Project</h1>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb bg-transparent p-0">
+      <li class="breadcrumb-item"><a href="/">Home</a></li>
+      <li class="breadcrumb-item" aria-current="page">
+        <a href="{% url 'document' %}">Documents</a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">
+        Revised Guidelines for Wind Power Project
+      </li>
+    </ol>
+  </nav>
+</div>
+
+<section class="hwed-sec"  id="divContent">
+  <div class="container">
+    <div class="table-responsive">
+      <table class="table table-bordered table-hover">
+        <thead class="table-success">
+          <tr class="text-center">
+            <th scope="col">Sl.No</th>
+            <th scope="col" colspan="2">Description</th>
+            <th scope="col">Date</th>
+           <th scope="col">File</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for item in revise %}
+          <tr>
+            <th scope="row">{{item.sr_No}}</th>
+            <td colspan="2">  <a href="{{item.documents.url}}" target="_blank">
+              {{item.title}}
+            </a> </td>
+            <td>{{item.date}}</td>
+            <td> <a href="{{item.documents.url}}" target="_blank" aria-label="pen{{item.title}}"><i class="{{item.documents_info.icon }}">  
+              {{ item.documents_info.type }}, </i> </a> {{ item.documents_info.size }}</td>
+          </tr>
+
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- footer -->
+
+{% endblock %}

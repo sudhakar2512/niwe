@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block meta %}
+  <meta name="description" content="Report of International Trainings by the National Institute of Wind Energy (NIWE), Chennai, detailing participation, outcomes, and learnings from global wind energy and renewable energy training programs under MNRE.">
+  <meta name="keywords" content="NIWE international training report, NIWE Chennai, MNRE India, wind energy workshops, renewable energy training programs, global knowledge exchange, training outcomes, wind sector education, MNRE initiatives, NIWE reports">
+{% endblock %}
+
+{% block title %} Report of International Trainings | National Institute of Wind Energy (NIWE), Ministry of New and Renewable Energy, Government of India. {% endblock %}
+
+{% block content %}
+
+<section class="head-div">
+  <div class="overlay d-flex align-items-center">
+    <div class="container">
+      <h1 class="text-white">
+        {% for national in sub_eitecs %} {{national.title}} {% endfor %}
+      </h1>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb bg-transparent p-0">
+      <li class="breadcrumb-item"><a href="/">Home</a></li>
+      <li class="breadcrumb-item">
+        <a href="{% url 'departments' %}">Department</a>
+      </li>
+      <li class="breadcrumb-item">
+        <a href="{% url 'sdt' %}">Skill Development & Training</a>
+      </li>
+      <li class="breadcrumb-item">
+        <a href="{% url 'international_training_list' %}"
+          >International Training</a
+        >
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">
+        {% for national in sub_eitecs %} {{national.title}} {% endfor %}
+      </li>
+    </ol>
+  </nav>
+</div>
+
+<section class="rnd-div" id="divContent">
+  <div class="container">
+    {% for national in sub_eitecs %} {{national.data|safe}} {% endfor %}
+  </div>
+</section>
+{% endblock %}

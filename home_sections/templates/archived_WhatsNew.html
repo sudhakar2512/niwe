@@ -1,0 +1,114 @@
+{% extends 'base.html' %}
+
+{% block meta %}
+  <meta name="description" content="Archive of 'What's New' at the National Institute of Wind Energy (NIWE), Chennai, documenting past updates, announcements, events, and developments in wind energy under the Ministry of New and Renewable Energy (MNRE).">
+  <meta name="keywords" content="NIWE archive, what's new archive, NIWE Chennai, MNRE India, wind energy updates, past announcements, wind energy events, renewable energy developments, NIWE news archive, wind energy documentation">
+{% endblock %}
+
+{% block title %} Archive - What's New | National Institute of Wind Energy (NIWE), Ministry of New and Renewable Energy, Government of India {% endblock %}
+
+{% block content %}
+
+<section class="head-div">
+  <div class="overlay d-flex align-items-center">
+    <div class="container">
+      <h1 class="text-white">Archive - What's New</h1>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb bg-transparent p-0">
+      <li class="breadcrumb-item">
+        <a href="/">Home</a>
+      </li>     
+      <li class="breadcrumb-item">
+        <a href="{% url 'Whatsnew_full_view' %}">Whats New</a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page"> Archive - What's New</li>
+    </ol>
+  </nav>
+</div>
+
+
+<section class="dgm-div" id="div-content">
+  <div class="container">
+   
+    {% if page_obj.object_list%}
+        <table class="whats-new-table">
+        <thead>
+            <tr>
+            <th class="sl-no">Sl No</th>
+            <th class="title">Title</th>
+            <th class="Published-Date">Published Date</th>
+            <th class="file">File</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for datas in page_obj %}
+            <tr>
+            <td>{{ forloop.counter|add:page_obj.start_index|add:-1 }}</td>
+            <td>{{ datas.title }}             
+                {% if datas.corrigendam.exists %}
+                <ol style="list-style-type: disc" class="notranslate">
+                {% for corrigendum in datas.corrigendam.all %}
+                <li>
+                    <a href="{{ corrigendum.file.url }}" target="_blank">
+                    <span class="notranslate">{{ corrigendum.title }}</span>
+                    
+                    <i class="{{ corrigendum.file_icon_class }}"> {{ corrigendum.file_type }}</i>                       
+                    <span class="text-muted">({{ corrigendum.file_size_display }})</span>
+                    </a>
+                </li>
+                {% endfor %}
+                </ol>
+                {% endif %}
+            </td>
+            <td>
+                {{ datas.Published_Date |date:"d.m.Y" }}  
+            </td>
+            <td>
+                {% if datas.url_link %}
+                <a href="{{ datas.url_link }}" target="_blank" class="text-primary ms-2 ">
+                    <i class="fa fa-external-link text-primary"></i> Link
+                </a>
+                {% elif datas.Pdf_File %}
+                <a href="{{ datas.Pdf_File.url }}" target="_blank" class="text-primary ms-2">
+                    <i class="{{ datas.file_icon_class }}"> {{ datas.file_type }} </i>
+                    <span class="text-muted">({{ datas.file_size_display }})</span>
+                </a>
+                {% else %}
+                <span class="text-muted">No file available</span>
+                {% endif %}
+            </td>     
+            </tr>
+            {% endfor %}
+        </tbody>
+        </table>
+
+        <!-- Pagination Controls -->
+        <div class="pagination">
+        <ul class="pagination-list">
+            {% if page_obj.has_previous %}
+            <li><a href="?page={{ page_obj.previous_page_number }}">&laquo; Previous</a></li>
+            {% endif %}
+            {% for page in page_obj.paginator.page_range %}
+            <li class="{% if page == page_obj.number %}active{% endif %}">
+            <a href="?page={{ page }}">{{ page }}</a>
+            </li>
+            {% endfor %}
+            {% if page_obj.has_next %}
+            <li><a href="?page={{ page_obj.next_page_number }}">Next &raquo;</a></li>
+            {% endif %}
+        </ul>
+        </div>
+    {% else %}
+        <p class="text-center mt-4"> No archived data found</p>
+    {% endif %}
+
+  </div>
+</section>
+
+
+{% endblock %}

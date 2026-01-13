@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+
+{% block meta %}
+  <meta name="description" content="Foreign and Domestic Tours by Head of the Department page of the National Institute of Wind Energy (NIWE), Chennai, providing details of official tours, visits, and engagements related to wind energy and renewable energy initiatives under MNRE.">
+  <meta name="keywords" content="NIWE HOD tours, foreign and domestic visits, NIWE Chennai, MNRE India, wind energy official trips, renewable energy engagements, MNRE initiatives, NIWE leadership tours, departmental travel, official visits">
+{% endblock %}
+
+{% block title %}Foreign and Domestic tours by Head of the Department | National Institute of Wind Energy (NIWE), Ministry of New and Renewable Energy, Government of India {% endblock %}
+
+{% block content %}
+
+<!-- nav end  -->
+
+<section class="head-div">
+    <div class="overlay d-flex align-items-center">
+        <div class="container">
+            <h1 class="text-white">Foreign and Domestic tours by Head of the Department</h1>
+        </div>
+    </div>
+</section>
+
+<div class="container">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb bg-transparent p-0">
+            <li class="breadcrumb-item"><a href="/">Home </a></li>
+            <li class="breadcrumb-item"><a href="{% url 'rti' %}">Right To Information</a></li>
+            <li class="breadcrumb-item "><a href="{% url 'rti_Tour_type' %}">Foreign and Domestic tours by Head of the Department</a></li>
+            <li class="breadcrumb-item active" aria-current="page">{{ rti_type.type }}</li>
+        </ol>
+    </nav>
+</div>
+
+<section class="main-div py-5 header">
+    <div class="container py-1">
+        <div class="row">
+
+            <div class="col-md-9 mt-4 order-lg-1 order-2">
+
+                <div class="tab-content" id="v-pills-tabContent"><!--left side tab content-area -->
+
+                    <div class="tab-pane fade rounded bg-white show active" id="wind-energy" role="tabpanel"
+                        aria-labelledby="wind-energy">
+
+                        <div class="row col-12 mx-auto px-0">
+                            {% for detail in tour_details %}
+                            <div class="col-lg-3 col-md-2 col-sm-6 col-12 mb-3"> <!-- Adjusted column size -->
+                                <a href="{{ detail.pdfLink.url }}" target="_blank">
+                                    <div class="card sm-card-design text-center px-3 py-4">
+                                        <h6>{{ detail.year }}</h6>
+                                        {% if detail.documents_info %}                                               
+                                            <i class="fas {{ detail.documents_info.icon }}">                                                 
+                                            {{ detail.documents_info.type }} ,
+                                            {{ detail.documents_info.size }}</i> 
+                                        {% endif %}  
+                                    </div>
+                                </a>
+                            </div>
+                            {% endfor %}
+                        </div><!--div close for row-->
+                    </div><!--div close for tab-pane-->
+
+                </div><!--div close for tab content-->
+            </div><!--div close for col-md-9-->
+
+        </div>
+    </div>
+</section>
+
+<!-- footer -->
+
+{% endblock %}

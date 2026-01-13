@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block meta %}
+  <meta name="description" content="Frequently Asked Questions (FAQ) page of the National Institute of Wind Energy (NIWE), Chennai, providing answers and guidance on wind energy, renewable energy initiatives, and services under the Ministry of New and Renewable Energy (MNRE).">
+  <meta name="keywords" content="NIWE FAQ, NIWE Chennai, MNRE India, wind energy questions, renewable energy FAQs, wind sector guidance, NIWE services, MNRE initiatives, wind energy information, common queries">
+{% endblock %}
+
+{% block title %} FAQ | National Institute of Wind Energy (NIWE), Ministry of New and Renewable Energy, Government of India {% endblock %}
+
+{% block content %}
+
+<section class="head-div">
+  <div class="overlay d-flex align-items-center">
+    <div class="container">
+      <h1 class="text-white">FAQs</h1>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb bg-transparent p-0">
+      <li class="breadcrumb-item"><a href="/">Home</a></li>
+      <li class="breadcrumb-item" aria-current="page">
+        <a href="{% url 'document' %}">Documents</a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">FAQs</li>
+    </ol>
+  </nav>
+</div>
+
+<section class="rrs_section dgm-div ps-2 " id="divContent">
+  <div class="container ">
+
+    <p>{{faqs.0.preamble|safe}}</p>
+    <ul>  
+       
+    </ul>
+  </div>
+</section>
+
+{% endblock %}

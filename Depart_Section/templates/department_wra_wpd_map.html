@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block meta %}
+  <meta name="description" content="Wind Power Density (WPD) map of India provided by the National Institute of Wind Energy (NIWE), Chennai, illustrating wind resource distribution, density levels, and potential sites for wind energy development under MNRE.">
+  <meta name="keywords" content="wind power density map, WPD India, NIWE Chennai, wind resource mapping, MNRE India, wind energy potential, renewable energy sites, wind energy assessment, wind atlas, wind power site selection">
+{% endblock %}
+
+{% block title %}WPD map | National Institute of Wind Energy (NIWE), Ministry of New and Renewable Energy, Government of India {% endblock %}
+
+{% block content %}
+{% load static %}
+
+<section class="head-div">
+  <div class="overlay d-flex align-items-center">
+    <div class="container">
+      <h1 class="text-white">WPD map</h1>
+    </div>
+  </div>
+</section>
+<div class="container">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb bg-transparent p-0">
+      <li class="breadcrumb-item"><a href="/">Home</a></li>
+      <li class="breadcrumb-item" aria-current="page">
+        <a href="{% url 'departments' %}">Department</a>
+      </li>
+      <li class="breadcrumb-item active">
+        <a href="{% url 'wra' %}">Wind Resource Assessment (WRA)</a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">WPD Map</li>
+    </ol>
+  </nav>
+</div>
+
+<section class="rnd-div" id="divContent">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <div class="col-md-6 offset-md-3">
+          <img
+            class="img-fluid"
+            src="{%  static '/images/sub-gallery/WPD_Map.jpg' %}"
+            alt="stations-map"
+          />
+        </div>
+      </div>
+      <div class="col-md-4">{% include 'depart-side-tabs.html' %}</div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

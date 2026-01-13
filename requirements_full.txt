@@ -1,0 +1,17 @@
+asgiref==3.8.1
+Django==4.2.15
+django-axes==8.0.0
+django-environ==0.12.0
+django-google-translate==1.1
+django-modeltranslation==0.19.10
+django-preventconcurrentlogins==0.8.2
+django-tinymce==4.1.0
+extensions==0.4
+gunicorn==22.0.0
+packaging==24.1
+pillow==10.4.0
+psycopg2-binary==2.9.9
+sqlparse==0.5.1
+typing_extensions==4.12.2
+tzdata==2024.1
+whitenoise==6.7.0

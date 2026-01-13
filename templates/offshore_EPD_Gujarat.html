@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% block meta %}
+  <meta name="description" content="Offshore Wind Energy Portal by the National Institute of Wind Energy (NIWE), Chennai, providing information, resources, and updates on offshore wind power development, projects, and research under the Ministry of New and Renewable Energy (MNRE).">
+  <meta name="keywords" content="Offshore Wind Energy portal, NIWE Chennai, MNRE India, offshore wind power, wind energy development, renewable energy projects, NIWE offshore research, wind sector updates, MNRE initiatives, offshore wind resources">
+{% endblock %}
+
+{% block title %} Offshore Wind Energy portal | National Institute of Wind Energy (NIWE), Ministry of New and Renewable Energy, Government of India {% endblock %}
+
+{% block content %}
+
+<!-- nav end  -->
+
+<section class="head-div">
+  <div class="overlay d-flex align-items-center">
+    <div class="container">
+      <h1 class="text-white">Offshore Wind Energy portal</h1>
+    </div>
+  </div>
+</section>
+
+<section class="rnd-div" id="divContent">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 offset-md-0">
+        <div
+          class="card-dis border border-3 border-warning text-center p-3 rounded-3 bg-light"
+        >
+          <div class="title">
+            <h1 class="text-danger"><u>Disclaimer</u></h1>
+
+            <p class="pt-3">
+              The contents of the PPT (Graph/Photographs) etc., should not be
+              used elsewhere without prior permission/approval from NIWE &
+              GPCL/GETCO/GMB/Gujarat Port Trust authorities etc.
+            </p>
+          </div>
+        </div>
+        <div class="button-ppt text-center mt-4">
+          <a
+            href="/static/images/NIWE_Presentation-EOI_meeting-NewDelhi.pdf"
+            target="_blank"
+            class="btn btn-info text-white p-3"
+            data-doc
+            >Click here for NIWE Presentation</a
+          >
+
+          <a
+            href="/static/images/offshore_wind_Mill-epd-24-07-2018.pdf"
+            target="_blank"
+            class="btn btn-info text-white p-3"
+            data-doc
+            >Click here for GPCL Presentation</a
+          >
+        </div>
+      </div>
+      <div class="col-md-4">{% include 'departments-owd-side-tabs.html' %}</div>
+
+      <div class="col-md-8 mt-4"></div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

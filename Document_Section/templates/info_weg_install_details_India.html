@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% block meta %}
+  <meta name="description" content="Year-wise details of Wind Energy Generator (WEG) installations in India provided by the National Institute of Wind Energy (NIWE), Chennai, including capacity addition, project locations, and annual operational statistics under the Ministry of New and Renewable Energy (MNRE).">
+  <meta name="keywords" content="WEG installation year-wise, wind energy generators India, NIWE Chennai, MNRE India, annual wind power capacity, wind energy projects India, renewable energy statistics, wind power growth, wind energy monitoring, wind installation data">
+  
+{% endblock %}
+{% block title %} WEG Installation Details India - Year Wise | National Institute of Wind Energy (NIWE), Ministry of New and Renewable Energy, Government of India {% endblock %}
+
+{% block content %}
+<style>
+  .about-us{
+    overflow-x: auto;
+  }
+  .about-us table{
+    width:100% !important;
+  }
+  .about-div p img{
+    width:100%;
+    height: auto;
+  }
+</style>
+<!-- nav end  -->
+
+<section class="head-div">
+  <div class="overlay d-flex align-items-center">
+    <div class="container">
+      <h1 class="text-white">WEG Installation Details India - year Wise</h1>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb bg-transparent p-0">
+      <li class="breadcrumb-item"><a href="/">Home</a></li>
+      <li class="breadcrumb-item" aria-current="page">
+        <a href="{% url 'document' %}">Documents</a>
+      </li>
+      <li class="breadcrumb-item" aria-current="page">
+        <a href="{% url 'information_weg_installation' %}"> Weg Installation</a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">
+        WEG Installation Details India - year Wise
+      </li>
+    </ol>
+  </nav>
+</div>
+
+<section class="about-div" id="divContent">
+  <div class="container mt-4 text-center">   
+
+    {% for detail in details %}
+      <p>{{detail.description|safe}}</p>
+    {% endfor %}
+
+  </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{% block meta %}
+  <meta name="description" content="Governing Council page of the National Institute of Wind Energy (NIWE), Chennai, providing information on council members, their roles, responsibilities, and oversight of wind energy and renewable energy initiatives under MNRE.">
+  <meta name="keywords" content="NIWE governing council, NIWE Chennai, MNRE India, council members, wind energy governance, renewable energy oversight, MNRE initiatives, NIWE administration, wind sector management, council responsibilities">
+{% endblock %}
+
+{% block title %} Governing Council | National Institute of Wind Energy (NIWE), Ministry of New and Renewable Energy, Government of India {% endblock %}
+
+{% block content %} 
+
+{% load static %}
+    <!-- nav end  -->
+
+    <section class="head-div">
+        <div class="overlay d-flex align-items-center">
+            <div class="container">
+                <h1 class="text-white">Governing Council</h1>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb bg-transparent p-0">
+                        <li class="breadcrumb-item"><a href="/">Home </a></li>        
+                        <li class="breadcrumb-item" ><a href="{% url 'rti' %}">Right To Information</a></li>     
+                        <li class="breadcrumb-item ">Statement of the boards, councils, committees and other bodies</li>                                  
+                        <li class="breadcrumb-item active" aria-current="page">Governing Council</li>
+                    </ol>
+            </nav>
+    </div>
+
+    <section class="rti-sec" id="divContent">
+        <div class="container">
+            
+        <ol class="ps-5" type="1">
+            <li>
+                <a href="{% static '/pdf/Governing_Council_June_2023.pdf' %}" target="_blank" data-doc>
+                    <h5>Constitution of Governing Council</h5>
+                </a>
+            </li>            
+            <li>
+                <a href="{% static '/pdf/GC_Members_list.pdf' %}" target="_blank" data-doc>
+                    <h5> Details of the Governing Council Members</h5>
+                </a>
+            </li>
+            <li>
+                <a href="{% url 'minutes_GC' %}" target="_blank">
+                    <h5>Minutes of Governing Council</h5>
+                </a>
+            </li>
+        </ol>
+
+            
+        </div>
+</section>
+
+
+<!-- footer -->
+
+{% endblock %}

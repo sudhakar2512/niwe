@@ -1,0 +1,131 @@
+{% extends 'base.html' %}
+
+{% block meta %}
+  <meta name="description" content="Overview of various departments at the National Institute of Wind Energy (NIWE), Chennai, detailing their roles, functions, and contributions in wind energy research, development, testing, certification, training, and policy support under MNRE.">
+  <meta name="keywords" content="NIWE departments, wind energy departments, MNRE India, NIWE Chennai, wind energy research, wind turbine testing, certification department, training and development, renewable energy administration, wind energy policy support">
+{% endblock %}
+
+{% block title %} Departments | National Institute of Wind Energy (NIWE), Ministry of New and Renewable Energy, Government of India {% endblock %}
+
+{% block content %}
+
+<section class="head-div">
+  <div class="overlay d-flex align-items-center">
+    <div class="container">
+      <h1 class="text-white">Department</h1>
+    </div>
+  </div>
+</section>
+<div class="container">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb bg-transparent p-0">
+      <li class="breadcrumb-item"><a href="/">Home</a></li>
+      <li class="breadcrumb-item" aria-current="page">Department</li>
+    </ol>
+  </nav>
+</div>
+
+<section class="department-div" id="divContent">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 col-12">
+        <div class="card" title="{{depart.0.title|striptags}}">
+          <div class="icon-wrapper">
+            <i class="fa fa-cogs" aria-hidden="true"></i>
+          </div>
+          <h3><a href="{% url 'r&d' %}" class="text-dark" title="{{depart.0.title}}">{{depart.0.title|safe}} </a></h3>
+           <div style="height:11rem; overflow-y:auto;">
+             {{depart.0.description|safe}}
+           </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 col-12">
+        <div class="card" title="{{depart.1.title|striptags}}">
+          <div class="icon-wrapper">
+            <i class="fa fa-certificate" aria-hidden="true"></i>
+          </div>
+          <h3><a href="{% url 'certificate' %}" class="text-dark">{{depart.1.title|safe}}</a></h3>
+           <div style="height:11rem; overflow-y:auto;"> 
+             {{depart.1.description|safe}}
+            </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 col-12">
+        <div class="card" title="{{depart.2.title|striptags}}"> 
+          <div class="icon-wrapper">
+            <i class="fa fa-wrench" aria-hidden="true"></i>
+          </div>
+          <h3><a href=" {% url 's&d' %}" class="text-dark">{{depart.2.title|safe}}</a></h3>
+         <div style="height:11rem; overflow-y:auto;">
+           {{depart.2.description|safe}}
+         </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 col-12">
+        <div class="card" title="{{depart.7.title|striptags}}">
+          <div class="icon-wrapper">
+            <i class="fa fa-briefcase" aria-hidden="true"></i>
+          </div>
+          <h3><a href="{% url 'testing_menu' %}" class="text-dark">{{depart.7.title|safe}}</a></h3>
+          <div style="height:11rem; overflow-y:auto;">
+            {{depart.7.description|safe}}
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 col-12">
+        <div class="card" title="{{depart.3.title|striptags}}">
+          <div class="icon-wrapper">
+            <i class="fa fa-window-restore" aria-hidden="true"></i>
+          </div>
+          <h3><a href="{% url 'wra' %} " class="text-dark">{{depart.3.title|safe}}</a></h3>
+          <div style="height:11rem; overflow-y:auto;">
+            {{depart.3.description|safe}}
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 col-12">
+        <div class="card" title="{{depart.4.title|striptags}}">
+          <div class="icon-wrapper">
+            <i class="fa fa-snowflake-o" aria-hidden="true"></i>
+          </div>
+          <h3><a href="{% url 'owd' %}" class="text-dark">{{depart.4.title|safe}}</a></h3>
+          <div style="height:11rem; overflow-y:auto;">
+            {{depart.4.description|safe}}
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 col-12">
+        <div class="card" title="{{depart.5.title|striptags}}">
+          <div class="icon-wrapper">
+            <i class="fa fa-laptop" aria-hidden="true"></i>
+          </div>
+          <h3><a href="{% url 'sdt' %}" class="text-dark"> {{depart.5.title|safe}}</a></h3>
+           <div style="height:11rem; overflow-y:auto;">
+             {{depart.5.description|safe}}
+           </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 col-12">
+        <div class="card" title="{{depart.6.title|striptags}}">
+          <div class="icon-wrapper">
+            <i class="fa fa-briefcase" aria-hidden="true"></i>
+          </div>
+          <h3><a href="{% url 'finance' %}" class="text-dark">{{depart.6.title|safe}}</a></h3>
+           <div style="height:11rem; overflow-y:auto;">
+             {{depart.6.description|safe}}
+           </div>
+        </div>
+      </div>
+
+     
+    </div>
+  </div>
+</section>
+{% endblock %}

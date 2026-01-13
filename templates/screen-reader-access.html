@@ -1,0 +1,121 @@
+{% extends 'base.html' %}
+
+{% block meta %}
+  <meta name="description" content="Screen Reader Access page of the National Institute of Wind Energy (NIWE), Chennai, providing information, instructions, and accessibility support for users utilizing screen readers to navigate the website under MNRE guidelines.">
+  <meta name="keywords" content="NIWE screen reader access, NIWE Chennai, MNRE India, website accessibility, assistive technology, screen reader support, wind energy accessibility, renewable energy website navigation, NIWE accessibility guidelines, MNRE compliance">
+{% endblock %}
+
+{% block title %} Screen Reader Access | National Institute of Wind Energy (NIWE), Ministry of New and Renewable Energy, Government of India {% endblock %}
+
+{% block content %}
+<section class="head-div">
+  <div class="overlay d-flex align-items-center">
+    <div class="container">
+      <h1 class="text-white">Screen Reader Access</h1>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb bg-transparent p-0">
+      <li class="breadcrumb-item"><a href="/">Home</a></li>
+      <li class="breadcrumb-item active" aria-current="page">
+        Screen Reader Access
+      </li>
+    </ol>
+  </nav>
+</div>
+
+<section class="dgm-div " id="divContent">
+  <div class="container mb-4">
+    <h1 class=" py-2  ">Screen Reader Access</h1>
+    <p>
+      The National Institute Of Wind Energy website complies with Guidelines for
+      Indian Government Websites and World Wide Web Consortium (W3C) Web Content
+      Accessibility Guidelines (WCAG) 2.0 level A. This will enable people with
+      visual impairments access the website using technologies, such as screen
+      readers. The information of the website is accessible with different
+      screen readers, such as JAWS, NVDA, SAFA, Supernova and Window-Eyes.
+    </p>
+
+    <p class="pt-2"><b>Some Screen Readers Are As Follows </b></p>
+    <div class="table-responsive">
+      <table class="table p-4 w-100">
+        <thead class="table-primary">
+          <tr>
+            <th scope="col">Screen Reader</th>
+            <th scope="col">Website</th>
+            <th scope="col">Free / Commercial</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="text-body">Screen Access For All (SAFA)</td>
+            <td>
+              <a
+                href="http://safa-reader.software.informer.com/download/"
+                target="blank" class="external-link" aria-label="Open link for download safa reader Software"
+                >http://safa-reader.software.informer.com/download/</a
+              >
+            </td>
+            <td>Free</td>
+          </tr>
+          <tr>
+            <td>Non Visual Desktop Access (NVDA)</td>
+            <td>
+              <a href="http://www.nvda-project.org/" target="blank" class="external-link" aria-label="Open link for download nvda  Software"
+                >http://www.nvda-project.org/</a
+              >
+            </td>
+            <td>Free</td>
+          </tr>
+          <tr>
+            <td>System Access To Go</td>
+            <td>
+              <a href="http://www.satogo.com/" target="blank" class="external-link" aria-label="Open link for download System access to go  Software"
+                >http://www.satogo.com/</a
+              >
+            </td>
+            <td>Free</td>
+          </tr>
+
+          <tr>
+            <td>JAWS</td>
+            <td>
+              <a
+                href="http://www.freedomscientific.com/jaws-hq.asp"
+                target="blank" class="external-link" aria-label="Open link for download JAWS Software"
+                >http://www.freedomscientific.com/jaws-hq.asp</a
+              >
+            </td>
+            <td>Commercial</td>
+          </tr>
+          <tr>
+            <td>Supernova</td>
+            <td>
+              <a
+                href="http://www.yourdolphin.co.uk/productdetail.asp?id=1"
+                target="blank" class="external-link" aria-label="Open link for download Supernova Software"
+                >http://www.yourdolphin.co.uk/productdetail.asp?id=1</a
+              >
+            </td>
+            <td>Commercial</td>
+          </tr>
+          <tr>
+            <td>Window-Eyes</td>
+            <td>
+              <a href="http://www.gwmicro.com/Window-Eyes/" target="blank" class="external-link" aria-label="Open link for download window eyes Software"
+                >http://www.gwmicro.com/Window-Eyes/</a
+              >
+            </td>
+            <td>Commercial</td>
+          </tr>
+        </tbody>
+        <tfoot></tfoot>
+      </table>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

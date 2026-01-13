@@ -1,0 +1,98 @@
+{% extends 'base.html' %}
+
+{% block meta %}
+  <meta name="description" content="Result Framework Document (RFD) page of the National Institute of Wind Energy (NIWE), Chennai, detailing organizational objectives, performance targets, outcomes, and accountability measures under the Ministry of New and Renewable Energy (MNRE).">
+  <meta name="keywords" content="NIWE RFD, Result Framework Document, NIWE Chennai, MNRE India, organizational objectives, performance targets, accountability measures, wind energy goals, renewable energy outcomes, NIWE performance framework">
+{% endblock %}
+
+{% block title %}Result Framework Document | National Institute of Wind Energy (NIWE), Ministry of New and Renewable Energy, Government of India {% endblock %}
+
+{% block content %}
+
+{% load static %}
+<!-- nav end  -->
+
+<section class="head-div">
+  <div class="overlay d-flex align-items-center">
+    <div class="container">
+      <h1 class="text-white">Result Framework Document</h1>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb bg-transparent p-0">
+      <li class="breadcrumb-item"><a href="/">Home</a></li>
+      
+      <li class="breadcrumb-item active" aria-current="page">
+        Result Framework Document
+      </li>
+    </ol>
+  </nav>
+</div>
+
+<section class="rnd-div" id="divContent">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <h5 class="pb-3">Result Framework Document</h5>
+        <ol type="I">
+          <li>
+            <a href="{% static '/pdf/NIWE_RFD_2015-16.pdf' %}" target="_blank" data-doc >
+              RFD 2015-2016
+            </a>
+          </li>
+          <li>
+            <a href="{% static '/pdf/NIWE_RFD_2014-15.pdf' %}" target="_blank" data-doc >
+              RFD 2014-2015
+            </a>
+          </li>
+          <li>
+            <a href="{% static '/pdf/NIWE_RFD_2013-14.pdf' %}" target="_blank" data-doc >
+              RFD 2013-2014
+            </a>
+          </li>
+          <li>
+            <a href="{% static '/pdf/NIWE_RFD_2012-13.pdf' %}" target="_blank" data-doc >
+              RFD 2012-2013
+            </a>
+          </li>
+          <li>
+            <a href="{% static '/pdf/NIWE_RFD_2011-12.pdf' %}" target="_blank" data-doc >
+              RFD 2011-2012
+            </a>
+          </li>
+        </ol>
+
+        <h5 class="pb-3 pt-2">Performance Evaluation Report</h5>
+
+        <ol type="I">
+          <li>
+            <a href="{% static '/pdf/NIWE_PER_2014-15.pdf' %}" target="_blank" data-doc >
+              RFD 2014-2015
+            </a>
+          </li>
+          <li>
+            <a href="{% static '/pdf/NIWE_PER_2013-14.pdf' %}" target="_blank" data-doc >
+              RFD 2013-2014
+            </a>
+          </li>
+          <li>
+            <a href="{% static '/pdf/NIWE_PER_2012-13.pdf' %}" target="_blank" data-doc >
+              RFD 2012-2013
+            </a>
+          </li>
+          <li>
+            <a href="{% static '/pdf/NIWE_PER_2011-12.pdf' %}" target="_blank" data-doc >
+              RFD 2011-2012
+            </a>
+          </li>
+        </ol>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+{% endblock %}

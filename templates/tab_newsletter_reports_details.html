@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+
+{% block meta %}
+  <meta name="description" content="Newsletter of {{ year }} by the National Institute of Wind Energy (NIWE), Chennai, featuring updates, articles, research highlights, and developments in wind energy and renewable energy initiatives under MNRE.">
+  <meta name="keywords" content="NIWE newsletter {{ year }}, NIWE Chennai, MNRE India, wind energy updates, renewable energy articles, wind sector developments, NIWE research highlights, wind power news, MNRE initiatives, wind energy information">
+{% endblock %}
+
+{% block title %}Newsletter of {{ year }} | National Institute of Wind Energy (NIWE), Ministry of New and Renewable Energy, Government of India. {% endblock %}
+
+{% block content %}
+
+<section class="head-div">
+  <div class="overlay d-flex align-items-center">
+    <div class="container">
+      <h1 class="text-white">Newsletter of {{ year }}</h1>
+    </div>
+  </div>
+</section>
+
+<div class="container py-2">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb bg-transparent p-0">
+      <li class="breadcrumb-item"><a href="/">Home</a></li>
+      <li class="breadcrumb-item">
+        <a href="{% url 'departments' %}">Department</a>
+      </li>
+      <li class="breadcrumb-item">
+        <a href="{% url 'sdt' %}">Skill Development & Training</a>
+      </li>
+      
+      <li class="breadcrumb-item">
+        <a href="{% url 'newsletters' %}">Newsletter</a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">
+        {{ year }}
+      </li>
+    </ol>
+  </nav>
+</div>
+
+<section class="department-div header report-section" id="divContent" >
+  <div class="container">
+    <h2>Download News letter - {{ issue }} </h2>  <br>    
+    <ul>
+      {% if report.docs_english %}
+        
+          <li>
+            <a href="{{ report.docs_english.url }}" target="_blank">Newsletter  - English
+              <i class="{{ report.docs_english_info.icon }}">  
+              {{ report.docs_english_info.type }}, </i> </a> {{ report.docs_english_info.size }} 
+            </li>
+          </li>
+       
+      {% endif %}
+    
+      {% if report.docs_hindi %}
+        
+          <li>
+            <a href="{{ report.docs_hindi.url }}" target="_blank">
+              Newsletter - Hindi
+          
+            <i class="{{ report.docs_hindi_info.icon }}" aria-hidden="true">  
+            {{ report.docs_hindi_info.type }}, </i> </a> {{ report.docs_hindi_info.size }} 
+          </li>
+        
+      {% else %}
+        <li class = "not-available">
+          <a href="javascript:void(0)" target="_blank">Newsletter  - Hindi is not available </a>
+        </li>
+      {% endif %}
+    </ul>
+
+ 
+
+  </div>
+</section>
+
+{% endblock %}

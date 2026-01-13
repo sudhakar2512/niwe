@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% block meta %}
+  <meta name="description" content="Details of the 2nd Global Re-Invest Meet hosted by the National Institute of Wind Energy (NIWE), Chennai, covering international participation, discussions, renewable energy initiatives, and wind energy developments under MNRE.">
+  <meta name="keywords" content="2nd Global Re-Invest Meet, NIWE Chennai, MNRE India, wind energy conference, renewable energy meet, international energy discussions, NIWE events, wind power developments, global renewable initiatives, wind energy sector meet">
+{% endblock %}
+
+{% block title %} 2nd Global Re-Invest Meet  | National Institute of Wind Energy (NIWE), Ministry of New and Renewable Energy, Government of India {% endblock %}
+
+{% block content %} {% load static %}
+
+<section class="head-div">
+  <div class="overlay d-flex align-items-center">
+    <div class="container">
+      <h1 class="text-white">Events</h1>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb bg-transparent p-0">
+      <li class="breadcrumb-item"><a href="/">Home</a></li>
+      <li class="breadcrumb-item">
+        <a href="{% url 'medias' %}">Media</a>
+      </li>
+      <li class="breadcrumb-item">
+        <a href="{% url 'events' %}"> Events</a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">
+        2nd Global Re-Invest Meet - 3 to 5 Oct, 2018
+      </li>
+    </ol>
+  </nav>
+</div>
+
+<section class="main-div">
+  <div class="container">
+    <h2>2nd Global Re-Invest Meet - 3 to 5 Oct, 2018 </h2>
+<div class="container">
+   <div class="row mx-auto gallery col-12">
+      {% for photo in global_invest_photo %}
+      <div class="col-lg-3 col-md-3 col-sm-6 col-12">
+        <a href="{{ photo.image.url }}" class="big" aria-label="2nd Global Re-Invest Meet - 3 to 5 Oct, 2018">
+          <div class="card sub-gallery-card p-0">
+            <div class="card-body text-center p-2 sub-gallery-img">
+              <img
+                src="{{ photo.image.url }} "
+                class="card-img-top"
+                alt="2nd Global Re-Invest Meet - 3 to 5 Oct, 2018"
+                title="2nd Global Re-Invest Meet - 3 to 5 Oct, 2018"
+              />
+            </div>
+          </div>
+        </a>
+      </div>
+      {% endfor %}
+    </div>
+</div>
+
+  </div>
+</section>
+
+{% endblock %}

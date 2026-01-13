@@ -1,0 +1,121 @@
+{% extends 'base.html' %}
+
+{% block meta %}
+  <meta name="description" content="Archived tenders of the National Institute of Wind Energy (NIWE), Chennai, including past tender notices, procurement details, and related documentation under the Ministry of New and Renewable Energy (MNRE).">
+  <meta name="keywords" content="archived tenders NIWE, NIWE Chennai, MNRE India, past tender notices, wind energy procurement, renewable energy tenders, NIWE tender archive, wind sector procurement, tender documentation, MNRE tender records">
+{% endblock %}
+
+{% block title %} Archived Tenders | National Institute of Wind Energy (NIWE), Ministry of New and Renewable Energy, Government of India {% endblock %}
+
+{% block content %}
+
+<section class="head-div">
+  <div class="overlay d-flex align-items-center">
+    <div class="container">
+      <h1 class="text-white">Archived Tenders</h1>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb bg-transparent p-0">
+      <li class="breadcrumb-item">
+        <a href="/">Home</a>
+      </li>
+      <li class="breadcrumb-item">
+        <a href="{% url 'tender_data' %}">Tenders</a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">Archived Tenders</li>
+    </ol>
+  </nav>
+</div>
+
+
+<section class="tender-sec" id="div-content">
+  <div class="container">
+
+    {% if page_obj.object_list%}
+    <div class="table-responsive">
+
+
+      <table class="tender-table w-100">
+        <thead>
+          <tr>
+            <th class="sl-no">Sno</th>
+            <th class="title">Title</th>
+            <th class="Open-Date">Published Date</th>
+            <th class="Due-Date">Due Date</th>            
+            <th class="file">File</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for datas in page_obj %}
+                <tr>
+                  <td>{{ forloop.counter|add:page_obj.start_index|add:-1 }}</td>
+                  <td>{{ datas.Tender_Title }}
+                    <!-- {% if datas.New_Label %}
+                      <span class="label_blink notranslate">NEW</span>
+                    {% endif %}  -->
+                    {% if datas.corrigenda.exists %}
+                    <ol style="list-style-type: disc" class="notranslate">
+                      {% for corrigendum in datas.corrigenda.all %}
+                      <li>
+                        <a href="{{ corrigendum.file.url }}" target="_blank">
+                          
+                          <span class="notranslate">{{ corrigendum.title }}</span>
+                          <!-- {% if corrigendum.New_Label %}
+                            <span class="label_blink notranslate">NEW</span>
+                          {% endif %} -->
+                          <i class="{{ corrigendum.file_icon_class }}"> {{ corrigendum.file_type }}</i>
+                        </a>
+                        <span class="text-muted">({{ corrigendum.file_size_display }})</span>
+                      </li>
+                      {% endfor %}
+                    </ol>
+                    {% endif %} 
+                  </td>
+                  <td>
+                    {{ datas.Published_Date |date:"d.m.Y" }} 
+                  </td>
+                  <td>
+                    {{ datas.Due_Date |date:"d.m.Y" }} Upto {{ datas.Due_Date |date:"g:i A" }}
+                  </td>
+                  
+                  <td>
+                    <a href="{{ datas.Tender_Pdf.url }}" target="_blank" class="text-primary ms-2">
+                      <i class="{{ datas.file_icon_class }}" aria-hidden="true"> </i> {{ datas.file_type }}
+                      <span class="text-muted">({{ datas.file_size_display  }})</span>
+                    </a>
+                  </td>
+                </tr>
+                {% endfor %}
+        </tbody>
+      </table>
+    </div>
+      <!-- Pagination Controls -->
+      <div class="pagination">
+        <ul class="pagination-list">
+          {% if page_obj.has_previous %}
+          <li><a href="?page={{ page_obj.previous_page_number }}">&laquo; Previous</a></li>
+          {% endif %}
+          {% for page in page_obj.paginator.page_range %}
+          <li class="{% if page == page_obj.number %}active{% endif %}">
+            <a href="?page={{ page }}">{{ page }}</a>
+          </li>
+          {% endfor %}
+          {% if page_obj.has_next %}
+          <li><a href="?page={{ page_obj.next_page_number }}">Next &raquo;</a></li>
+          {% endif %}
+        </ul>
+      </div>
+
+    {% else %}
+    <p class="text-center mt-4"> No archived data found</p>
+    {% endif %}
+
+  </div>
+</section>
+
+
+{% endblock %}

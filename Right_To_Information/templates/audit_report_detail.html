@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block meta %}
+  <meta name="description" content="Audit Report for {{ detail.year }} page of the National Institute of Wind Energy (NIWE), Chennai, providing detailed audit findings, financial assessments, and compliance reports for wind energy and renewable energy initiatives under MNRE.">
+  <meta name="keywords" content="NIWE audit report {{ detail.year }}, NIWE Chennai, MNRE India, financial audit, wind energy compliance, renewable energy audit, annual audit report, MNRE initiatives, NIWE financial assessment, wind sector audit">
+{% endblock %}
+
+{% block title %} Audit Report - {{ detail.year }} | National Institute of Wind Energy (NIWE), Ministry of New and Renewable Energy, Government of India {% endblock %}
+
+{% block content %} 
+
+<section class="head-div">
+    <div class="overlay d-flex align-items-center">
+        <div class="container">
+            <h1 class="text-white">Audit Report - {{ detail.year }}</h1>
+        </div>
+    </div>
+</section>
+
+<div class="container mt-5">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb bg-transparent p-0">
+            <li class="breadcrumb-item"><a href="/">Home</a></li>
+            <li class="breadcrumb-item"><a href="{% url 'rti' %}">Right To Information</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Audit Report - {{ detail.year }}</li>
+        </ol>
+    </nav>
+
+    <div class="row">
+        <div class="col-12">
+            <div class="card p-4">
+                <!-- Render the HTML content -->
+                <div class="html-content">
+                    {{ detail.description|safe }}
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

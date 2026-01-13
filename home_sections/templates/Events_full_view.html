@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+
+{% block meta %}
+  <meta name="description" content="Information on events organized by the National Institute of Wind Energy (NIWE), Chennai, including seminars, workshops, training programs, conferences, and other activities in the wind energy sector under the Ministry of New and Renewable Energy (MNRE).">
+  <meta name="keywords" content="NIWE events, wind energy workshops, seminars, NIWE Chennai, MNRE India, wind energy conferences, training programs, renewable energy events, wind energy sector activities, NIWE programs">
+{% endblock %}
+
+{% block title %} Events | National Institute of Wind Energy (NIWE), Ministry of New and Renewable Energy, Government of India. {% endblock %}
+
+{% block content %}
+<section class="head-div">
+  <div class="overlay d-flex align-items-center">
+    <div class="container">
+      <h1 class="text-white">Events</h1>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb bg-transparent p-0">
+      <li class="breadcrumb-item">
+        <a href="/">Home</a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">Events</li>
+    </ol>
+  </nav>
+</div>
+
+<section class="dgm-div" id="div-content">
+  <div class="container">
+    <div class="table-responsive">
+      <table  class="whats-new-table w-100">
+            <thead>
+              <tr>
+                <th class="sl-no">Sl No</th>
+                <th class="title">Title</th>
+                <th class="file">File</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for data in page_obj %}
+              <tr>
+                <td>{{ forloop.counter |add:page_obj.start_index|add:-1 }}</td>
+                <td>{{ data.title }} 
+                  {% if data.New_Label %}
+                  <span class="label_blink notranslate">NEW</span>
+                  {% endif %}         
+                </td>
+                <td><a href="{{ data.url_link }}" target="_blank">Click here</a> </td>
+              </tr>
+              {% endfor %}
+            </tbody>     
+        </table>
+    </div>
+    <!-- Pagination Controls -->
+    <div class="pagination">
+      <ul class="pagination-list">
+        {% if page_obj.has_previous %}
+        <li><a href="?page={{ page_obj.previous_page_number }}">&laquo; Previous</a></li>
+        {% endif %}
+        {% for page in page_obj.paginator.page_range %}
+        <li class="{% if page == page_obj.number %}active{% endif %}">
+          <a href="?page={{ page }}">{{ page }}</a>
+        </li>
+        {% endfor %}
+        {% if page_obj.has_next %}
+        <li><a href="?page={{ page_obj.next_page_number }}">Next &raquo;</a></li>
+        {% endif %}
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+{% endblock %}

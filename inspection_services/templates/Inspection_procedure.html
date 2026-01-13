@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% block meta %}
+  <meta name="description" content="Detailed Inspection Procedure at the National Institute of Wind Energy (NIWE), Chennai, outlining step-by-step processes, protocols, and guidelines for conducting inspections of wind energy systems under MNRE.">
+  <meta name="keywords" content="inspection procedure NIWE, wind energy inspection, NIWE Chennai, MNRE India, wind turbine inspection guidelines, renewable energy inspections, wind power compliance, inspection protocols, NIWE procedures, wind energy standards">
+{% endblock %}
+
+{% block title %} Inspection Procedure  | National Institute of Wind Energy (NIWE), Ministry of New and Renewable Energy, Government of India {% endblock %}
+
+{% block content %}
+
+<section class="head-div">
+  <div class="overlay d-flex align-items-center">
+    <div class="container">
+      <h1 class="text-white">Inspection Procedure</h1>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb bg-transparent p-0">
+      <li class="breadcrumb-item"><a href="/">Home</a></li>
+      <li class="breadcrumb-item" aria-current="page">
+        <a href="{% url 'departments' %}">Department</a>
+      </li>
+      <li class="breadcrumb-item" aria-current="page">
+        <a href="{% url 'certificate' %}">Certification</a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">
+        Inspection Services
+      </li>
+    </ol>
+  </nav>
+</div>
+
+<section class="rnd-div" id="divContent">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">{% include 'inspection_sidenav.html' %}</div>
+      <div class="col-md-8">
+        <div class="dgm-text">
+          <!--   -->
+          <h5>Flow chart for ISO/IEC 17020:2012</h5>
+          <img
+            src="/static/images/certification/Inpsection_procedure_2025.png"
+            alt="flow-chart"
+            style="max-width:100%;"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

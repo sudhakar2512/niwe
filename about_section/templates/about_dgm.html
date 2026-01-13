@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% block meta %}
+  <meta name="description" content="Read the Director General's message of the National Institute of Wind Energy (NIWE), highlighting NIWE’s achievements, vision for wind energy development in India, commitment to research, innovation, and sustainable renewable energy solutions under the Ministry of New and Renewable Energy.">
+  <meta name="keywords" content="Director General message NIWE, NIWE leadership, wind energy India, MNRE, National Institute of Wind Energy, renewable energy vision, NIWE achievements, wind energy research, sustainable energy solutions, NIWE Chennai">
+{% endblock %}
+
+{% block title %}
+  Director General's Message | National Institute of Wind Energy (NIWE), Ministry of New and Renewable Energy, Government of India
+{% endblock %}
+
+{% block content %}
+
+<section class="head-div">
+  <div class="overlay d-flex align-items-center">
+    <div class="container">
+      <h1 class="text-white">Director General's Message</h1>
+    </div>
+  </div>
+</section>
+<div class="container">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb bg-transparent p-0">
+      <li class="breadcrumb-item"><a href="/">Home</a></li>
+      <li class="breadcrumb-item" aria-current="page">
+        <a href="{% url 'us' %}">About Us</a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">
+        Director General's Message
+      </li>
+    </ol>
+  </nav>
+</div>
+
+<section class="dgm-div" >
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">{% include 'aboutsidenav.html' %}</div>
+      <div class="col-md-8" id="divContent">
+        <div class="dgm-text" >
+          {% for data in dgm %}
+
+          <h4>{{data.title}}</h4>
+
+          {{data.description | safe}}
+          <p>Yours faithfully,</p>
+          <h5>Director General</h5>
+
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

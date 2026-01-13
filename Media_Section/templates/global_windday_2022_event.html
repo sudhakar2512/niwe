@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% block meta %}
+  <meta name="description" content="Details of Global Wind Day 2022 and Silver Jubilee Celebration at the National Institute of Wind Energy (NIWE), Chennai, highlighting events, programs, achievements, and initiatives in the wind energy sector under MNRE.">
+  <meta name="keywords" content="Global Wind Day 2022, Silver Jubilee NIWE, NIWE Chennai, MNRE India, wind energy celebration, renewable energy events, wind sector achievements, NIWE programs, wind energy initiatives, anniversary events">
+{% endblock %}
+
+{% block title %} Global Wind Day 2022 & Silver Jubilee Celebration  | National Institute of Wind Energy (NIWE), Ministry of New and Renewable Energy, Government of India {% endblock %}
+
+{% block content %} {% load static %}
+
+<section class="head-div">
+  <div class="overlay d-flex align-items-center">
+    <div class="container">
+      <h1 class="text-white">Events</h1>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb bg-transparent p-0">
+      <li class="breadcrumb-item"><a href="/">Home</a></li>
+      <li class="breadcrumb-item">
+        <a href="{% url 'medias' %}">Media</a>
+      </li>
+      <li class="breadcrumb-item">
+        <a href="{% url 'events' %}"> Events</a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">
+        Global Wind Day 2022 & Silver Jubilee Celebration of National Institute of Wind Energy 
+      </li>
+    </ol>
+  </nav>
+</div>
+
+<section class="main-div">
+  <div class="container">
+    <h2>Global Wind Day 2022 & Silver Jubilee Celebration of National Institute of Wind Energy</h2>
+<div class="container">
+   <div class="row mx-auto gallery col-12">
+      {% for photo in windday_photo %}
+      <div class="col-lg-3 col-md-3 col-sm-6 col-12 mb-3">
+        <a href="{{ photo.photo.url }}" class="big" aria-label="open Global Wind Day 2022">
+          <div class="card sub-gallery-card p-0">
+            <div class="card-body text-center p-2 sub-gallery-img">
+              <img
+                src="{{ photo.photo.url }} "
+                class="card-img-top"
+                alt="Global Wind Day 2022 "
+                title = "Global Wind Day 2022"
+              />
+            </div>
+          </div>
+        </a>
+      </div>
+      {% endfor %}
+    </div>
+</div>
+
+  </div>
+</section>
+
+{% endblock %}

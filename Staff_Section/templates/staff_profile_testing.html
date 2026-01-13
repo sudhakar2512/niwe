@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+
+
+{% block meta %}
+  <meta name="description" content="Staff profile of the Testing Department at the National Institute of Wind Energy (NIWE), Chennai, highlighting professionals engaged in wind turbine testing, performance assessment, and quality assurance to support India's renewable energy goals under the Ministry of New and Renewable Energy (MNRE).">
+  <meta name="keywords" content="NIWE staff profile, Testing Department, NIWE Chennai, wind turbine testing experts, MNRE India, wind energy performance testing, renewable energy quality assurance, NIWE engineers, turbine evaluation, testing specialists">
+{% endblock %}
+
+{% block title %} Staff profile of Testing | National Institute of Wind Energy (NIWE), Ministry of New and Renewable Energy, Government of India {% endblock %}
+
+{% block content %} 
+
+<section class="head-div">
+  <div class="overlay d-flex align-items-center">
+    <div class="container">
+      <h1 class="text-white">Testing</h1>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb bg-transparent p-0">
+      <li class="breadcrumb-item"><a href="/">Home </a></li>
+      <li class="breadcrumb-item">
+        <a href="{% url 'contact' %}">Contact Us </a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">
+        Testing
+      </li>
+    </ol>
+  </nav>
+</div>
+
+<section class="staff-dev" id="divContent">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 col-12">
+        <!-- sidenav bar -->
+        {% include 'sidenav.html' %}
+      </div>
+
+      <div class="col-md-8 col-12">
+        <div class="staff-table">
+          <div class="table-responsive">
+            <table
+              class="table table-bordered table-striped"
+              style="margin-top: 0px"
+            >
+              <thead class="table__head">
+                <tr>
+                  <th><i class="fa fa-user" aria-hidden="true"></i> Name</th>
+                  <th>
+                    <i class="fa fa-map-marker" aria-hidden="true"></i> Contact
+                  </th>
+                </tr>
+              </thead>
+              <tbody class="table__body">
+                {% for staff in testStaff %}
+                <tr>
+                  <td>
+                    <a href="{% url 'testing_staff_photo' staff.id %} "> {{staff.name}}</a>
+                    <br />
+                    {{staff.position}}
+                  </td>
+
+                  <td>
+                    <i class="fa fa-envelope" aria-hidden="true"></i
+                    >{{staff.email}}
+                    <br />
+                    <i class="fa fa-phone" aria-hidden="true"></i
+                    >{{staff.phone_number}}
+                  </td>
+                </tr>
+                {% endfor %}
+               
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- footer -->
+
+{% endblock %}

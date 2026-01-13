@@ -1,0 +1,234 @@
+{% extends 'base.html' %}
+
+{% block meta %}
+  <meta name="description" content="Information on Micro Survey activities conducted by the National Institute of Wind Energy (NIWE), Chennai, including small-scale wind resource assessment, data collection, analysis, and reporting to support wind energy projects under the Ministry of New and Renewable Energy.">
+  <meta name="keywords" content="NIWE micro survey, small-scale wind assessment, MNRE, NIWE Chennai, wind resource data collection, wind energy analysis, renewable energy surveys, wind project support, wind data reporting, wind energy research">
+{% endblock %}
+
+{% block title %} Micro Survey | National Institute of Wind Energy (NIWE), Ministry of New and Renewable Energy, Government of India {% endblock %}
+
+{% block content %}
+{% load static %}
+<section class="head-div">
+  <div class="overlay d-flex align-items-center">
+    <div class="container">
+      <h1 class="text-white">Micro Survey</h1>
+    </div>
+  </div>
+</section>
+<div class="container">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb bg-transparent p-0">
+      <li class="breadcrumb-item"><a href="/">Home</a></li>
+      <li class="breadcrumb-item" aria-current="page">
+        <a href="{% url 'departments' %}">Department</a>
+      </li>
+      <li class="breadcrumb-item active">
+        <a href="{% url 'wra' %}">Wind Resource Assessment (WRA)</a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">Micro Survey</li>
+    </ol>
+  </nav>
+</div>
+
+<section class="rnd-div" id="divContent">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <div class="container my-4">
+          <!-- Accordion structure -->
+          <div class="accordion" id="micero1">
+            <!-- General Section -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="micro1">
+                <button
+                  class="accordion-button"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseMicro1"
+                  aria-expanded="true"
+                  aria-controls="collapseMicro1"
+                >
+                  General
+                </button>
+              </h2>
+              <div
+                id="collapseMicro1"
+                class="accordion-collapse collapse show"
+                aria-labelledby="micro1"
+                data-bs-parent="#micero1"
+              >
+                <div class="accordion-body">
+                  &nbsp &nbsp &nbsp &nbsp The monitored wind data at a location
+                  in the case of homogeneous terrain can be extended to a
+                  certain distance. Thus it is possible to predict wind
+                  climatology around a station using Reference station data in
+                  conjunction with appropriate models. This will result in the
+                  micro survey of wind resource around a station. 97 stations
+                  micro survey has been conducted and the reports are available
+                  for sale.
+                  <a
+                    href="{%  static '/images/sub-gallery/Availability_of_Micro_survey_Reports.pdf' %}"
+                    target="_blank" data-doc>
+                    Click here for availability of Micro Survey Reports
+                  </a>
+                </div>
+              </div>
+            </div>
+            <!-- State-wise List Section -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="m2">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#microTwo"
+                  aria-expanded="false"
+                  aria-controls="microTwo"
+                >
+                  State-wise List of Wind Monitoring Stations for which Micro
+                  Survey has been done is as follows
+                </button>
+              </h2>
+              <div
+                id="microTwo"
+                class="accordion-collapse collapse"
+                aria-labelledby="m2"
+                data-bs-parent="#micro2"
+              >
+                <div class="accordion-body col-md-8 offset-md-2">
+                  <table class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th class="text-center">S.No</th>
+                        <th class="text-center">State</th>
+                        <th class="text-center">Stations</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {% for item in servey %}
+
+                      <tr>
+                        <td class="text-center">{{item.serial}}</td>
+                        <td>{{item.state }}</td>
+                        <td class="text-center">{{ item.stations }}</td>
+                      </tr>
+
+                      {% endfor %}
+
+                      <tr>
+                        <td class="text-center" colspan="2">Total</td>
+                        <td class="text-center">97</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <!-- MicroSiting Section -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="micro3">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseThree"
+                  aria-expanded="false"
+                  aria-controls="collapseThree"
+                >
+                  MicroSiting
+                </button>
+              </h2>
+              <div
+                id="collapseThree"
+                class="accordion-collapse collapse"
+                aria-labelledby="micro3"
+                data-bs-parent="#accordionExample"
+              >
+                <div class="accordion-body">
+                  &nbsp &nbsp &nbsp &nbsp By conducting a micro survey around a
+                  station the known windy locations around the site can be
+                  earmarked. However this is always general information and for
+                  locating and siting wind turbines at any identified location
+                  is to be further microsited considering the topography,
+                  contour, roughness etc. Thus for commissioning wind farms at
+                  any location micrositing is required. The NIWE under takes
+                  such works.
+                </div>
+              </div>
+            </div>
+            <!-- Detailed Project Report Section -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingFour">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseFour"
+                  aria-expanded="false"
+                  aria-controls="collapseFour"
+                >
+                  Detailed Project Report for Wind Farms
+                </button>
+              </h2>
+              <div
+                id="collapseFour"
+                class="accordion-collapse collapse"
+                aria-labelledby="headingFour"
+                data-bs-parent="#accordionExample"
+              >
+                <div class="accordion-body">
+                  <p>
+                    &nbsp &nbsp &nbsp &nbsp Prior to the commissioning of a wind
+                    farm at any location a detailed project report has to be
+                    prepared. This will carry all the details like the wind
+                    resource, configuration of wind turbine, annual energy
+                    production, required civil and electrical works and finally
+                    the economic viability of the project. NIWE undertakes such
+                    projects.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!-- Time Series Data Section -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingFive">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseFive"
+                  aria-expanded="false"
+                  aria-controls="collapseFive"
+                >
+                  Time Series Data
+                </button>
+              </h2>
+              <div
+                id="collapseFive"
+                class="accordion-collapse collapse"
+                aria-labelledby="headingFive"
+                data-bs-parent="#accordionExample"
+              >
+                <div class="accordion-body">
+                  <p>
+                    &nbsp &nbsp &nbsp &nbsp NIWE has commissioned so far 915
+                    wind monitoring stations in the country. From these stations
+                    one or more years data is available and can be obtained from
+                    NIWE. Two different formats are available and these are
+                    priced at Rs.15,000 for Second Wind data and Rs.20,000 for
+                    NRG data for one year from a station(GST will be levied as
+                    per rule).
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">{% include 'depart-side-tabs.html' %}</div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{% block meta %}
+  <meta name="description" content="Short-Term Courses page of the National Institute of Wind Energy (NIWE), Chennai, providing information on brief, specialized training programs and workshops in wind energy and renewable energy under MNRE.">
+  <meta name="keywords" content="NIWE short-term courses, NIWE Chennai, MNRE India, wind energy training, renewable energy workshops, specialized programs, brief training courses, wind sector education, MNRE initiatives, NIWE programs">
+{% endblock %}
+
+{% block title %} Short-Term Courses | National Institute of Wind Energy (NIWE), Ministry of New and Renewable Energy, Government of India. {% endblock %}
+
+{% block content %} 
+
+<section class="head-div">
+  <div class="overlay d-flex align-items-center">
+    <div class="container">
+      <h1 class="text-white">Short-Term Courses</h1>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb bg-transparent p-0">
+      <li class="breadcrumb-item"><a href="/">Home</a></li>
+      <li class="breadcrumb-item">
+        <a href="{% url 'departments' %}">Department</a>
+      </li>
+      <li class="breadcrumb-item">
+        <a href="{% url 'sdt' %}">Skill Development & Training</a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">
+        Short-Term Courses
+      </li>
+    </ol>
+  </nav>
+</div>
+<section class="rnd-div" id="divContent">
+  <div class="container">
+    <div class="row col-12 mx-auto">
+      <div class="col-md-8">
+        <div class="mx-auto">
+          {% for item in short %}
+          <!-- <div class="col-md-3 col-sm-6 offset-md-4">
+            <div class="sm-card-design text-center">
+              <img src=" {{ item.image.url }}  " alt="img" class="img-fluid" />
+            </div>
+          </div> -->
+
+          <div class="font-italic my-1 text-center">
+            <b>{{item.title|safe}} </b>
+            {{ item.description|safe }}
+          </div>
+
+          {% endfor %}
+        </div>
+      </div>
+
+      <div class="col-md-4">{% include "side-tab.html" %}</div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+
+{% block meta %}
+  <meta name="description" content="Get in touch with the National Institute of Wind Energy (NIWE), Chennai. Find contact details, office addresses, phone numbers, email IDs, and directions to NIWE for inquiries related to wind energy research, testing, certification, and consultancy services under the Ministry of New and Renewable Energy.">
+  <meta name="keywords" content="NIWE contact details, National Institute of Wind Energy contact, MNRE, NIWE Chennai phone, email address, wind energy inquiries, wind power office address, renewable energy contact, wind turbine information, NIWE support">
+{% endblock %}
+
+{% block title %} Contact Us | National Institute of Wind Energy (NIWE), Ministry of New and Renewable Energy, Government of India {% endblock %}
+
+{% block content %}
+
+<section class="head-div">
+  <div class="overlay d-flex align-items-center">
+    <div class="container">
+      <h1 class="text-white">Contact Us</h1>
+    </div>
+  </div>
+</section > 
+<div class="container">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb bg-transparent p-0">
+      <li class="breadcrumb-item"><a href="/">Home </a></li>
+      <li class="breadcrumb-item active" aria-current="page">Contact Us</li>
+    </ol>
+  </nav>
+</div>
+
+<section class="staff-dev" id="divContent">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 col-12">
+        <!-- sidenav bar -->
+        {% include "sidenav.html" %}
+      </div>
+
+      <div class="col-md-8 col-12">
+        <div class="feedback">
+          {{contact.0.feedback_and_Address|safe}}
+       <span class="fw-bold">Email ID:-</span> <a href="mailto:itteam@niwe.res.in" class="text-dark">itteam[at]niwe[dot]res[dot]in</a>
+        </div>
+
+        <div class="map">
+          <h3>CHENNAI</h3>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d124438.0770408365!2d80.191885!3d12.927641!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a525db9969587c9%3A0xf6896d7d3dadeb2d!2sNational%20Institute%20of%20Wind%20Energy!5e0!3m2!1sen!2sus!4v1710931663334!5m2!1sen!2sus"
+            width="100%"
+            height="300px"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+
+        <div class="row mt-5 col-12 mx-auto">
+          <div class="col-md-6 col-12">
+            <div class="feedback">
+              {{contact.0.testing_and_Research_Station|safe}} 
+              
+            </div>
+          </div>
+          <div class="col-md-6 col-12">
+            <div class="map2">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15764.366314280194!2d77.7197153!3d8.9637089!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b041dee3bf157df%3A0xe96a6f1b9a746a07!2sNATIONAL%20INSTITUTE%20OF%20WIND%20ENERGY%2C%20Ministry%20of%20New%20and%20Renewable%20Energy%2C%20Government%20of%20India!5e0!3m2!1sen!2sin!4v1727694759202!5m2!1sen!2sin"
+                width="100%"
+                height="325"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

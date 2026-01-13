@@ -1,0 +1,315 @@
+<!-- search_results.html -->
+{% include 'header.html' %}
+
+<section class="dgm-div" id="divContent">
+  <div class="container">
+    <!-- start about_section -->
+
+    <ul>
+      {% for about in aboutUs %}
+        <h2>About Us</h2>
+        <h5>{{ about.title }}:</h5>
+        <li>{{ about.description }}</li>
+      {% empty %}
+
+      {% endfor %}
+    </ul>
+    <ul>
+      {% for about in background %}
+        <h2>Background</h2>
+        <li>{{ about.description }}</li>
+      {% empty %}
+
+      {% endfor %}
+    </ul>
+
+    <ul>
+      {% for about in DGMessage %}
+        <h2>Director General Messege</h2>
+        <h5>{{ about.title }}</h5>
+        {{ about.description }}
+      {% empty %}
+
+      {% endfor %}
+    </ul>
+    
+    <ul>
+      {% for about in charters %}
+        <h2>Charters</h2>
+        <h5>Preamble</h5>
+        <li>{{ about.preamble }}</li>
+        <h5>Mission</h5>
+        <li>{{ about.mission }}</li>
+        <h5>Objectives</h5>
+        <li>{{ about.objectives }}</li>
+      {% empty %}
+
+      {% endfor %}
+    </ul>
+    <ul>
+      {% for about in OrgChart %}
+        <li>{{ about.description }}</li>
+        <li>{{ about.image }}</li>
+      {% empty %}
+
+      {% endfor %}
+    </ul>
+    <ul>
+      {% for about in qualityPolicy %}
+        <li>{{ about.policyImage }}</li>
+      {% empty %}
+
+      {% endfor %}
+    </ul>
+
+    <!-- Start media_section -->
+    <ul>
+      {% for department in award %}
+        <div>
+          <h5>{{ department.title }}:</h5>
+          <!--    
+            <li>{{ department.image_1 }}</li>
+          <li>{{ department.image_2 }}</li>
+            -->
+          <li>{{ department.description }}</li>
+        </div>
+      {% empty %}
+
+      {% endfor %}
+    </ul>
+
+    <ul>
+      {% for department in citizen_charter %}
+        <h5>{{ department.title }}:</h5>
+        <!--     
+        <li>{{ department.document_File }}</li>
+
+    -->
+      {% empty %}
+
+      {% endfor %}
+    </ul>
+
+    <ul>
+      {% for department in events %}
+        <h5>{{ department.title }}:</h5>
+        <!--     
+        <li>{{ department.document_File }}</li>
+        
+            -->
+        <li>{{ department.url }}</li>
+      {% empty %}
+
+      {% endfor %}
+    </ul>
+
+    <ul>
+      {% for gallerys in gallery %}
+        <h5>{{ gallerys.title }}:</h5>
+      {% empty %}
+
+      {% endfor %}
+    </ul>
+
+    <ul>
+      {% for think in thin_tank %}
+        <h5>{{ think.title }}:</h5>
+      {% empty %}
+
+      {% endfor %}
+    </ul>
+
+    <!-- start department_section -->
+
+    <ul>
+      {% for department in departments %}
+        <h2>Department</h2>
+        <h5>{{ department.title }}:</h5>
+        <li>{{ department.description }}</li>
+      {% empty %}
+
+      {% endfor %}
+    </ul>
+
+    <ul>
+      {% for research in research_development %}
+        <h2>Research and Developement</h2>
+        <h5>{{ research.title }}:</h5>
+        <li>{{ research.description }}</li>
+      {% empty %}
+
+      {% endfor %}
+    </ul>
+
+    <ul>
+      {% for finance in finance_administration %}
+        <h2>Administration</h2>
+        <li>{{ finance.description }}</li>
+      {% empty %}
+
+      {% endfor %}
+    </ul>
+
+    <ul>
+      {% for department in finance_purchase %}
+        <h2>Finance Purchase</h2>
+        <h5>{{ department.annexure }}:</h5>
+      {% empty %}
+
+      {% endfor %}
+    </ul>
+
+    <ul>
+      {% for document in depart_document %}
+        <h2>Department Documents</h2>
+        <h5>{{ document.title }}:</h5>
+        <li>{{ document.description }}</li>
+      {% empty %}
+
+      {% endfor %}
+    </ul>
+
+    <ul>
+      {% for skill in depart_skill_development %}
+        <h5>{{ skill.title }}:</h5>
+        <li>{{ skill.description }}</li>
+      {% empty %}
+
+      {% endfor %}
+    </ul>
+
+    <ul>
+      {% for owd in depart_owd %}
+        <h5>{{ owd.title }}:</h5>
+        <li>{{ owd.description }}</li>
+      {% empty %}
+
+      {% endfor %}
+    </ul>
+
+    <ul>
+      {% for finance in finance_development %}
+        <h2>Finance Developement</h2>
+        <h5>{{ finance.title }}:</h5>
+        <li>{{ finance.description }}</li>
+      {% empty %}
+
+      {% endfor %}
+    </ul>
+
+    <ul>
+      {% for testing in department_Testing %}
+        <h2>Testing and Standered Department</h2>
+        <h5>{{ testing.title }}:</h5>
+        <li>{{ testing.description }}</li>
+      {% empty %}
+
+      {% endfor %}
+    </ul>
+
+    <ul>
+      {% for resource in depart_wind_resource %}
+        <h1>Wind Resource Assessment</h1>
+        <h5>{{ resource.title }}:</h5>
+        <li>{{ resource.description }}</li>
+      {% empty %}
+
+      {% endfor %}
+    </ul>
+
+    <!-- # Start Document_section -->
+
+    <ul>
+      {% for info in genral_info %}
+        <h2>General Information</h2>
+        <h5>{{ info.title }}:</h5>
+        <li>{{ info.description }}</li>
+      {% empty %}
+
+      {% endfor %}
+    </ul>
+
+    <ul>
+      {% for report in annual_report %}
+        <h5>Annual Report</h5>
+        <li>{{ report.year }}</li>
+      {% empty %}
+
+      {% endfor %}
+    </ul>
+
+    <ul>
+      {% for newsletter in newsletters %}
+        <h2>News Letters</h2>
+        <li>{{ newsletter.issue }}:</li>
+        <li>{{ newsletter.year }}</li>
+      {% empty %}
+
+      {% endfor %}
+    </ul>
+
+    <ul>
+      {% for weg_install in weg_Install_world %}
+        <h2>Weg Install World Wise</h2>
+        <li>{{ weg_install.position }}:</li>
+        <li>{{ weg_install.country }}</li>
+        <li>{{ weg_install.capacity }}</li>
+      {% empty %}
+
+      {% endfor %}
+    </ul>
+
+    <ul>
+      {% for guidelines in revised_guidelines %}
+        <h2>Revised Guidelines</h2>
+        <h5>{{ guidelines.title }}:</h5>
+        <li>{{ guidelines.description }}</li>
+      {% empty %}
+
+      {% endfor %}
+    </ul>
+
+    <ul>
+      {% for related in related_links %}
+        <h2>Related Links</h2>
+        <h5>{{ related.title }}:</h5>
+        <li>{{ related.description }}</li>
+      {% empty %}
+
+      {% endfor %}
+    </ul>
+
+    <ul>
+      {% for record in record_retention %}
+        <h2>Record Retention Schedule</h2>
+        <h5>{{ record.title }}:</h5>
+        <li>{{ record.description }}</li>
+      {% empty %}
+
+      {% endfor %}
+    </ul>
+    <ul>
+      {% for weg_india in weg_Install_India %}
+        <h2>Weg Install India</h2>
+        <h5>{{ weg_india.title }}:</h5>
+        <li>{{ weg_india.description }}</li>
+      {% empty %}
+
+      {% endfor %}
+    </ul>
+
+    <!-- start certification_section -->
+
+    <ul>
+      {% for procedure in certification_procedure %}
+        <h2>Certification Procedure</h2>
+        <h5>{{ procedure.title }}:</h5>
+        <li>{{ procedure.description }}</li>
+      {% empty %}
+
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+
+{% include 'footer.html' %}

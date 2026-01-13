@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block meta %}
+  <meta name="description" content="Explore the organizational structure of the National Institute of Wind Energy (NIWE), Chennai. Understand the hierarchy, roles, and responsibilities of various divisions, departments, and key officials working to promote wind energy research, development, testing, and certification under the Ministry of New and Renewable Energy.">
+  <meta name="keywords" content="NIWE organization structure, NIWE departments, wind energy divisions, MNRE, National Institute of Wind Energy Chennai, wind energy hierarchy, wind energy research India, renewable energy governance, NIWE officials, wind power development">
+{% endblock %}
+
+{% block title %}Organization Structure | National Institute of Wind Energy (NIWE), Ministry of New and Renewable Energy, Government of India {% endblock %}
+
+{% block content %}
+
+<section class="head-div">
+  <div class="overlay d-flex align-items-center">
+    <div class="container">
+      <h1 class="text-white">Organizational Structure</h1>
+    </div>
+  </div>
+</section>
+<div class="container">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb bg-transparent p-0">
+      <li class="breadcrumb-item"><a href="/">Home</a></li>
+      <li class="breadcrumb-item" aria-current="page">
+        <a href="{% url 'us' %}">About Us</a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">
+        Organizational Structure
+      </li>
+    </ol>
+  </nav>
+</div>
+
+<section class="dgm-div" id="divContent">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">{% include 'aboutsidenav.html' %}</div>
+      <div class="col-md-8" id="divContent">
+        <div class="dgm-text">
+          {% for data in org %}
+
+          <p>{{ data.description|safe }}</p>
+
+          <img src="{{ data.image.url }}" alt="Organizational Structure" class="w-100" />
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

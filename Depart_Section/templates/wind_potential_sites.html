@@ -1,0 +1,40 @@
+<div class="container">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb bg-transparent p-0">
+            <li class="breadcrumb-item"><a href="/">Home</a></li>
+            <li class="breadcrumb-item"><a href="{% url 'departments' %}">Department</a></li>
+            <li class="breadcrumb-item"><a href="{% url 'wra' %}">Wind Resource Assessment (WRA)</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Wind Potential Sites</li>
+        </ol>
+    </nav>
+    
+    <section class="Wind-div">
+        <h2>Wind Potential Sites</h2>
+        
+        <h5 class="pt-3">JPG Maps</h5>
+        <ul>
+            {% for site in sites %}
+                {% if site.jpg_map %}
+                    <li>
+                        <a href="{{ site.jpg_map.url }}" target="_blank">{{ site.state_name }}</a>
+                        <span class="label_blink notranslate">NEW</span>
+                    </li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+
+        <h5 class="pt-3">KML Files</h5>
+        <ul>
+            {% for site in sites %}
+                {% if site.kml_file %}
+                    <li>
+                        <a href="{{ site.kml_file.url }}" target="_blank">{{ site.state_name }}</a>
+                        <span class="label_blink notranslate">NEW</span>
+                    </li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+    </section>
+</div>
+
+{% endblock %}

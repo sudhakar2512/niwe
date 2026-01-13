@@ -1,0 +1,30 @@
+{% load static %}
+
+<div class="about-side-nav">
+  <ul class="nav-tab" style="list-style-type: none">
+    <li>
+      <a href="{% url 'us' %}">About Us</a>
+    </li>
+    <li>
+      <a href="{% url 'dgm' %}">Director General's Message</a>
+    </li>
+    <li>
+      <a href="{% url 'background' %}">Background</a>
+    </li>
+    <li>
+      <a href="{% url 'charter' %}">Charter</a>
+    </li>
+    <li>
+      <a href="{% url 'org' %}" >Organizational Chart</a>
+    </li>
+    <li>
+      <a href="{% url 'quality' %}">Quality Policy</a>
+    </li>
+    <li>
+      <a href="{% static '/images/ISO_CERTIFICATE.pdf' %}" data-doc target="_blank"
+        >Management System Certificate</a 
+      >
+    </li>
+
+  </ul>
+</div>

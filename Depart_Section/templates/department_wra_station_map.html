@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block meta %}
+  <meta name="description" content="Comprehensive details of SRRA (State Renewable Resource Assessment) stations established by the National Institute of Wind Energy (NIWE), Chennai, under the Ministry of New and Renewable Energy (MNRE), to monitor and analyze wind resource data across India.">
+  <meta name="keywords" content="SRRA stations, NIWE wind monitoring, wind resource assessment, MNRE, NIWE Chennai, wind data India, renewable energy resource, SRRA network, wind potential assessment, wind energy monitoring stations">
+{% endblock %}
+
+{% block title %} SRRA Stations | National Institute of Wind Energy (NIWE), Ministry of New and Renewable Energy, Government of India {% endblock %}
+
+{% block content %}
+{% load static %} 
+
+<section class="head-div">
+  <div class="overlay d-flex align-items-center">
+    <div class="container">
+      <h1 class="text-white">SRRA Stations</h1>
+    </div>
+  </div>
+</section>
+<div class="container">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb bg-transparent p-0">
+      <li class="breadcrumb-item"><a href="/">Home</a></li>
+      <li class="breadcrumb-item" aria-current="page">
+        <a href="{% url 'departments' %}">Department</a>
+      </li>
+      <li class="breadcrumb-item active">
+        <a href="{% url 'wra' %}">Wind Resource Assessment (WRA)</a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">
+        SRRA Stations
+      </li>
+    </ol>
+  </nav>
+</div>
+
+<section class="rnd-div" id="divContent">
+  <div class="container">
+    <div class="row  col-12 mx-auto">
+     
+      <div class="col-md-8">
+        <div class="col-md-9 offset-md-2" >
+            <img class="img-fluid"
+              src="{%  static '/images/SRRA_Stations_map.jpg' %}"
+              alt="stations-map"
+            />
+        </div>
+      </div>
+
+      <div class="col-md-4">{% include 'depart-side-tabs.html' %}</div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

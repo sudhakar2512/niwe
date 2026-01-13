@@ -1,0 +1,190 @@
+ .running-news {
+  position: relative;
+  overflow: hidden; /* Hide overflowing content */
+  white-space: nowrap; /* Prevent wrapping of content */
+  background-color: #ffffff; /* White background */
+  border: 1px solid #ddd; /* Subtle border */
+  padding: 10px 0; /* Padding around the text */
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  width: 100%; /* Ensure it takes up full width */
+}
+
+/* Scrolling Text */
+.scrolling-text {
+  display: inline-block;
+  white-space: nowrap; /* Prevent wrapping of content */
+  animation: scroll-left 105s linear infinite; /* Smooth scrolling animation */
+  animation-delay : -30s;
+  display: flex; /* Arrange items horizontally */
+  width: max-content;
+}
+
+/* Make links inline and add some space */
+.scrolling-text a {
+  margin-right: 2rem; /* Space between links */
+  text-decoration: none; /* Remove underline from links */
+  color: #003366; /* Blue link color */
+}
+
+.scrolling-text a:hover {
+  color:#0056b3; /* Darker blue on hover */
+}
+
+/* Keyframe Animation for scrolling */
+@keyframes scroll-left {
+  0% {
+    transform: translateX(100%); /* Start off-screen on the right */
+  }
+  100% {
+    transform: translateX(-100%); /* Move off-screen to the left */
+  }
+}
+
+/* Hover effect to pause scrolling */
+.scrolling-text:hover {
+  animation-play-state: paused; /* Pause the animation when hovering */
+}
+
+.running-news-vertical {
+  position: relative;
+  overflow: hidden; /* Hide overflowing content */
+  background-color: #ffffff; /* White background */  
+  padding: 10px; /* Padding around the content */  
+  width: 100%; /* Ensure it takes up full width */
+  height: 200px; /* Set height for the vertical scrolling area */
+}
+
+.scrolling-text-vertical {
+  display: block;
+  flex-direction: column;
+  gap: 10px; 
+  position: absolute; /* Position for smooth scrolling */
+  /* animation-delay : -30s; */
+  width: 94%; /* Ensure it takes up the full container width */
+  animation: scroll-up 15s linear infinite; /* Smooth vertical scrolling animation */
+ 
+}
+
+.scrolling-text-vertical a {
+  display: block; /* Ensure links stack vertically */
+  margin-bottom: 10px; /* Add spacing between vertical items */
+  text-decoration: none; /* Remove underline */
+  color: #003366; /* Blue link color */
+}
+.scrolling-text-vertical li { 
+  margin-bottom: 10px; /* Add spacing between vertical items */
+  list-style-type:disc ;
+}
+
+.scrolling-text-vertical a:hover {
+  color: #d64418; /* Darker blue on hover */
+}
+
+.view-more-container{
+  text-align:right; 
+  margin-top: 10px;
+}
+.view-more-btn{
+  text-decoration: none;
+  font-weight: bold;
+  color:  #003366;
+}
+.view-more-btn:hover
+{
+  color: #d64418;
+}
+
+/* Keyframe Animation for Vertical Scrolling */
+@keyframes scroll-up {
+  from {
+    transform: translateY(30%); /* Start off-screen at the bottom */
+  }
+  to {
+    transform: translateY(-100%); /* Move off-screen at the top */
+  }
+}
+
+/* Hover effect to pause scrolling */
+.scrolling-text-vertical:hover {
+  animation-play-state: paused; /* Pause the animation when hovering */
+}
+
+
+/* Table Styling */
+.whats-new-table {
+  width: 80%;
+  border-collapse: collapse; /* Merges adjacent borders for a clean look */
+  text-align: left;
+  color: #003366;
+  table-layout:auto;
+  
+}
+
+.whats-new-table th,
+.whats-new-table td {
+  border: 1px solid rgb(208, 200, 200); /* Black border around cells */
+  padding: 6px; /* Space within cells */
+}
+
+.whats-new-table th {
+  background-color: #a0daeb; /* Light gray background for headers */
+  font-weight: bold;
+  text-align: center;
+}
+
+.whats-new-table tr:nth-child(even) {
+  background-color: #f9f9f9; /* Alternate row background for better readability */
+}
+
+.whats-new-table tr:hover {
+  background-color: #e8f4fc; /* Highlight row on hover */
+}
+
+.whats-new-table th.sl-no{
+  width: 5%;
+}
+.whats-new-table th.title{
+  width: 60%;
+}
+.whats-new-table th.Published-Date{
+  width: 12%;
+}
+.whats-new-table th.file{
+  width: 15%;
+}
+    
+
+.pagination {
+  margin-top: 20px;
+  text-align: right; /* Align the pagination to the right */
+}
+
+.pagination-list {
+ 
+  display: inline-flex;
+  flex-wrap:wrap ;
+  /* Align the pagination items in a row */
+}
+
+.pagination-list li {
+  list-style: none !important ;
+  padding: 0 !important;
+  margin: 0 !important;
+  margin: 0 3px; /* Add spacing between pagination items */
+}
+
+.pagination-list li a {
+  text-decoration: none;
+  padding: 7px 20px;
+  border: 1px solid #ddd;
+  color: #007bff;
+  border-radius: 4px; /* Add rounded corners (optional) */
+}
+
+.pagination-list li.active a {
+  background-color: #007bff;
+  color: white;
+  border-color: #007bff;
+}
+
+

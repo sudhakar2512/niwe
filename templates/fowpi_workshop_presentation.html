@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+
+{% block meta %}
+  <meta name="description" content="FOWPI Workshop Presentations by the National Institute of Wind Energy (NIWE), Chennai, covering offshore wind power discussions, technical sessions, and research findings under the Ministry of New and Renewable Energy (MNRE).">
+  <meta name="keywords" content="FOWPI workshop presentations, NIWE Chennai, MNRE India, offshore wind power workshop, wind energy technical sessions, renewable energy research, NIWE offshore projects, wind energy discussions, MNRE initiatives, FOWPI presentations">
+{% endblock %}
+
+{% block title %} FOWPI Workshop Presentations | National Institute of Wind Energy (NIWE), Ministry of New and Renewable Energy, Government of India. {% endblock %}
+
+{% block content %}
+
+{% load static %}
+
+<section class="head-div">
+  <div class="overlay d-flex align-items-center">
+    <div class="container">
+      <h1 class="text-white">FOWPI Workshop Presentations</h1>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb bg-transparent p-0">
+      <li class="breadcrumb-item"><a href="/">Home</a></li>
+      <li class="breadcrumb-item">
+        <a href="{% url 'departments' %}">Department</a>
+      </li>
+      <li class="breadcrumb-item">
+        <a href="{% url 'owd' %}">Offshore Wind Development</a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">
+        FFOWPI Workshop Presentations
+      </li>
+    </ol>
+  </nav>
+</div>
+
+<section class="rnd-div" id="divContent">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <h5 class="pb-3">FOWPI Foundation Workshop Proceedings</h5>
+        <ol type="I">
+          <li>
+            <a href="{% static '/pdf/depart-side-tabs/FOWPI_foundation_design.pdf' %}" target="_blank" data-doc>
+            FOWPI foundation design
+            </a>
+          </li>
+          <li>
+          <a href="{% static '/pdf/depart-side-tabs/FOWPI_status_update.pdf' %}" target="_blank" data-doc >
+            FOWPI status update
+          </a>
+          </li>
+          <li>
+            <a href="{% static '/pdf/depart-side-tabs/FOWPI-NIWE-Offshore_wind_energy_in_India.pdf' %}" target="_blank" data-doc >
+              FOWPI-NIWE Offshore wind energy in India
+            </a>
+          </li>
+          <li>
+            <a href="{% static '/pdf/depart-side-tabs/Geotechnical_and_Offsgore_solutions.pdf' %}" target="_blank" data-doc >
+              Geotechnical and Offshore solutions
+            </a>
+          </li>
+        </ol>
+
+        <h5 class="pb-3 pt-2">FOWPI Metocean Workshop Presentations</h5>
+
+        <ol type="I">
+          <li>
+            <a href="{% static '/pdf/depart-side-tabs/Dr.Jesper_Skourup-Metocean_Studies_02Jun2017.pdf' %}" target="_blank" data-doc >
+              "Metocean Studies" by Dr. Jesper Skourup
+            </a>
+          </li>
+          <li>
+            <a href="{% static '/pdf/depart-side-tabs/Dr.Rajesh_Katyal-Offshore_wind_energy_02Jun2017.pdf' %}" target="_blank" data-doc >
+                "Offshore Wind Energy" by Dr. Rajesh Katyal
+            </a>
+          </li>
+          <li>
+            <a href="{% static '/pdf/depart-side-tabs/Mr.Per_Volund-FOWPI_Project&European_OWF_Exp_02Jun2017.pdf' %}" target="_blank" data-doc>
+              "FOWPI Project & European OWF Experience" by Mr. Per Volund
+            </a>
+          </li>
+          <li>
+            <a href="{% static '/pdf/depart-side-tabs/Ms.Cecile_Leemans-EU_Energy_Policy17.pdf' %}" target="_blank" data-doc >
+              "EU Energy Policy & Offshore Wind" by Ms. Cecile Leemans
+            </a>
+          </li>
+        </ol>
+      </div>
+      <div class="col-md-4">{% include 'departments-owd-side-tabs.html' %}</div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

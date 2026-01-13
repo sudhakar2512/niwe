@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{% block meta %}
+  <meta name="description" content="Photo gallery of the National Institute of Wind Energy (NIWE), Chennai, showcasing images of events, projects, workshops, and activities related to wind energy and renewable energy initiatives under MNRE.">
+  <meta name="keywords" content="NIWE photo gallery, wind energy images, NIWE Chennai, MNRE India, wind energy events photos, renewable energy project images, wind sector activities, NIWE workshops photos, wind power documentation, MNRE media gallery">
+{% endblock %}
+
+{% block title %} Photo gallery | National Institute of Wind Energy (NIWE), Ministry of New and Renewable Energy, Government of India {% endblock %}
+
+{% block content %} 
+
+<section class="head-div">
+  <div class="overlay d-flex align-items-center">
+    <div class="container">
+      <h1 class="text-white">Sub-Gallery</h1>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb bg-transparent p-0">
+      <li class="breadcrumb-item"><a href="/">Home </a></li>
+      <li class="breadcrumb-item">
+        <a href="{% url 'medias' %}">Media</a>
+      </li>
+      <li class="breadcrumb-item">
+        <a href="{% url 'gallery' %}">Gallery</a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">Sub-Gallery</li>
+    </ol>
+  </nav>
+</div>
+
+<section class="main-div" id="divContent">
+  <div class="container">
+    
+    <div class="row mx-auto gallery">
+      <h4>Album: {{ album.title }}</h4>
+      {% for sub_album in sub_albums %}
+
+      <div class="col-lg-2 col-md-3 col-sm-6 col-12 mb-3">
+        <a href="{{ sub_album.image.url }}" class="big" aria-label="{{ album.title }}">
+          <div class="card sub-gallery-card p-0">
+            <div class="card-body text-center p-2 sub-gallery-img">
+              <img
+                src="{{ sub_album.image.url }} "
+                title="{{ album.title }}"
+                class="card-img-top"
+                alt="{{ album.title }}"
+              />
+            </div>
+          </div>
+        </a>
+      </div>
+
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block meta %}
+  <meta name="description" content="Learn about the Administration Department at the National Institute of Wind Energy (NIWE), Chennai. This page details administrative functions, office management, staff coordination, policy implementation, and support services that enable smooth operations under the Ministry of New and Renewable Energy.">
+  <meta name="keywords" content="NIWE administration department, admin functions NIWE, MNRE, NIWE Chennai, office management, staff coordination, policy implementation, support services, wind energy administration, renewable energy governance">
+{% endblock %}
+
+{% block title %} Administration Department | National Institute of Wind Energy (NIWE), Ministry of New and Renewable Energy, Government of India {% endblock %}
+
+{% block content %}
+
+<section class="head-div">
+  <div class="overlay d-flex align-items-center">
+    <div class="container">
+      <h1 class="text-white">Admin</h1>
+    </div>
+  </div>
+</section>
+<div class="container">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb bg-transparent p-0">
+      <li class="breadcrumb-item"><a href="/">Home </a></li>
+      <li class="breadcrumb-item" aria-current="page">
+        <a href="{% url 'departments' %}">Department</a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">Admin</li>
+    </ol>
+  </nav>
+</div>
+
+<section class="rnd-div" id="divContent">
+  <div class="container">
+    <div class="row mx-auto col-12">
+      <div class="col-md-8">
+        <h6>
+          <a href="/static/pdf/Revised_ACR_format.docx" data-doc>
+            Revised format of ACR 
+          </a>
+          <span class="label_blink notranslate">NEW</span>
+        </h6>
+
+        <h6 class="pt-2">
+          <a href="/static/pdf/NIWE_Welfare_Fund_Scheme.pdf "  data-doc target="_blank">
+            NIWE Welfare Fund Scheme
+          </a>
+        </h6>
+      </div>
+
+      <div class="col-md-4">{% include "depart-fa-side-tabs.html" %}</div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

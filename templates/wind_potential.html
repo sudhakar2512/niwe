@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+
+{% block meta %}
+  <meta name="description" content="Wind Potential Sites for setting up Wind Projects - MOD NOC details page of the National Institute of Wind Energy (NIWE), Chennai, providing information on identified sites, clearance details, and guidelines for wind energy project development under MNRE.">
+  <meta name="keywords" content="NIWE wind potential sites, MOD NOC details, NIWE Chennai, MNRE India, wind project sites, wind energy clearance, renewable energy project guidelines, wind sector development, MNRE initiatives, NIWE site information">
+{% endblock %}
+
+{% block title %} Wind Potential Sites for setting up Wind Projects_MOD NOC details  | National Institute of Wind Energy (NIWE), Ministry of New and Renewable Energy, Government of India {% endblock %}
+
+{% block content %}
+
+{% load static %}
+
+<section class="head-div">
+  <div class="overlay d-flex align-items-center">
+    <div class="container">
+      <h1 class="text-white">
+        Wind Potential Sites for setting up Wind Projects_MOD NOC details
+      </h1>
+    </div>
+  </div>
+</section>
+
+
+<div class="container">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb bg-transparent p-0">
+      <li class="breadcrumb-item"><a href="/">Home</a></li>
+      <li class="breadcrumb-item" aria-current="page">
+        <a href="{% url 'departments' %}">Department</a>
+      </li>
+      <li class="breadcrumb-item active">
+        <a href="{% url 'wra' %}">Wind Resource Assessment (WRA)</a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">
+        Wind Potential Sites for setting up Wind Projects_MOD NOC details
+      </li>
+    </ol>
+  </nav>
+</div>
+
+
+<section class="Wind-div" id="divContent">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h6>
+          <a href="{% static '/images/Condition_MOD.pdf' %}"  data-doc class="text-dark"
+            >General conditions of NOC for construction of Wind Power Projects
+            (Para (i) updated w.e.f 05.06.2024)
+          </a>
+          <span class="label_blink notranslate">NEW</span>
+        </h6>
+        <ol style="list-style-type: disc"  >
+          <li>
+            <h5 class="pt-3">
+              <a
+                href="{% static '/images/Condition_MOD.pdf' %}"
+                target="_blank"
+                class="text-dark pt-3 pb-3"
+                data-doc
+              >
+                JPG Map
+              </a>
+              <span class="label_blink notranslate">NEW</span>
+            </h5>
+          </li>
+
+          <ul style="color: #000">
+            <li><a href="{% static '/images/map/AP.jpg' %}" target="_blank" data-doc>Andhra Pradesh</a></li>
+            <li><a href="{% static '/images/map/GJ.jpg' %}" target="_blank" data-doc>Gujarat [Updated Block 4 w.e.f 05.06.2024]</a></li>
+            <li><a href="{% static '/images/map/KA.jpg' %}" target="_blank" data-doc>Karnataka [Updated Block 7  w.e.f 08.02.2024]</a></li>
+            <li><a href="{% static '/images/map/MP.jpg' %}" target="_blank" data-doc>Madhya Pradesh</a></li>
+            <li><a href="{% static '/images/map/MH.jpg' %}" target="_blank" data-doc>Maharashtra</a></li>
+            <li><a href="{% static '/images/map/RJ.jpg' %}" target="_blank" data-doc>Rajasthan</a></li>
+            <li><a href="{% static '/images/map/TN.jpg' %}" target="_blank" data-doc>Tamil Nadu</a></li>
+          </ul>
+
+          <li>
+            <h5 class="pt-3">
+              KML File
+              <span class="label_blink notranslate">NEW</span>
+            </h5>
+          </li>
+          <ul style="color: #000">
+            <li><a href="{% static '/images/map/AP.kmz' %}" data-doc>Andhra Pradesh</a></li>
+            <li><a href="{% static '/images/map/GJ.kmz' %}" data-doc>Gujarat [Updated Block 4 w.e.f 05.06.2024]</a></li>
+            <li><a href="{% static '/images/map/KA.kmz' %}" data-doc>Karnataka [Updated Block 7  w.e.f 08.02.2024]</a></li>
+            <li><a href="{% static '/images/map/MP.kmz' %}" data-doc>Madhya Pradesh</a></li>
+            <li><a href="{% static '/images/map/MH.kmz' %}" data-doc>Maharashtra</a></li>
+            <li><a href="{% static '/images/map/RJ.kmz' %}" data-doc>Rajasthan</a></li>
+            <li><a href="{% static '/images/map/TN.kmz' %}" data-doc>Tamil Nadu</a></li>
+          </ul>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- footer -->
+
+{% endblock %}

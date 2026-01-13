@@ -1,0 +1,144 @@
+{% extends 'base.html' %}
+
+{% block meta %}
+  <meta name="description" content="Right to Information (RTI) - page of the National Institute of Wind Energy (NIWE), Chennai, providing detailed information, guidelines, and procedures under the RTI Act for accessing wind energy and renewable energy information under MNRE.">
+  <meta name="keywords" content="NIWE RTI, Right to Information , NIWE Chennai, MNRE India, RTI guidelines, wind energy information, renewable energy access, MNRE initiatives, public information requests, NIWE RTI details">
+{% endblock %}
+
+
+{% block title %}  Right To Information  | National Institute of Wind Energy (NIWE), Ministry of New and Renewable Energy, Government of India {% endblock %}
+
+{% block content %} 
+
+{% load static %}
+<!-- nav end  -->
+
+    <section class="head-div">
+        <div class="overlay d-flex align-items-center">
+            <div class="container">
+                <h1 class="text-white">Right To Information</h1>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb bg-transparent p-0">
+                        <li class="breadcrumb-item"><a href="/">Home </a></li>                        
+                        <li class="breadcrumb-item active" aria-current="page">Right To Information</li>
+                    </ol>
+            </nav>
+    </div>
+
+    <section class="rti-sec" id="divContent">
+            <div class="container">
+                <ul>
+                    <li>
+                        <a href="{% url 'retention' %}" target="_blank">Records Retention Schedule</a>
+                    </li>
+                    <li>
+                        <a href="{% static '/pdf/Guide_2013-issue.pdf' %}" target="_blank" data-doc aria-label="open Guide on RTI ACT,2005">Guide on RTI ACT,2005</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'audit' %}" target="_blank" aria-label="Open Audit Report of Proactive Disclosure under RTI Act, 2005">Audit Report of Proactive Disclosure under RTI Act, 2005</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'account' %}" target="_blank" aria-label="Open Annual Accounts  -  1998-99 - onwards">Annual Accounts  -  1998-99 - onwards</a>
+                    </li>
+                    <li>
+                        <a href="{% static '/pdf/Financial_details-1998-99_to_2023-24.pdf' %}" target="_blank" aria-label="Open Financial Details for Past years ( Grant-in-Aid and Internal Revenue Generation )" data-doc>Financial Details for Past years ( Grant-in-Aid and Internal Revenue Generation )</a>
+                    </li>
+                </ul>
+                <h5>Memorandum of Understanding (MOU) between MNRE and NIWE</h5>
+                
+                <ol class="ps-5" type="1">
+                    {% for data in rti %}
+                    <li class="ps-4"> 
+                        <a href="{{data.document.url}}" target="_blank">
+                            {{data.year}}, &nbsp; 
+                        </a>
+                    {% if data.documents_info %}            
+                        <i class="fas {{ data.documents_info.icon }}">                            
+                            {{ data.documents_info.type }} </i>
+                            ({{ data.documents_info.size }})
+                    {% endif %}
+                     
+                </li>
+                    {% endfor %}
+                </ol>
+                   
+
+                <h5 class="pb-3 pt-3">Information</h5>
+
+                <ol class="ps-5" type="1">
+                    {% for item in info %}
+                        <li class="ps-4"> 
+                            
+                            {% if item.document != "" %}
+                            <a href="{{item.document.url}} " data-doc target="_blank">
+                                {{item.title}}
+                            </a>
+                            {% endif %}
+
+                            {% if item.document == "" %}
+                            <a href="{% url 'subInfo' item.id  %}" target="_blank">
+                                {{item.title}}
+                            </a>
+                            {% endif %}                        
+                        </li>                
+                    {% endfor %}
+
+                </ol>
+
+                <ol class="ps-5" start="14">
+                    <li class="ps-4">Information available in electronics form</a>
+
+                        <ul class="new-letter pb-3">
+                            <a href="{% url 'newsletters' %}" target="blank"> <li>News Letter</li></a>
+                            <a href="{% url 'tender_data' %}" target="blank"> <li>Tender notifications</li></a>
+                            <a href="{% url 'Whatsnew_full_view' %}" target="blank"> <li>Circulars on various training programmes, recruitment, announcements, published reports, saleable data, links to Ministries announcements, etc.</li></a>
+                        </ul>
+                    </li>                  
+                    <li class="ps-4"><a href = "{% url 'facility_to_Citizen' %}"> Particulars of Facilities available to citizen for obtaining information</a> </li>               
+                    <li class="ps-4"><a href = "{% url 'Public_information_Officer' %}">Names, designation and other particulars of the Public Information Officers</a> </li>
+
+                
+                    <li class="ps-4">Other Information</a> 
+                        <ul class="anul-info pb-3">
+                            <li><a href="{% url 'annual_reports' %}" target="blank"> Annual Report   -   1998-99 - onwards</a></li>
+                            <li>Details of the Annual Report / Financial Report and Performance Report in Bilingual (Hindi & English) Laid on the table of Both Houses of Parliament :
+                                <ol class="ps-5" type="1">
+                                    {% for item in finance_info %}
+                                        <li class="ps-4"> 
+                                            <a href="{{item.pdf_link.url}}" target="_blank">{{item.year}}, &nbsp;</a>
+                                            {% if item.documents_info %}            
+                                                <i class="fas {{ item.documents_info.icon }}">                            
+                                                    {{ item.documents_info.type }} </i>
+                                                    ({{ item.documents_info.size }})
+                                            {% endif %}
+                                        </li>
+                                    {% endfor %}
+                                </ol>   
+                            </li></a>
+                            <li><a href="{% url 'faq' %}" target="_blank">FAQs</a></li>
+                           <li><a href="{% static '/pdf/Damages_due_to_unprecedented_floods_2015.pdf' %}" data-doc arget="_blank">Information about the damages occurred to equipments, furniture, vehicles, records, etc. due to the unprecedented floods during 2nd - 4th December 2015 at NIWE, Chennai. The same has been approved by the Governing Council in its 37th meeting held on 9th March 2016.</a></li>
+                                    
+                        </ul>                        
+                    </li>
+                    <li class="ps-4"><a href="{% url 'rti_application' %}" >RTI Applications</a></li>
+                    <li class="ps-4"><a href="{% static '/pdf/cag_&_pac.pdf' %}"  target="_blank" data-doc>CAG & PAC paras</a></li>
+                    <li class="ps-4"><a href="{% url 'rti_HOD' %}" >Head of Department(HoD) - Executive Director / Director General</a> </li>
+                    <li class="ps-4"><a href="{% url 'rti_Tour_type' %}" >Foreign and Domestic tours by Head of the Department</a></li>
+                    <li class="ps-4"><a href="{% static '/pdf/NIWE_website_securtiy_audit_certificate_2025.pdf' %}" data-doc target="_blank">NIWE Website Security Audit Certificate</a></li> 
+                    <li class="ps-4"><a href="{% static '/pdf/IEM_NIWE_Procurement.pdf' %}" data-doc target="_blank">Appointment of IEM In NIWE For Procurements With Threshold Value of Rupees 1.50 Crores and above for a Period of Three Years from 05.02.2025</a></li> 
+                    <li class="ps-4"><a href="{% static '/pdf/Vigilance_officer_2025.pdf' %}" data-doc target="_blank">Vigilance Officer of NIWE</a></li> 
+                </ol>
+
+                
+            </div>
+    </section>
+
+
+    <!-- footer -->
+
+    {% endblock %}

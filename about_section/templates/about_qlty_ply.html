@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block meta %}
+  <meta name="description" content="Learn about the Quality Policy of the National Institute of Wind Energy (NIWE), Chennai, outlining its commitment to maintaining high standards in wind energy research, testing, certification, and consultancy services. NIWE ensures reliability, excellence, and continuous improvement in supporting the wind energy sector under MNRE.">
+  <meta name="keywords" content="NIWE quality policy, wind energy quality standards, NIWE research standards, MNRE, wind power testing, wind turbine certification, renewable energy quality, NIWE Chennai, wind energy consultancy, wind energy excellence">
+{% endblock %}
+
+{% block title %} Quality Policy | National Institute of Wind Energy (NIWE), Ministry of New and Renewable Energy, Government of India {% endblock %}
+
+{% block content %}
+
+<section class="head-div">
+  <div class="overlay d-flex align-items-center">
+    <div class="container">
+      <h1 class="text-white">Quality Policy</h1>
+    </div>
+  </div>
+</section>
+<div class="container">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb bg-transparent p-0">
+      <li class="breadcrumb-item"><a href="/">Home</a></li>
+      <li class="breadcrumb-item" aria-current="page">
+        <a href="{% url 'us' %}">About Us</a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">Quality Policy</li>
+    </ol>
+  </nav>
+</div>
+
+<section class="policy-div" id="divContent">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">{% include 'aboutsidenav.html' %}</div>
+      <div class="col-md-8">
+        {% for data in quality %}
+
+        <div class="policy-img">
+          <img src="{{ data.policyImage.url }}" alt="Quality Policy of the organization" class="" />
+        </div>
+
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
